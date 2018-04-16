@@ -47,4 +47,8 @@ public class Customer extends User
                 // WTF?
             }*/
     }
+    public void pay()
+    {
+        //TODO
+    }
 }

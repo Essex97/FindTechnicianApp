@@ -56,6 +56,11 @@ public abstract class User
         return addresses;
     }
 
+    public void removeAddress(Address address)
+    {
+        addresses.remove(address);
+    }
+
     public void addAddress(Address address)
     {
         addresses.add(address);
