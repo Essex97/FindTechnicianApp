@@ -14,7 +14,7 @@ public class Technician extends User
 
     public Technician(String firstName, String lastName, String phone, String email) {
         super(firstName, lastName, phone, email);
-        visists = new ArrayList<Visit>();
+        visits = new ArrayList<Visit>();
         services = new ArrayList<TechnicianService>();
     }
 
