@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>384</x>
-      <y>8</y>
+      <x>448</x>
+      <y>80</y>
       <w>256</w>
       <h>240</h>
     </coordinates>
@@ -32,10 +32,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>96</x>
-      <y>304</y>
+      <x>152</x>
+      <y>376</y>
       <w>288</w>
-      <h>120</h>
+      <h>144</h>
     </coordinates>
     <panel_attributes>Customer
 --
@@ -46,32 +46,33 @@
 +getEvaluations() : List&lt;Evaluation&gt;
 +createAppointment(Sring code, Date date, Time time)
 +pay(Appointment : app)
-+Evaluate(Tecnician : tech)</panel_attributes>
++browseTechnician() : Technician
++Evaluate(Tecnician : tech)
++pay(Appointment appointment) </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>488</x>
-      <y>312</y>
-      <w>264</w>
-      <h>104</h>
+      <x>536</x>
+      <y>376</y>
+      <w>312</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Tecnician
 --
--visits : List&lt;Visit&gt;
+-appontments : List&lt;Appointment&gt;
 -services : List &lt;TechnicianService&gt;
 --
-+getVisits() : List &lt;Visits&gt; {query}
 +getServices() : List &lt;TechnicianService&gt; {query}
-</panel_attributes>
++approve(Appointment appointment)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
-      <y>768</y>
+      <x>472</x>
+      <y>832</y>
       <w>208</w>
       <h>160</h>
     </coordinates>
@@ -85,15 +86,14 @@
 +getPaymentCode() : String {query}
 +getTotalCost() : double {query}
 +getPaidFlag() : Boolean {query}
-+pay() 
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>648</y>
+      <x>72</x>
+      <y>712</y>
       <w>304</w>
       <h>208</h>
     </coordinates>
@@ -118,8 +118,8 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>80</x>
-      <y>32</y>
+      <x>152</x>
+      <y>96</y>
       <w>192</w>
       <h>152</h>
     </coordinates>
@@ -141,8 +141,8 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1016</x>
-      <y>624</y>
+      <x>1096</x>
+      <y>688</y>
       <w>184</w>
       <h>144</h>
     </coordinates>
@@ -163,8 +163,8 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>696</x>
-      <y>600</y>
+      <x>768</x>
+      <y>664</y>
       <w>232</w>
       <h>176</h>
     </coordinates>
@@ -187,17 +187,19 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>352</x>
-      <y>536</y>
+      <x>416</x>
+      <y>552</y>
       <w>264</w>
-      <h>184</h>
+      <h>200</h>
     </coordinates>
     <panel_attributes>Appointment
 --
 -appointmentCode : String
+-tecnician : Technician
+-customer : Customer
 -date : Date
 -time : Time
--approved : Boolean
+-visit : Visit
 --
 +getAppointmentCode() : int {query}
 +getAppointmentCode(appointmentCode : String)
@@ -205,15 +207,14 @@ getCostumer() : Costumer {query}
 +setDate(date : Date)
 +getTime() : Time {query}
 +setTime(time : Time)
-+getApproved() : Boolean {query}
-+setApproved(approved : Boolean)</panel_attributes>
++getVisit() : Visit {query}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>952</x>
-      <y>368</y>
+      <x>1040</x>
+      <y>432</y>
       <w>264</w>
       <h>200</h>
     </coordinates>
@@ -240,8 +241,8 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>976</x>
-      <y>0</y>
+      <x>1080</x>
+      <y>64</y>
       <w>232</w>
       <h>176</h>
     </coordinates>
@@ -265,8 +266,8 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>728</x>
-      <y>128</y>
+      <x>808</x>
+      <y>176</y>
       <w>200</w>
       <h>152</h>
     </coordinates>
@@ -287,8 +288,8 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1008</x>
-      <y>232</y>
+      <x>1112</x>
+      <y>288</y>
       <w>184</w>
       <h>88</h>
     </coordinates>
