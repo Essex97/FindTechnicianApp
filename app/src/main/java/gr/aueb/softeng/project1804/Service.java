@@ -9,22 +9,20 @@ import java.util.List;
 public class Service
 {
     private String serviceCode;
-    private double serviceCost;
     private String description;
     private List<Category> categories;
-    private List<TechnicianService> technicians;
+    private List<OfferedService> OfferedServices;
 
     public Service()
     {
     }
 
-    public Service(String serviceCode, double serviceCost, String description, List<Category> categories, List<TechnicianService> technicians)
+    public Service(String serviceCode, String description, List<Category> categories, List<OfferedService> OfferedServices)
     {
         this.serviceCode = serviceCode;
-        this.serviceCost = serviceCost;
         this.description = description;
         this.categories = categories;
-        this.technicians = technicians;
+        this.OfferedServices = OfferedServices;
     }
 
     public String getServiceCode()
@@ -35,16 +33,6 @@ public class Service
     public void setServiceCode(String serviceCode)
     {
         this.serviceCode = serviceCode;
-    }
-
-    public double getServiceCost()
-    {
-        return serviceCost;
-    }
-
-    public void setServiceCost(double serviceCost)
-    {
-        this.serviceCost = serviceCost;
     }
 
     public String getDescription()
@@ -62,8 +50,8 @@ public class Service
         return categories;
     }
 
-    public List<TechnicianService> getTechnicians()
+    public List<OfferedService> getTechnicians()
     {
-        return technicians;
+        return OfferedServices;
     }
 }

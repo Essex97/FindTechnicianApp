@@ -54,10 +54,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>500</x>
+      <x>510</x>
       <y>370</y>
-      <w>390</w>
-      <h>120</h>
+      <w>380</w>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Tecnician
 --
@@ -65,8 +65,11 @@
 -services : List &lt;OfferedServices&gt;
 --
 +getServices() : List &lt;TechnicianService&gt; {query}
++getRequests() : List&lt;Request&gt;
++getApprovedRequests() : List&lt;Request&gt;
 +approve(Request request )
-+browseResources() : List&lt;Resource&gt;</panel_attributes>
++browseResources() : List&lt;Resource&gt;
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -226,7 +229,7 @@ getVisit() : Visit() {query}
 -serviceCode : String
 -description : String
 -categories : List&lt;Category&gt;
--services : List &lt;OfferedService&gt;
+-offeredServices : List &lt;OfferedService&gt;
 --
 +getServiceCode() : String {query}
 +setServiceCode(serviceCode : String)
@@ -281,6 +284,22 @@ getVisit() : Visit() {query}
 +setService(service : Service)
 +getCost() : double {query}
 +setCost(cost : double)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>930</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Scale
+--
+VERY_GOOD
+GOOD
+BAD</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

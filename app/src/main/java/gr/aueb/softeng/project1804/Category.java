@@ -11,7 +11,6 @@ public class Category
     private String code;
     private String title;
     private String description;
-    private List<Service> services;
 
     /**
      * Default Constructor
@@ -60,14 +59,23 @@ public class Category
         return description;
     }
 
-    public void setDescription(String description)
-    {
-        this.description = description;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Category category = (Category) o;
+
+        if (code != null ? !code.equals(category.code) : category.code != null) return false;
+        if (title != null ? !title.equals(category.title) : category.title != null) return false;
+        return description != null ? description.equals(category.description) : category.description == null;
     }
 
-    public List<Service> getServices()
-    {
-        return services;
+    @Override
+    public int hashCode() {
+        int result = code != null ? code.hashCode() : 0;
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        return result;
     }
-
 }

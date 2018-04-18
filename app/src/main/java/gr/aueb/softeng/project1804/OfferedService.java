@@ -4,7 +4,7 @@ package gr.aueb.softeng.project1804;
  * Created by Stratos on 11/4/2018.
  */
 
-public class TechnicianService
+public class OfferedService
 {
     private Technician technician;
     private Service service;
@@ -13,11 +13,11 @@ public class TechnicianService
     /**
      * Default Constructor
      */
-    public TechnicianService()
+    public OfferedService()
     {
     }
 
-    public TechnicianService(Technician technician, Service service, double cost)
+    public OfferedService(Technician technician, Service service, double cost)
     {
         this.technician = technician;
         this.service = service;
