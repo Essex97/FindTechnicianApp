@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://C:\Users\Stratos\Documents\Android Studio Projects\project1804\CS.iml" filepath="C:\Users\Stratos\Documents\Android Studio Projects\project1804\CS.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/project1804.iml" filepath="$PROJECT_DIR$/project1804.iml" />
     </modules>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>10</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>448</x>
-      <y>80</y>
-      <w>256</w>
-      <h>240</h>
+      <x>470</x>
+      <y>0</y>
+      <w>320</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>/User/
 --
@@ -32,70 +32,68 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>152</x>
-      <y>376</y>
-      <w>288</w>
-      <h>144</h>
+      <x>10</x>
+      <y>360</y>
+      <w>470</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>Customer
 --
--appontments : List&lt;Appointment&gt;
--evaluation : List&lt;Evaluation&gt;
+-requests : List&lt;Request&gt;
+-evaluations : List&lt;Evaluation&gt;
 --
-+getApprovedAppointments() : List&lt;Appointment&gt;
++getApprovedRequests() : List&lt;Request&gt;
 +getEvaluations() : List&lt;Evaluation&gt;
-+createAppointment(Sring code, Date date, Time time)
-+pay(Appointment : app)
++createRequest(Sring code, Date date, Time time, 
+					Technician technician, Customer customer)
++pay(Request request, double givenAmmount)
 +browseTechnician() : Technician
-+Evaluate(Tecnician : tech)
-+pay(Appointment appointment) </panel_attributes>
++Evaluate(Technician tech, Visit visit) : Evaluation</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>536</x>
-      <y>376</y>
-      <w>312</w>
-      <h>88</h>
+      <x>500</x>
+      <y>370</y>
+      <w>390</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>Tecnician
 --
--appontments : List&lt;Appointment&gt;
--services : List &lt;TechnicianService&gt;
+-requests : List&lt;Requests&gt;
+-services : List &lt;OfferedServices&gt;
 --
 +getServices() : List &lt;TechnicianService&gt; {query}
-+approve(Appointment appointment)</panel_attributes>
++approve(Request request )
++browseResources() : List&lt;Resource&gt;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>472</x>
-      <y>832</y>
-      <w>208</w>
-      <h>160</h>
+      <x>900</x>
+      <y>930</y>
+      <w>260</w>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Payment
 --
 -paymentCode : String
 -totalCost : double
--paidFlag : Boolean
--visit : Visit
 --
 +getPaymentCode() : String {query}
 +getTotalCost() : double {query}
-+getPaidFlag() : Boolean {query}
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>72</x>
-      <y>712</y>
-      <w>304</w>
-      <h>208</h>
+      <x>0</x>
+      <y>790</y>
+      <w>380</w>
+      <h>260</h>
     </coordinates>
     <panel_attributes>Evaluation
 --
@@ -103,25 +101,27 @@ technicianBehavior : Scale
 workQuality : Scale
 priceEvaluation : Scale
 comment : String
-costumer : Costumer
+customer : Customer
 technician : Technician
+visit : Visit
 --
 getTechnicianBehavior() : Scale {query}
 getWorkQuality() : Scale {query}
 getPriceEvaluation() : Scale {query}
 getComment() : String {query}
 getTechnician() : Teecnician {query}
-getCostumer() : Costumer {query}
+getCustomer() : Customer {query}
+getVisit() : Visit() {query}
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>152</x>
-      <y>96</y>
-      <w>192</w>
-      <h>152</h>
+      <x>100</x>
+      <y>20</y>
+      <w>240</w>
+      <h>190</h>
     </coordinates>
     <panel_attributes>Address
 --
@@ -141,10 +141,10 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1096</x>
-      <y>688</y>
-      <w>184</w>
-      <h>144</h>
+      <x>1310</x>
+      <y>760</y>
+      <w>230</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>Resource 
 --
@@ -163,77 +163,77 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>768</x>
-      <y>664</y>
-      <w>232</w>
-      <h>176</h>
+      <x>880</x>
+      <y>650</y>
+      <w>320</w>
+      <h>250</h>
     </coordinates>
     <panel_attributes>Visit
 --
 -date : Date
--appointment : Appointment
 -resources : List&lt;Resource&gt;
 -payment : Payment
 -tecnician : Tecnician
+-offeredService : List&lt;OferredService&gt;
 --
 +getDate(): Date{quuery}
 +setDate(date : Date)
-+getAppointment() : Appointment{query}
 +getPayment() : Payment{query}
 +getTecnisian(): Tecnisian{query}
-+getResources(): List&lt;Reasource&gt;</panel_attributes>
++getResources(): List&lt;Reasource&gt;
++setResources(resources : List&lt;Resource&gt;)
++getOfferedService() : List&lt;OferredService&gt;
++createPayment(givenAmmount : double)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>416</x>
-      <y>552</y>
-      <w>264</w>
-      <h>200</h>
+      <x>430</x>
+      <y>580</y>
+      <w>340</w>
+      <h>270</h>
     </coordinates>
-    <panel_attributes>Appointment
+    <panel_attributes>Request
 --
--appointmentCode : String
+-requestCode : String
 -tecnician : Technician
 -customer : Customer
 -date : Date
 -time : Time
 -visit : Visit
 --
-+getAppointmentCode() : int {query}
-+getAppointmentCode(appointmentCode : String)
++getRequestCode() : int {query}
++setRequestCode(requestCode : String)
 +getDate(): Date {quuery}
 +setDate(date : Date)
 +getTime() : Time {query}
 +setTime(time : Time)
-+getVisit() : Visit {query}</panel_attributes>
++getVisit() : Visit {query}
++isApproved() : Boolean  { return visit = null }</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1040</x>
-      <y>432</y>
-      <w>264</w>
-      <h>200</h>
+      <x>1300</x>
+      <y>340</y>
+      <w>350</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>Service
 --
 -serviceCode : String
--serviceCost : double
 -description : String
 -categories : List&lt;Category&gt;
--tecnicians : List &lt;TechnicianService&gt;
+-services : List &lt;OfferedService&gt;
 --
 +getServiceCode() : String {query}
 +setServiceCode(serviceCode : String)
-+getServiceCost() : double {query}
-+setServiceCost(serviceCost : double)
 +getDescription() : String {query}
 +setDescription(description : String)
-+getCategories(): List&lt;Category&gt; {query}
-+getTechnicians() : List &lt;TechnicianService&gt; {query}
++getOfferedServices(): List&lt;Service&gt; {query}
++setOfferedServices() : List &lt;OfferedService&gt; {query}
 
 </panel_attributes>
     <additional_attributes/>
@@ -241,17 +241,16 @@ getCostumer() : Costumer {query}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>64</y>
-      <w>232</w>
-      <h>176</h>
+      <x>1320</x>
+      <y>40</y>
+      <w>280</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>Category
 --
 -code : String
 -title : String
 -description : String
--services : List&lt;Service&gt;
 --
 +getCode() : String {query}
 +setCode(code : String)
@@ -259,19 +258,18 @@ getCostumer() : Costumer {query}
 +setTitle(title : String)
 +getDescription() : String {query}
 +setDescription(description : String)
-+getServices() : List&lt;Service&gt; {query}
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>808</x>
-      <y>176</y>
-      <w>200</w>
-      <h>152</h>
+      <x>990</x>
+      <y>360</y>
+      <w>250</w>
+      <h>180</h>
     </coordinates>
-    <panel_attributes>TechnicianService
+    <panel_attributes>OfferedService
 --
 -tecnician : Tecnician
 -service : Service
@@ -283,23 +281,6 @@ getCostumer() : Costumer {query}
 +setService(service : Service)
 +getCost() : double {query}
 +setCost(cost : double)</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1112</x>
-      <y>288</y>
-      <w>184</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>ServiceCategory
---
--service : Service
--category : Category
---
-getService() : Service {query}
-getCategory() : Category {query}</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
