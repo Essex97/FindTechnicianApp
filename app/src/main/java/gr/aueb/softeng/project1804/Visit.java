@@ -6,12 +6,23 @@ import java.util.ArrayList;
 public class Visit
 {
     private Date date;
-    private Appointment appointment;
+    private Request request;
     private ArrayList<Resource> resources;
     private Payment payment;
     private Technician technician;
 
-    public Visit(Request request, )
+    /**
+     * Constructor
+     *
+     * @param request the request that initialized the visit
+     * @param technician the technician that was requested and then accepted the request
+     */
+    public Visit(Request request, Technician technician)
+    {
+        date = request.getDate();
+        this.request = request;
+        this.technician = technician;
+    }
 
     public Date getDate()
     {
@@ -23,9 +34,9 @@ public class Visit
         this.date = date;
     }
 
-    public Appointment getAppointment()
+    public Request getRequest()
     {
-        return appointment;
+        return request;
     }
 
     public ArrayList<Resource> getResources()
@@ -33,6 +44,10 @@ public class Visit
         return resources;
     }
 
+    public void setResources(ArrayList<Resource> resources)
+    {
+        this.resources = resources;
+    }
 
     public Payment getPayment()
     {
@@ -42,6 +57,11 @@ public class Visit
     public Technician getTechnician()
     {
         return technician;
+    }
+
+    public void createPayment(double amount)
+    {
+        payment = new Payment(amount);
     }
 
 }
