@@ -11,6 +11,8 @@ public class Visit
     private Payment payment;
     private Technician technician;
 
+    public Visit(Request request, )
+
     public Date getDate()
     {
         return date;
