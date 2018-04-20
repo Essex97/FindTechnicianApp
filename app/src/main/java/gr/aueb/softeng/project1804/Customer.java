@@ -41,10 +41,14 @@ public class Customer extends User
 
     public void pay(Appointment appointment)
     {
-        for (Appointment appoint : appointments)
-            if (appoint.equals(appointment))
+        for (Appointment apoint : appointments);
+            /*if (appoint.equals(appointment))
             {
                 // WTF?
-            }
+            }*/
+    }
+    public void pay()
+    {
+        //TODO
     }
 }

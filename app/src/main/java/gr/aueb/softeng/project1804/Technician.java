@@ -10,19 +10,19 @@ import java.util.List;
 public class Technician extends User
 {
     private List<Visit> visits;
-    private List<TechnicianService> services;
+    private List<OfferedService> services;
 
     public Technician(String firstName, String lastName, String phone, String email) {
         super(firstName, lastName, phone, email);
         visits = new ArrayList<Visit>();
-        services = new ArrayList<TechnicianService>();
+        services = new ArrayList<OfferedService>();
     }
 
     public List<Visit> getVisits() {
         return visits;
     }
 
-    public List<TechnicianService> getServices() {
+    public List<OfferedService> getServices() {
         return services;
     }
 
