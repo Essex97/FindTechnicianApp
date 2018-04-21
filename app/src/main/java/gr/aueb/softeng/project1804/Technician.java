@@ -9,21 +9,66 @@ import java.util.List;
 
 public class Technician extends User
 {
-    private List<Visit> visits;
-    private List<OfferedService> services;
-
     public Technician(String firstName, String lastName, String phone, String email) {
         super(firstName, lastName, phone, email);
-        visits = new ArrayList<Visit>();
+        requests = new ArrayList<Request>();
         services = new ArrayList<OfferedService>();
     }
 
-    public List<Visit> getVisits() {
-        return visits;
+    private List<Request> requests;
+
+    public List<Request> getRequests() {
+        return requests;
+    }
+
+    public void setRequests(List<Request> requests) {
+        this.requests = requests;
     }
 
     public List<OfferedService> getServices() {
         return services;
+    }
+
+    public void setServices(List<OfferedService> services) {
+        this.services = services;
+    }
+
+    private List<OfferedService> services;
+
+
+
+    public List<Request> getApprovedRequests()
+    {
+        if (requests == null)
+            return null;
+
+        List<Request> approved = new ArrayList<Request>();
+
+        for (Request request : requests)
+            if (request.isApproved())
+                approved.add(request);
+        return approved;
+    }
+
+    public List<Request> getPendingRequests()
+    {
+        if (requests == null)
+            return null;
+
+        List<Request> pending = new ArrayList<Request>();
+
+        for (Request request : requests)
+            if (!request.isApproved())
+                pending.add(request);
+        return pending;
+    }
+
+    public void approve(Request request)
+    {
+        if (request == null)
+            throw new IllegalArgumentException();
+
+        request.setApproved(true);
     }
 
     @Override
@@ -34,23 +79,15 @@ public class Technician extends User
 
         Technician that = (Technician) o;
 
-        if (visits != null && !visits.equals(that.visits))
+        if (requests != null ? !requests.equals(that.requests) : that.requests != null)
             return false;
-        else if (visits == null &&  that.visits != null)
-            return false;
-
-        if (services != null && !services.equals(that.services))
-            return false;
-        else if (services == null &&  that.services != null)
-            return false;
-
-        return true;
+        return services != null ? services.equals(that.services) : that.services == null;
     }
 
     @Override
     public int hashCode() {
         int result = super.hashCode();
-        result = 31 * result + (visits != null ? visits.hashCode() : 0);
+        result = 31 * result + (requests != null ? requests.hashCode() : 0);
         result = 31 * result + (services != null ? services.hashCode() : 0);
         return result;
     }
