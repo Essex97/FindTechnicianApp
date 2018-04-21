@@ -1,6 +1,8 @@
 package gr.aueb.softeng.project1804;
 
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 /**
  * Created by marios on 4/15/18.
@@ -8,25 +10,40 @@ import java.util.List;
 
 public class Customer extends User
 {
-    private List<Appointment> appointments;
+    private List<Request> requests;
     private List<Evaluation> evaluations;
 
     public Customer(String firstName, String lastName, String phone, String email)
     {
         super(firstName, lastName, phone, email);
-        appointments = new ArrayList<Appointment>();
+        requests = new ArrayList<Request>();
         evaluations = new ArrayList<Evaluation>();
     }
 
-    public List<Appointment> getApprovedAppointments()
+    public List<Request> getApprovedRequests()
     {
-        List<Appointment> approved = new ArrayList<Appointment>();
+        if (requests == null)
+            return null;
 
-        for (Appointment appointment : appointments)
-            if (appointment.getApproved())
-                approved.add(appointment);
+        List<Request> approved = new ArrayList<Request>();
 
+        for (Request request : requests)
+            if (request.isApproved())
+                approved.add(request);
         return approved;
+    }
+
+    public List<Request> getPendingRequests()
+    {
+        if (requests == null)
+            return null;
+
+        List<Request> pending = new ArrayList<Request>();
+
+        for (Request request : requests)
+            if (!request.isApproved())
+                pending.add(request);
+        return pending;
     }
 
     public List<Evaluation> getEvaluations()
@@ -34,21 +51,70 @@ public class Customer extends User
         return evaluations;
     }
 
-    public void createAppointment()
+    public void createRepuests(Date date, Time time, Technician technician, List<OfferedService> services)
     {
-        // waiting for the appointment constructor to be made lol
+        if (date == null)
+            throw new IllegalArgumentException();
+
+        if (time == null)
+            throw new IllegalArgumentException();
+
+        if (technician == null)
+            throw new IllegalArgumentException();
+
+        if (services == null)
+            throw new IllegalArgumentException();
+
+
+        Request request = new Request(date, time, technician, this, services);
+        requests.add(request);
     }
 
-    public void pay(Appointment appointment)
+    public void pay(Request request, double givenAmount)
     {
-        for (Appointment apoint : appointments);
-            /*if (appoint.equals(appointment))
-            {
-                // WTF?
-            }*/
+        if (request == null)
+            throw new IllegalArgumentException();
+
+        if (givenAmount > 0)
+            throw new IllegalArgumentException();
+
+        Visit visit = request.getVisit();
+
+        if (visit != null)
+            visit.createPayment(givenAmount);
     }
-    public void pay()
+
+    public void evaluate(Technician technician, Visit visit)
     {
-        //TODO
+        if (technician == null)
+            throw new IllegalArgumentException();
+
+        if (visit == null)
+            throw new IllegalArgumentException();
+
+        Evaluation evaluation = new Evaluation(technician, visit);
+        evaluations.add(evaluation);
+
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+
+        Customer customer = (Customer) o;
+
+        if (requests != null ? !requests.equals(customer.requests) : customer.requests != null)
+            return false;
+        return evaluations != null ? evaluations.equals(customer.evaluations) : customer.evaluations == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + (requests != null ? requests.hashCode() : 0);
+        result = 31 * result + (evaluations != null ? evaluations.hashCode() : 0);
+        return result;
     }
 }
