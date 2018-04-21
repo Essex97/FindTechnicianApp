@@ -23,7 +23,7 @@ public class Request
      * @param customer the customer who initialized the request
      *                 @param
      */
-    public Request(Date date, Time time, Technician technician, Customer customer, ArrayList<OfferedService> offeredServices)
+    public Request(Date date, Time time, Technician technician, Customer customer, List<OfferedService> offeredServices)
     {
         counter++;
         this.requestCode = counter + "";
@@ -31,7 +31,7 @@ public class Request
         this.technician = technician;
         this.time = time;
         this.customer = customer;
-        this.offeredServices = offeredServices;
+        this.offeredServices = (ArrayList<OfferedService>)offeredServices;
     }
 
     /**
