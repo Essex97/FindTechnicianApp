@@ -14,7 +14,6 @@ public class Evaluation
      *
      * @param technician the technician associated with this evaluation
      * @param visit the visit associated with this evaluation
-     * @param visit the comment associated with this evaluation
      */
     public Evaluation(Technician technician, Visit visit)
     {
