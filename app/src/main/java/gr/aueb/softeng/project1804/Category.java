@@ -1,7 +1,5 @@
 package gr.aueb.softeng.project1804;
 
-import java.util.List;
-
 /**
  * Created by Stratos on 11/4/2018.
  */

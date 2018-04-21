@@ -68,6 +68,7 @@ public class Customer extends User
 
         Request request = new Request(date, time, technician, this, services);
         requests.add(request);
+        technician.setRequest(request);
     }
 
     public void pay(Request request, double givenAmount)

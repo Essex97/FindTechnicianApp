@@ -71,6 +71,10 @@ public class Technician extends User
         request.setApproved(true);
     }
 
+    public void setRequest(Request rq){
+        requests.add(rq);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
