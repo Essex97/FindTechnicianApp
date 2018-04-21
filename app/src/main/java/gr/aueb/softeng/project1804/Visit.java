@@ -133,7 +133,6 @@ public class Visit
         Visit visit = (Visit) o;
 
         if (request != null ? !request.equals(visit.request) : visit.request != null) return false;
-        if (!visitID.equals(visit.visitID)) return false;
         if (resources != null ? !resources.equals(visit.resources) : visit.resources != null)
             return false;
         return payment != null ? payment.equals(visit.payment) : visit.payment == null;
