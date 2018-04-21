@@ -64,7 +64,7 @@ public class Payment
 
         if (counter != payment.counter) return false;
         if (Double.compare(payment.totalCost, totalCost) != 0) return false;
-        return paymentCode.equals(payment.paymentCode);
+        return true;
     }
 
     @Override
