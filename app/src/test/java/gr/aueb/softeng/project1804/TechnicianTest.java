@@ -47,7 +47,8 @@ public class TechnicianTest {
         cst.createRepuests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
 
         tech.approve(tech.getRequests().get(0));
-        
+
+
         List<Request> approved = new ArrayList<Request>();
         approved.add(tech.getRequests().get(0));
 

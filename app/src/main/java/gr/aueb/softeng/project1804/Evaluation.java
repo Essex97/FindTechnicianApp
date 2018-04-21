@@ -126,7 +126,6 @@ public class Evaluation
         Evaluation that = (Evaluation) o;
 
         if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
-        if (!evaluationID.equals(that.evaluationID)) return false;
         if (technician != null ? !technician.equals(that.technician) : that.technician != null)
             return false;
         if (visit != null ? !visit.equals(that.visit) : that.visit != null) return false;

@@ -69,7 +69,7 @@
 +getApprovedRequests() : List&lt;Request&gt;
 +approve(Request request )
 +browseResources() : List&lt;Resource&gt;
-</panel_attributes>
++setServices( List&lt;OfferedServices&gt; )</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -185,7 +185,7 @@
 +getDate(): Date{query}
 +setDate(date : Date)
 +getPayment() : Payment{query}
-+getTechnisian(): Tecnisian{query}
++getTechnician(): Tecnician{query}
 +getResources(): List&lt;Reasource&gt;
 +setResources(resources : List&lt;Resource&gt;)
 +createPayment(givenAmmount : double)

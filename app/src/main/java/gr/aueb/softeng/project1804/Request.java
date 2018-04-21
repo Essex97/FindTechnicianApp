@@ -169,7 +169,6 @@ public class Request
 
         Request request = (Request) o;
 
-        if (!requestCode.equals(request.requestCode)) return false;
         if (date != null ? !date.equals(request.date) : request.date != null) return false;
         if (time != null ? !time.equals(request.time) : request.time != null) return false;
         if (visit != null ? !visit.equals(request.visit) : request.visit != null) return false;

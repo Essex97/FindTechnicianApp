@@ -103,7 +103,21 @@ public class Visit
      */
     public void createPayment(double amount)
     {
-        payment = new Payment(amount);
+        double totalCost = 0;
+
+        for (OfferedService ofsrv : request.getOfferedService()){
+            totalCost = totalCost + ofsrv.getCost();
+        }
+
+        if (resources != null){
+            for (Resource rc : resources){
+                totalCost = totalCost + rc.getPrice();
+            }
+        }
+
+        if(amount >= totalCost){
+            payment = new Payment(amount);
+        }
     }
 
     /**
@@ -119,7 +133,6 @@ public class Visit
         Visit visit = (Visit) o;
 
         if (request != null ? !request.equals(visit.request) : visit.request != null) return false;
-        if (!visitID.equals(visit.visitID)) return false;
         if (resources != null ? !resources.equals(visit.resources) : visit.resources != null)
             return false;
         return payment != null ? payment.equals(visit.payment) : visit.payment == null;
