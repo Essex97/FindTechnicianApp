@@ -3,6 +3,8 @@ package gr.aueb.softeng.project1804;
 public class Evaluation
 {
     private String comment;
+    private static int counter = 0;
+    private String evaluationID;
     private Technician technician;
     private Visit visit;
     private Scale technicianBehavior, workQuality, priceEvaluation;
@@ -13,18 +15,21 @@ public class Evaluation
      * @param technician the technician associated with this evaluation
      * @param visit the visit associated with this evaluation
      * @param visit the comment associated with this evaluation
-     * @param technicianBehavior the rating given
-     * @param workQuality the rating given
-     * @param priceEvaluation the rating given
      */
-    public Evaluation(Technician technician, Visit visit, String comment, Scale technicianBehavior, Scale workQuality, Scale priceEvaluation)
+    public Evaluation(Technician technician, Visit visit)
     {
+        counter++;
+        evaluationID = counter + "";
         this.technician = technician;
-        this.comment = comment;
         this.visit = visit;
-        this.technicianBehavior = technicianBehavior;
-        this.workQuality = workQuality;
-        this.priceEvaluation = priceEvaluation;
+    }
+
+    /**
+     * @return unique id
+     */
+    public String getEvaluationID()
+    {
+        return evaluationID;
     }
 
     /**
@@ -83,14 +88,15 @@ public class Evaluation
         return comment;
     }
 
+
+    /**
+     * @param newComment sets the Evaluation's comment to newComment
+     */
     public void setComment(String newComment)
     {
         comment = newComment;
     }
 
-    /**
-     * @return the customer associated with this Evaluation
-     */
 
     /**
      * @return the technician associated with this Evaluation
@@ -98,7 +104,6 @@ public class Evaluation
     public Technician getTechnician()
     {
         return technician;
-
     }
 
     /**
@@ -121,9 +126,11 @@ public class Evaluation
 
         Evaluation that = (Evaluation) o;
 
-        if (!comment.equals(that.comment)) return false;
-        if (!technician.equals(that.technician)) return false;
-        if (!visit.equals(that.visit)) return false;
+        if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;
+        if (!evaluationID.equals(that.evaluationID)) return false;
+        if (technician != null ? !technician.equals(that.technician) : that.technician != null)
+            return false;
+        if (visit != null ? !visit.equals(that.visit) : that.visit != null) return false;
         if (technicianBehavior != that.technicianBehavior) return false;
         if (workQuality != that.workQuality) return false;
         return priceEvaluation == that.priceEvaluation;
@@ -132,12 +139,13 @@ public class Evaluation
     @Override
     public int hashCode()
     {
-        int result = comment.hashCode();
-        result = 31 * result + technician.hashCode();
-        result = 31 * result + visit.hashCode();
-        result = 31 * result + technicianBehavior.hashCode();
-        result = 31 * result + workQuality.hashCode();
-        result = 31 * result + priceEvaluation.hashCode();
+        int result = comment != null ? comment.hashCode() : 0;
+        result = 31 * result + evaluationID.hashCode();
+        result = 31 * result + (technician != null ? technician.hashCode() : 0);
+        result = 31 * result + (visit != null ? visit.hashCode() : 0);
+        result = 31 * result + (technicianBehavior != null ? technicianBehavior.hashCode() : 0);
+        result = 31 * result + (workQuality != null ? workQuality.hashCode() : 0);
+        result = 31 * result + (priceEvaluation != null ? priceEvaluation.hashCode() : 0);
         return result;
     }
 }

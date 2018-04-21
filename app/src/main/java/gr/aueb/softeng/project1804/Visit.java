@@ -5,23 +5,31 @@ import java.util.ArrayList;
 
 public class Visit
 {
-    private Date date;
     private Request request;
+    private static int counter = 0;
+    private String visitID;
     private ArrayList<Resource> resources;
     private Payment payment;
-    private Technician technician;
 
     /**
      * Constructor
      *
      * @param request the request that initialized the visit
-     * @param technician the technician that was requested and then accepted the request
+     *
      */
-    public Visit(Request request, Technician technician)
+    public Visit(Request request)
     {
-        date = request.getDate();
+        counter++;
+        visitID = counter + "";
         this.request = request;
-        this.technician = technician;
+    }
+
+    /**
+     * @return unique id
+     */
+    public String visitID()
+    {
+        return visitID;
     }
 
     /**
@@ -29,7 +37,7 @@ public class Visit
      */
     public Date getDate()
     {
-        return date;
+        return request.getDate();
     }
 
     /**
@@ -37,7 +45,7 @@ public class Visit
      */
     public void setDate(Date date)
     {
-        this.date = date;
+        request.setDate(date);
     }
 
     /**
@@ -77,8 +85,17 @@ public class Visit
      */
     public Technician getTechnician()
     {
-        return technician;
+        return request.getTechnician();
     }
+
+    /**
+     * @return the customer that requested the visit
+     */
+    public Customer getCustomer()
+    {
+        return request.getCustomer();
+    }
+
 
     /**
      * This method will create a Payment object as soon as the customer pays for the service
@@ -101,21 +118,20 @@ public class Visit
 
         Visit visit = (Visit) o;
 
-        if (!date.equals(visit.date)) return false;
-        if (!request.equals(visit.request)) return false;
-        if (!resources.equals(visit.resources)) return false;
-        if (payment != null ? !payment.equals(visit.payment) : visit.payment != null) return false;
-        return technician.equals(visit.technician);
+        if (request != null ? !request.equals(visit.request) : visit.request != null) return false;
+        if (!visitID.equals(visit.visitID)) return false;
+        if (resources != null ? !resources.equals(visit.resources) : visit.resources != null)
+            return false;
+        return payment != null ? payment.equals(visit.payment) : visit.payment == null;
     }
 
     @Override
     public int hashCode()
     {
-        int result = date.hashCode();
-        result = 31 * result + request.hashCode();
-        result = 31 * result + resources.hashCode();
+        int result = request != null ? request.hashCode() : 0;
+        result = 31 * result + visitID.hashCode();
+        result = 31 * result + (resources != null ? resources.hashCode() : 0);
         result = 31 * result + (payment != null ? payment.hashCode() : 0);
-        result = 31 * result + technician.hashCode();
         return result;
     }
 }

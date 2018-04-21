@@ -5,50 +5,52 @@ import java.util.*;
 
 public class Request
 {
+    private static int counter = 0;
     private String requestCode;
     private Date date;
     private Time time;
     private Visit visit;
-    private boolean approved;
     private Technician technician;
     private Customer customer;
-    private OfferedService offeredService;
+    private ArrayList<OfferedService> offeredServices;
 
     /**
      * Constructor-1
      *
-     * @param requestCode Each request has a different code
      * @param date creation date of the Request
      * @param time creation time of the Request
      * @param technician the technician to whom the Request refers to
      * @param customer the customer who initialized the request
+     *                 @param
      */
-    public Request(String requestCode, Date date, Time time, Technician technician, Customer customer, OfferedService offeredService)
+    public Request(Date date, Time time, Technician technician, Customer customer, ArrayList<OfferedService> offeredServices)
     {
-        this.requestCode = requestCode;
+        counter++;
+        this.requestCode = counter + "";
         this.date = date;
         this.technician = technician;
         this.time = time;
         this.customer = customer;
-        this.offeredService = offeredService;
+        this.offeredServices = offeredServices;
     }
 
     /**
      * Constructor-2
      *
-     * @param requestCode Each request has a different code
      * @param date creation date of the Request
      * @param time creation time of the Request
      * @param customer the customer who initialized the request
+     *                 @param
      */
-    public Request(String requestCode, Date date, Time time, Customer customer, OfferedService offeredService)
+    public Request(Date date, Time time, Customer customer, ArrayList<OfferedService> offeredServices)
     {
-        this.requestCode = requestCode;
+        counter++;
+        this.requestCode = counter + "";
         this.date = date;
-        this.technician = technician;
         this.time = time;
-        this.customer = null;
-        this.offeredService = offeredService;
+        this.customer = customer;
+        this.technician = null;
+        this.offeredServices = offeredServices;
     }
 
     /**
@@ -57,10 +59,12 @@ public class Request
      */
     public void setApproved(boolean approved)
     {
-        this.approved = approved;
-        if(approved)
+        if(approved && !isApproved())
         {
-            visit = new Visit(this, technician);
+            visit = new Visit(this);
+        }else
+        {
+            visit = null;
         }
     }
 
@@ -140,17 +144,17 @@ public class Request
     /**
      * @return the service chosen by the customer
      */
-    public OfferedService getOfferedService()
+    public ArrayList<OfferedService>  getOfferedService()
     {
-        return offeredService;
+        return offeredServices;
     }
 
     /**
      * @param offeredService sets the Request's offeredService to offeredService
      */
-    public void setOfferedService(OfferedService offeredService)
+    public void setOfferedServices(ArrayList<OfferedService> offeredService)
     {
-        this.offeredService = offeredService;
+        this.offeredServices = offeredServices;
     }
 
     /**
@@ -165,28 +169,27 @@ public class Request
 
         Request request = (Request) o;
 
-        if (approved != request.approved) return false;
         if (!requestCode.equals(request.requestCode)) return false;
-        if (!date.equals(request.date)) return false;
-        if (!time.equals(request.time)) return false;
-        if (!visit.equals(request.visit)) return false;
+        if (date != null ? !date.equals(request.date) : request.date != null) return false;
+        if (time != null ? !time.equals(request.time) : request.time != null) return false;
+        if (visit != null ? !visit.equals(request.visit) : request.visit != null) return false;
         if (technician != null ? !technician.equals(request.technician) : request.technician != null)
             return false;
-        if (!customer.equals(request.customer)) return false;
-        return offeredService.equals(request.offeredService);
+        if (customer != null ? !customer.equals(request.customer) : request.customer != null)
+            return false;
+        return offeredServices != null ? offeredServices.equals(request.offeredServices) : request.offeredServices == null;
     }
 
     @Override
     public int hashCode()
     {
         int result = requestCode.hashCode();
-        result = 31 * result + date.hashCode();
-        result = 31 * result + time.hashCode();
-        result = 31 * result + visit.hashCode();
-        result = 31 * result + (approved ? 1 : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
+        result = 31 * result + (time != null ? time.hashCode() : 0);
+        result = 31 * result + (visit != null ? visit.hashCode() : 0);
         result = 31 * result + (technician != null ? technician.hashCode() : 0);
-        result = 31 * result + customer.hashCode();
-        result = 31 * result + offeredService.hashCode();
+        result = 31 * result + (customer != null ? customer.hashCode() : 0);
+        result = 31 * result + (offeredServices != null ? offeredServices.hashCode() : 0);
         return result;
     }
 }
