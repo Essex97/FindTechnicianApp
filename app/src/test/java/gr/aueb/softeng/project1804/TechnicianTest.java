@@ -68,4 +68,30 @@ public class TechnicianTest {
 
         Assert.assertEquals(pending, tech.getPendingRequests());
     }
+
+    @Test
+    public void approveTest()
+    {
+        Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
+        List<Request> requests = new ArrayList<Request>();
+        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRepuests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+
+        Assert.assertTrue(!tech.getRequests().get(1).isApproved());
+        tech.approve(tech.getRequests().get(1));
+        Assert.assertTrue(tech.getRequests().get(1).isApproved());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void approveWithNullTest()
+    {
+        tech.approve(null);
+    }
+
+    @Test
+    public void equalsTest()
+    {
+        Technician tech2 = new Technician("Statos", "Xenouleas", "69xxxx", "stratos@gmail.com");
+        Assert.assertTrue(tech.equals(tech2));
+    }
 }

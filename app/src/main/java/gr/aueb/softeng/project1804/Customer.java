@@ -20,6 +20,11 @@ public class Customer extends User
         evaluations = new ArrayList<Evaluation>();
     }
 
+    public List<Request> getRequests()
+    {
+        return requests;
+    }
+
     public List<Request> getApprovedRequests()
     {
         if (requests == null)
@@ -76,7 +81,7 @@ public class Customer extends User
         if (request == null)
             throw new IllegalArgumentException();
 
-        if (givenAmount > 0)
+        if (givenAmount < 0)
             throw new IllegalArgumentException();
 
         Visit visit = request.getVisit();
