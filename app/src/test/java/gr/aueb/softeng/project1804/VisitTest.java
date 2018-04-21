@@ -64,14 +64,14 @@ public class VisitTest {
     @Test
     public void equalsTest(){
         Visit visit1 = new Visit(rq);
-        Assert.assertTrue(visit == visit1);
+        Assert.assertTrue(visit.equals(visit1));
     }
 
     @Test
     public void notEqualsTest(){
         Request rq1 = new Request(new Date(2021, 6, 1), new Time(2, 2, 4), cst, (ArrayList<OfferedService>) ofserv);
         Visit visit2 = new Visit(rq1);
-        Assert.assertFalse(visit == visit2);
+        Assert.assertFalse(visit.equals(visit2));
     }
 
 }
