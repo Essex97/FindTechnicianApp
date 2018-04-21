@@ -103,7 +103,21 @@ public class Visit
      */
     public void createPayment(double amount)
     {
-        payment = new Payment(amount);
+        double totalCost = 0;
+
+        for (OfferedService ofsrv : request.getOfferedService()){
+            totalCost = totalCost + ofsrv.getCost();
+        }
+
+        if (resources != null){
+            for (Resource rc : resources){
+                totalCost = totalCost + rc.getPrice();
+            }
+        }
+
+        if(amount >= totalCost){
+            payment = new Payment(amount);
+        }
     }
 
     /**
