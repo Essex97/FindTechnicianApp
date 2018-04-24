@@ -3,7 +3,7 @@ package gr.aueb.softeng.project1804;
 public class Evaluation
 {
     private String comment;
-    private static int counter = 0;
+    public static int counter = 0;
     private String evaluationID;
     private Technician technician;
     private Visit visit;
