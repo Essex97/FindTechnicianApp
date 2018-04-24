@@ -138,7 +138,6 @@ public class Evaluation
     public int hashCode()
     {
         int result = comment != null ? comment.hashCode() : 0;
-        result = 31 * result + evaluationID.hashCode();
         result = 31 * result + (technician != null ? technician.hashCode() : 0);
         result = 31 * result + (visit != null ? visit.hashCode() : 0);
         result = 31 * result + (technicianBehavior != null ? technicianBehavior.hashCode() : 0);

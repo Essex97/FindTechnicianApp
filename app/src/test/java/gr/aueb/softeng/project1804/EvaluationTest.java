@@ -23,6 +23,7 @@ public class EvaluationTest
     private Customer cst;
 	private Evaluation eval;
 	private Visit visit;
+	private int c=0;
 	
     @Before
     public void setUp() throws Exception {
@@ -50,11 +51,11 @@ public class EvaluationTest
 		
     }
 
-    /*@Test
+    @Test
     public void getEvaluationIdTest()
     {
-       Assert.assertTrue(eval.getEvaluationID().equals(eval.counter +"") && eval.counter == 2 );
-	}*/
+		Assert.assertTrue(eval.getEvaluationID().equals(eval.counter +"") );
+	}
 	
 	@Test
 	public void getTechnicianBehaviourTest()
@@ -106,6 +107,13 @@ public class EvaluationTest
 	{
 		Evaluation eval2 = new Evaluation(tech, visit);
 		Assert.assertTrue(eval2.equals(eval));
+	}
+
+	@Test
+	public void hashCodeTest()
+	{
+		Evaluation eval2 = new Evaluation(tech, visit);
+		Assert.assertTrue(eval2.hashCode() == eval.hashCode());
 	}
 	
 	

@@ -65,21 +65,32 @@ public class RequestTest
     @Test
     public void equalsTest()
     {
-        Category c1 = new Category("grg", "graa", "grae");
-        Category c2 = new Category("gkjlb,jkg", "giuolha", "kjglrae");
-        List<Category> categories = new ArrayList<Category>();
-        categories.add(c1);
-        categories.add(c2);
-        tech = new Technician("Statos", "Xenouleas", "69xxxx", "stratos@gmail.com");
-        cst = new Customer("Dimitris", "Staratzis", "xxxxx", "xxxxx");
-        Service s1 = new Service("fdhtg", "tghh", categories, null);
-        Service s2 = new Service("124", "jyy", categories, null);
-        ofserv = new ArrayList<OfferedService>();
-        ofserv.add(new OfferedService(tech, s1, 23.4));
-        ofserv.add(new OfferedService(tech, s2, 255));
-
         Request re5 = new  Request(new Date(2017, 3, 13), new Time(21, 24, 45), tech, cst, ofserv);
         Request re4 = new  Request(new Date(2017, 3, 13), new Time(21, 24, 45), tech, cst, ofserv);
+        Assert.assertTrue(re5.equals(re4));
+    }
+    @Test
+    public void NotEqualsTest()
+    {
+        Request re5 = new  Request(new Date(2018, 3, 13), new Time(21, 24, 45), tech, cst, ofserv);
+        Request re4 = new  Request(new Date(2017, 3, 13), new Time(21, 24, 45), tech, cst, ofserv);
+        Assert.assertFalse(re5.equals(re4));
+    }
+
+    @Test
+    public void hashCodeTest()
+    {
+        Request re5 = new  Request(new Date(2017, 3, 13), new Time(21, 24, 45), tech, cst, ofserv);
+        Request re4 = new  Request(new Date(2017, 3, 13), new Time(21, 24, 45), tech, cst, ofserv);
+        Assert.assertTrue(re5.hashCode() == re4.hashCode());
+    }
+
+    @Test
+    public void getTimeTest()
+    {
+        Time time = new Time(21, 24, 45);
+        re1.setTime(time);
+        Assert.assertEquals(time, re1.getTime());
     }
 
 }

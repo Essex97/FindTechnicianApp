@@ -2,7 +2,7 @@ package gr.aueb.softeng.project1804;
 
 public class Payment
 {
-    private int counter = 0;
+    public int counter = 0;
     private String paymentCode;
     private double totalCost;
 
@@ -32,14 +32,6 @@ public class Payment
     public double getTotalCost()
     {
         return totalCost;
-    }
-
-    /**
-     * @param paymentCode sets the Payment's paymentCode to paymentCode
-     */
-    public void setPaymentCode(String paymentCode)
-    {
-        this.paymentCode = paymentCode;
     }
 
     /**

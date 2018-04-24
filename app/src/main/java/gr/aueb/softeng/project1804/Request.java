@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Request
 {
-    private static int counter = 0;
+    public static int counter = 0;
     private String requestCode;
     private Date date;
     private Time time;
@@ -182,7 +182,7 @@ public class Request
     @Override
     public int hashCode()
     {
-        int result = requestCode.hashCode();
+        int result =0;
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + (visit != null ? visit.hashCode() : 0);
