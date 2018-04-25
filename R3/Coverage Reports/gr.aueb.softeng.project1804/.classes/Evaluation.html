@@ -1,0 +1,237 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Evaluation</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1804</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Evaluation (gr.aueb.softeng.project1804)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Evaluation</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (16/ 16)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    97.4%
+  </span>
+  <span class="absValue">
+    (38/ 39)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1804;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;public class Evaluation
+<i>4</i>&nbsp;{
+<i>5</i>&nbsp;    private String comment;
+<b class="fc"><i>6</i>&nbsp;    private static int counter = 0;</b>
+<i>7</i>&nbsp;    private String evaluationID;
+<i>8</i>&nbsp;    private Technician technician;
+<i>9</i>&nbsp;    private Visit visit;
+<i>10</i>&nbsp;    private Scale technicianBehavior, workQuality, priceEvaluation;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;    /**
+<i>13</i>&nbsp;     * Constructor
+<i>14</i>&nbsp;     *
+<i>15</i>&nbsp;     * @param technician the technician associated with this evaluation
+<i>16</i>&nbsp;     * @param visit the visit associated with this evaluation
+<i>17</i>&nbsp;     */
+<i>18</i>&nbsp;    public Evaluation(Technician technician, Visit visit)
+<b class="fc"><i>19</i>&nbsp;    {</b>
+<b class="fc"><i>20</i>&nbsp;        evaluationID = ++counter + &quot;&quot;;</b>
+<b class="fc"><i>21</i>&nbsp;        this.technician = technician;</b>
+<b class="fc"><i>22</i>&nbsp;        this.visit = visit;</b>
+<b class="fc"><i>23</i>&nbsp;    }</b>
+<i>24</i>&nbsp;
+<i>25</i>&nbsp;    /**
+<i>26</i>&nbsp;     * @return unique id
+<i>27</i>&nbsp;     */
+<i>28</i>&nbsp;    public String getEvaluationID()
+<i>29</i>&nbsp;    {
+<b class="fc"><i>30</i>&nbsp;        return evaluationID;</b>
+<i>31</i>&nbsp;    }
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;    /**
+<i>34</i>&nbsp;     * @return the static counter of the class
+<i>35</i>&nbsp;     */
+<i>36</i>&nbsp;    public static int getCounter() {
+<b class="fc"><i>37</i>&nbsp;        return counter;</b>
+<i>38</i>&nbsp;    }
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    /**
+<i>41</i>&nbsp;     * @return this specific rating
+<i>42</i>&nbsp;     */
+<i>43</i>&nbsp;    public Scale getTechnicianBehavior()
+<i>44</i>&nbsp;    {
+<b class="fc"><i>45</i>&nbsp;        return technicianBehavior;</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    /**
+<i>49</i>&nbsp;     * @return this specific rating
+<i>50</i>&nbsp;     */
+<i>51</i>&nbsp;    public Scale getWorkQuality()
+<i>52</i>&nbsp;    {
+<b class="fc"><i>53</i>&nbsp;        return workQuality;</b>
+<i>54</i>&nbsp;    }
+<i>55</i>&nbsp;
+<i>56</i>&nbsp;    /**
+<i>57</i>&nbsp;     * @return this specific rating
+<i>58</i>&nbsp;     */
+<i>59</i>&nbsp;    public Scale getPriceEvaluation()
+<i>60</i>&nbsp;    {
+<b class="fc"><i>61</i>&nbsp;        return priceEvaluation;</b>
+<i>62</i>&nbsp;    }
+<i>63</i>&nbsp;
+<i>64</i>&nbsp;    /**
+<i>65</i>&nbsp;     * @param newTechnicianBehavior sets the Evaluation&#39;s technicianBehaviour to newTechnicianBehaviour
+<i>66</i>&nbsp;     */
+<i>67</i>&nbsp;    public void setTechnicianBehaviour(Scale newTechnicianBehavior)
+<i>68</i>&nbsp;    {
+<b class="fc"><i>69</i>&nbsp;        technicianBehavior = newTechnicianBehavior;</b>
+<b class="fc"><i>70</i>&nbsp;    }</b>
+<i>71</i>&nbsp;
+<i>72</i>&nbsp;    /**
+<i>73</i>&nbsp;     * @param newWorkQuality sets the Evaluation&#39;s workQuality to newWorkQuality
+<i>74</i>&nbsp;     */
+<i>75</i>&nbsp;    public void setWorkQuality(Scale newWorkQuality)
+<i>76</i>&nbsp;    {
+<b class="fc"><i>77</i>&nbsp;        workQuality = newWorkQuality;</b>
+<b class="fc"><i>78</i>&nbsp;    }</b>
+<i>79</i>&nbsp;
+<i>80</i>&nbsp;    /**
+<i>81</i>&nbsp;     * @param newPriceEvaluation sets the Evaluation&#39;s priceEvaluation to newPriceEvaluation
+<i>82</i>&nbsp;     */
+<i>83</i>&nbsp;    public void setPriceEvaluation(Scale newPriceEvaluation)
+<i>84</i>&nbsp;    {
+<b class="fc"><i>85</i>&nbsp;        priceEvaluation = newPriceEvaluation;</b>
+<b class="fc"><i>86</i>&nbsp;    }</b>
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;    /**
+<i>89</i>&nbsp;     * @return the unique comments of this evaluation
+<i>90</i>&nbsp;     */
+<i>91</i>&nbsp;    public String getComment()
+<i>92</i>&nbsp;    {
+<b class="fc"><i>93</i>&nbsp;        return comment;</b>
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;
+<i>97</i>&nbsp;    /**
+<i>98</i>&nbsp;     * @param newComment sets the Evaluation&#39;s comment to newComment
+<i>99</i>&nbsp;     */
+<i>100</i>&nbsp;    public void setComment(String newComment)
+<i>101</i>&nbsp;    {
+<b class="fc"><i>102</i>&nbsp;        comment = newComment;</b>
+<b class="fc"><i>103</i>&nbsp;    }</b>
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;
+<i>106</i>&nbsp;    /**
+<i>107</i>&nbsp;     * @return the technician associated with this Evaluation
+<i>108</i>&nbsp;     */
+<i>109</i>&nbsp;    public Technician getTechnician()
+<i>110</i>&nbsp;    {
+<b class="fc"><i>111</i>&nbsp;        return technician;</b>
+<i>112</i>&nbsp;    }
+<i>113</i>&nbsp;
+<i>114</i>&nbsp;    /**
+<i>115</i>&nbsp;     * @return the visit associated with the current Evaluation
+<i>116</i>&nbsp;     */
+<i>117</i>&nbsp;    public Visit getVisit()
+<i>118</i>&nbsp;    {
+<b class="fc"><i>119</i>&nbsp;        return visit;</b>
+<i>120</i>&nbsp;    }
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;    /**
+<i>123</i>&nbsp;     * @param o object to compare with the current
+<i>124</i>&nbsp;     * @return true or false
+<i>125</i>&nbsp;     */
+<i>126</i>&nbsp;    @Override
+<i>127</i>&nbsp;    public boolean equals(Object o)
+<i>128</i>&nbsp;    {
+<b class="fc"><i>129</i>&nbsp;        if (this == o) return true;</b>
+<b class="fc"><i>130</i>&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
+<i>131</i>&nbsp;
+<b class="fc"><i>132</i>&nbsp;        Evaluation that = (Evaluation) o;</b>
+<i>133</i>&nbsp;
+<b class="fc"><i>134</i>&nbsp;        if (comment != null ? !comment.equals(that.comment) : that.comment != null) return false;</b>
+<b class="fc"><i>135</i>&nbsp;        if (technician != null ? !technician.equals(that.technician) : that.technician != null)</b>
+<b class="nc"><i>136</i>&nbsp;            return false;</b>
+<b class="fc"><i>137</i>&nbsp;        if (visit != null ? !visit.equals(that.visit) : that.visit != null) return false;</b>
+<b class="fc"><i>138</i>&nbsp;        if (technicianBehavior != that.technicianBehavior) return false;</b>
+<b class="fc"><i>139</i>&nbsp;        if (workQuality != that.workQuality) return false;</b>
+<b class="fc"><i>140</i>&nbsp;        return priceEvaluation == that.priceEvaluation;</b>
+<i>141</i>&nbsp;    }
+<i>142</i>&nbsp;
+<i>143</i>&nbsp;    @Override
+<i>144</i>&nbsp;    public int hashCode()
+<i>145</i>&nbsp;    {
+<b class="fc"><i>146</i>&nbsp;        int result = comment != null ? comment.hashCode() : 0;</b>
+<b class="fc"><i>147</i>&nbsp;        result = 31 * result + (technician != null ? technician.hashCode() : 0);</b>
+<b class="fc"><i>148</i>&nbsp;        result = 31 * result + (visit != null ? visit.hashCode() : 0);</b>
+<b class="fc"><i>149</i>&nbsp;        result = 31 * result + (technicianBehavior != null ? technicianBehavior.hashCode() : 0);</b>
+<b class="fc"><i>150</i>&nbsp;        result = 31 * result + (workQuality != null ? workQuality.hashCode() : 0);</b>
+<b class="fc"><i>151</i>&nbsp;        result = 31 * result + (priceEvaluation != null ? priceEvaluation.hashCode() : 0);</b>
+<b class="fc"><i>152</i>&nbsp;        return result;</b>
+<i>153</i>&nbsp;    }
+<i>154</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-04-25 22:51</div>
+</div>
+</body>
+</html>
