@@ -13,7 +13,11 @@ public abstract class User
 
     public User()
     {
-
+        this.addresses = new ArrayList<Address>();
+        this.firstName = null;
+        this.lastName = null;
+        this.phone = null;
+        this.email = null;
     }
 
     public User(String firstName, String lastName, String phone, String email) {
