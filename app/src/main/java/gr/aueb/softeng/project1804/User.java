@@ -11,6 +11,11 @@ public abstract class User
     private String firstName, lastName, phone, email;
     private List<Address> addresses;
 
+    public User()
+    {
+
+    }
+
     public User(String firstName, String lastName, String phone, String email) {
         this.addresses = new ArrayList<Address>();
         this.firstName = firstName;

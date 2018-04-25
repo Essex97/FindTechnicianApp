@@ -9,13 +9,18 @@ import java.util.List;
 
 public class Technician extends User
 {
+    private List<Request> requests;
+
     public Technician(String firstName, String lastName, String phone, String email) {
         super(firstName, lastName, phone, email);
         requests = new ArrayList<Request>();
         services = new ArrayList<OfferedService>();
     }
 
-    private List<Request> requests;
+    public Technician()
+    {
+        super();
+    }
 
     public List<Request> getRequests() {
         return requests;

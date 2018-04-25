@@ -115,4 +115,64 @@ public class CustomerTest
         Customer cst2 = new Customer("Statos", "Xenouleas", "69xxxx", "stratos@gmail.com");
         Assert.assertTrue(cst2.equals(cst));
     }
+
+    @Test
+    public void evaluateTechnicianComment()
+    {
+        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        Request request = cst.getRequests().get(0);
+        Visit visit = new Visit(request);
+        Evaluation eval = new Evaluation(tech, visit);
+        String comment = "A very good technician.";
+        eval.setComment(comment);
+        Assert.assertEquals(eval.getComment(), comment);
+    }
+
+    @Test
+    public void evaluateTechnicianBehavior()
+    {
+        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        Request request = cst.getRequests().get(0);
+        Visit visit = new Visit(request);
+        Evaluation eval = cst.evaluate(tech, visit);
+        Scale scale = Scale.GOOD;
+        eval.setTechnicianBehaviour(scale);
+        Assert.assertEquals(eval.getTechnicianBehavior(), scale);
+    }
+
+    @Test
+    public void evaluateTechnicianWorkQuality()
+    {
+        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        Request request = cst.getRequests().get(0);
+        Visit visit = new Visit(request);
+        Evaluation eval = cst.evaluate(tech, visit);
+        Scale scale = Scale.BAD;
+        eval.setWorkQuality(scale);
+        Assert.assertEquals(eval.getWorkQuality(), scale);
+    }
+
+    @Test
+    public void evaluateTechnicianPriceEvaluation()
+    {
+        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        Request request = cst.getRequests().get(0);
+        Visit visit = new Visit(request);
+        Evaluation eval = cst.evaluate(tech, visit);
+        Scale scale = Scale.VERY_GOOD;
+        eval.setPriceEvaluation(scale);
+        Assert.assertEquals(eval.getPriceEvaluation(), scale);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void evaluateTechnicianInvalidVisit()
+    {
+        Evaluation eval = cst.evaluate(tech, null);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void evaluateTechnicianInvalidTechnician()
+    {
+        Evaluation eval = cst.evaluate(null, null);
+    }
 }

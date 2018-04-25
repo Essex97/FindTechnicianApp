@@ -13,6 +13,11 @@ public class Customer extends User
     private List<Request> requests;
     private List<Evaluation> evaluations;
 
+    public Customer()
+    {
+        super();
+    }
+
     public Customer(String firstName, String lastName, String phone, String email)
     {
         super(firstName, lastName, phone, email);
@@ -90,7 +95,7 @@ public class Customer extends User
             visit.createPayment(givenAmount);
     }
 
-    public void evaluate(Technician technician, Visit visit)
+    public Evaluation evaluate(Technician technician, Visit visit)
     {
         if (technician == null)
             throw new IllegalArgumentException();
@@ -100,7 +105,7 @@ public class Customer extends User
 
         Evaluation evaluation = new Evaluation(technician, visit);
         evaluations.add(evaluation);
-
+        return evaluation;
     }
 
     @Override
