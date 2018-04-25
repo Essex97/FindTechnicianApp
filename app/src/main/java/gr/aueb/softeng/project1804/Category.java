@@ -7,6 +7,7 @@ package gr.aueb.softeng.project1804;
 public class Category
 {
     private String code;
+    private static int counter = 0;
     private String title;
     private String description;
 
@@ -15,19 +16,19 @@ public class Category
      */
     public Category()
     {
+        this.code = ++counter+"";
     }
 
     /**
      * Helped Constructor which initialize the state
      * of a new category
      *
-     * @param code        The code of the Category
      * @param title       The title of the Category
      * @param description A description of this category
      */
-    public Category(String code, String title, String description)
+    public Category(String title, String description)
     {
-        this.code = code;
+        this.code = ++counter+"";
         this.title = title;
         this.description = description;
     }
@@ -37,9 +38,8 @@ public class Category
         return code;
     }
 
-    public void setCode(String code)
-    {
-        this.code = code;
+    public static int getCounter() {
+        return counter;
     }
 
     public String getTitle()
@@ -55,6 +55,10 @@ public class Category
     public String getDescription()
     {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

@@ -9,17 +9,19 @@ import java.util.List;
 public class Service
 {
     private String serviceCode;
+    private static int counter = 0;
     private String description;
     private List<Category> categories;
     private List<OfferedService> OfferedServices;
 
     public Service()
     {
+        this.serviceCode = ++counter+"";
     }
 
-    public Service(String serviceCode, String description, List<Category> categories, List<OfferedService> OfferedServices)
+    public Service(String description, List<Category> categories, List<OfferedService> OfferedServices)
     {
-        this.serviceCode = serviceCode;
+        this.serviceCode = ++counter+"";
         this.description = description;
         this.categories = categories;
         this.OfferedServices = OfferedServices;
@@ -30,9 +32,8 @@ public class Service
         return serviceCode;
     }
 
-    public void setServiceCode(String serviceCode)
-    {
-        this.serviceCode = serviceCode;
+    public static int getCounter() {
+        return counter;
     }
 
     public String getDescription()
@@ -50,8 +51,11 @@ public class Service
         return categories;
     }
 
-    public List<OfferedService> getTechnicians()
-    {
+    public List<OfferedService> getOfferedServices() {
         return OfferedServices;
+    }
+
+    public void setOfferedServices(List<OfferedService> offeredServices) {
+        OfferedServices = offeredServices;
     }
 }
