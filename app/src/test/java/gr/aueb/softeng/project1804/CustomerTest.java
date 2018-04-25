@@ -164,6 +164,16 @@ public class CustomerTest
         Assert.assertEquals(eval.getPriceEvaluation(), scale);
     }
 
+    @Test
+    public void evaluateTechnicianEvaluationsSize()
+    {
+        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        Request request = cst.getRequests().get(0);
+        Visit visit = new Visit(request);
+        Evaluation eval = cst.evaluate(tech, visit);
+        Assert.assertEquals(1, cst.getEvaluations().size());
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void evaluateTechnicianInvalidVisit()
     {
