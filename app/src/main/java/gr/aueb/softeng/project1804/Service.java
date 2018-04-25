@@ -32,6 +32,9 @@ public class Service
         return serviceCode;
     }
 
+    /**
+     * @return the static counter of the class
+     */
     public static int getCounter() {
         return counter;
     }
