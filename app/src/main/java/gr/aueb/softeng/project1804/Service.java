@@ -21,7 +21,7 @@ public class Service
 
     public Service(String description, List<Category> categories, List<OfferedService> OfferedServices)
     {
-        this.serviceCode = ++counter+"";
+        this();
         this.description = description;
         this.categories = categories;
         this.OfferedServices = OfferedServices;
@@ -51,11 +51,37 @@ public class Service
         return categories;
     }
 
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
+
     public List<OfferedService> getOfferedServices() {
         return OfferedServices;
     }
 
     public void setOfferedServices(List<OfferedService> offeredServices) {
         OfferedServices = offeredServices;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Service service = (Service) o;
+
+        if (description != null ? !description.equals(service.description) : service.description != null)
+            return false;
+        if (categories != null ? !categories.equals(service.categories) : service.categories != null)
+            return false;
+        return OfferedServices != null ? OfferedServices.equals(service.OfferedServices) : service.OfferedServices == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = description != null ? description.hashCode() : 0;
+        result = 31 * result + (categories != null ? categories.hashCode() : 0);
+        result = 31 * result + (OfferedServices != null ? OfferedServices.hashCode() : 0);
+        return result;
     }
 }

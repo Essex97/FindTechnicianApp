@@ -28,7 +28,7 @@ public class Category
      */
     public Category(String title, String description)
     {
-        this.code = ++counter+"";
+        this();
         this.title = title;
         this.description = description;
     }

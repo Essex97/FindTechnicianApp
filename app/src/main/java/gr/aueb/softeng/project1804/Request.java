@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Request
 {
-    public static int counter = 0;
+    private static int counter = 0;
     private String requestCode;
     private Date date;
     private Time time;
@@ -21,12 +21,11 @@ public class Request
      * @param time creation time of the Request
      * @param technician the technician to whom the Request refers to
      * @param customer the customer who initialized the request
-     *                 @param
+     * @param offeredServices
      */
     public Request(Date date, Time time, Technician technician, Customer customer, List<OfferedService> offeredServices)
     {
-        counter++;
-        this.requestCode = counter + "";
+        this.requestCode = ++counter + "";
         this.date = date;
         this.technician = technician;
         this.time = time;
@@ -40,17 +39,11 @@ public class Request
      * @param date creation date of the Request
      * @param time creation time of the Request
      * @param customer the customer who initialized the request
-     *                 @param
+     * @param offeredServices
      */
     public Request(Date date, Time time, Customer customer, ArrayList<OfferedService> offeredServices)
     {
-        counter++;
-        this.requestCode = counter + "";
-        this.date = date;
-        this.time = time;
-        this.customer = customer;
-        this.technician = null;
-        this.offeredServices = offeredServices;
+        this(date, time, null, customer, offeredServices );
     }
 
     /**
@@ -74,6 +67,13 @@ public class Request
     public String getRequestCode()
     {
         return requestCode;
+    }
+
+    /**
+     * @return the static counter of the class
+     */
+    public static int getCounter() {
+        return counter;
     }
 
     /**

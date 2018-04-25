@@ -50,6 +50,11 @@ public class VisitTest {
     }
 
     @Test
+    public void visitIDTest(){
+        Assert.assertTrue(visit.getVisitID().equals(visit.getCounter() + ""));
+    }
+
+    @Test
     public void succesfulPaymentTest(){
         visit.createPayment(50);
         Assert.assertNull(visit.getPayment());

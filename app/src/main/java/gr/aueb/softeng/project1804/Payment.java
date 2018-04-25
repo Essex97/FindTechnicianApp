@@ -2,7 +2,7 @@ package gr.aueb.softeng.project1804;
 
 public class Payment
 {
-    public int counter = 0;
+    private static int counter = 0;
     private String paymentCode;
     private double totalCost;
 
@@ -13,8 +13,7 @@ public class Payment
      */
     public Payment(double totalCost)
     {
-        counter++;
-        paymentCode = counter + "";
+        paymentCode = ++counter + "";
         this.totalCost = totalCost;
     }
 
@@ -24,6 +23,13 @@ public class Payment
     public String getPaymentCode()
     {
         return paymentCode;
+    }
+
+    /**
+     * @return the static counter of the class
+     */
+    public static int getCounter() {
+        return counter;
     }
 
     /**
@@ -54,18 +60,15 @@ public class Payment
 
         Payment payment = (Payment) o;
 
-        if (counter != payment.counter) return false;
         if (Double.compare(payment.totalCost, totalCost) != 0) return false;
         return true;
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int result;
         long temp;
-        result = counter;
-        result = 31 * result + paymentCode.hashCode();
+        result = paymentCode != null ? paymentCode.hashCode() : 0;
         temp = Double.doubleToLongBits(totalCost);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;

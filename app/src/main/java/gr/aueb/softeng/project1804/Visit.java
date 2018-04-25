@@ -19,17 +19,23 @@ public class Visit
      */
     public Visit(Request request)
     {
-        counter++;
-        visitID = counter + "";
+        visitID = ++counter + "";
         this.request = request;
     }
 
     /**
      * @return unique id
      */
-    public String visitID()
+    public String getVisitID()
     {
         return visitID;
+    }
+
+    /**
+     * @return the static counter of the class
+     */
+    public static int getCounter() {
+        return counter;
     }
 
     /**

@@ -43,8 +43,8 @@ public class TechnicianTest {
     public void getApprovedRequestsTest(){
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
         List<Request> requests = new ArrayList<Request>();
-        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRepuests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
 
         tech.approve(tech.getRequests().get(0));
 
@@ -59,8 +59,8 @@ public class TechnicianTest {
     public void getPendingRequestsTest(){
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
         List<Request> requests = new ArrayList<Request>();
-        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRepuests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
 
         tech.approve(tech.getRequests().get(0));
 
@@ -75,8 +75,8 @@ public class TechnicianTest {
     {
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
         List<Request> requests = new ArrayList<Request>();
-        cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRepuests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
 
         //Assert.assertTrue(!tech.getRequests().get(1).isApproved());
         tech.approve(tech.getRequests().get(1));

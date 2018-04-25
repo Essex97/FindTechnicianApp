@@ -54,7 +54,7 @@ public class EvaluationTest
     @Test
     public void getEvaluationIdTest()
     {
-		Assert.assertTrue(eval.getEvaluationID().equals(eval.counter +"") );
+		Assert.assertTrue(eval.getEvaluationID().equals(eval.getCounter() +"") );
 	}
 	
 	@Test

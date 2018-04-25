@@ -48,6 +48,11 @@ public class RequestTest
     }
 
     @Test
+    public void getRequestCodeTest(){
+        Assert.assertTrue(re2.getRequestCode().equals(re2.getCounter() + ""));
+    }
+
+    @Test
     public void setApprovedTest()
     {
         re1.setApproved(true);

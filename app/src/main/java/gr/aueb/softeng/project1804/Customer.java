@@ -61,7 +61,7 @@ public class Customer extends User
         return evaluations;
     }
 
-    public void createRepuests(Date date, Time time, Technician technician, List<OfferedService> services)
+    public void createRequests(Date date, Time time, Technician technician, List<OfferedService> services)
     {
         if (date == null)
             throw new IllegalArgumentException();

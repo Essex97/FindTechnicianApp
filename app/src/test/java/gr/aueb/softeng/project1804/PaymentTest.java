@@ -29,8 +29,9 @@ public class PaymentTest
     @Test
     public void getEvaluationIdTest()
     {
-        Assert.assertTrue(a.getPaymentCode().equals(a.counter +"") );
+        Assert.assertTrue(b.getPaymentCode().equals(b.getCounter() +"") );
     }
+
     @Test
     public void equalsTest()
     {
@@ -54,9 +55,9 @@ public class PaymentTest
     }
 
     @Test
-    public void EqualHashCodeTest()
+    public void notEqualHashCodeTest()
     {
-        Assert.assertTrue(a.hashCode() == b.hashCode());
+        Assert.assertFalse(a.hashCode() == b.hashCode());
     }
 
 

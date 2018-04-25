@@ -3,7 +3,7 @@ package gr.aueb.softeng.project1804;
 public class Evaluation
 {
     private String comment;
-    public static int counter = 0;
+    private static int counter = 0;
     private String evaluationID;
     private Technician technician;
     private Visit visit;
@@ -17,8 +17,7 @@ public class Evaluation
      */
     public Evaluation(Technician technician, Visit visit)
     {
-        counter++;
-        evaluationID = counter + "";
+        evaluationID = ++counter + "";
         this.technician = technician;
         this.visit = visit;
     }
@@ -29,6 +28,13 @@ public class Evaluation
     public String getEvaluationID()
     {
         return evaluationID;
+    }
+
+    /**
+     * @return the static counter of the class
+     */
+    public static int getCounter() {
+        return counter;
     }
 
     /**

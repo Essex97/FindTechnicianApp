@@ -10,6 +10,7 @@ import java.util.List;
 public class Technician extends User
 {
     private List<Request> requests;
+    private List<OfferedService> services;
 
     public Technician(String firstName, String lastName, String phone, String email) {
         super(firstName, lastName, phone, email);
@@ -37,10 +38,6 @@ public class Technician extends User
     public void setServices(List<OfferedService> services) {
         this.services = services;
     }
-
-    private List<OfferedService> services;
-
-
 
     public List<Request> getApprovedRequests()
     {
