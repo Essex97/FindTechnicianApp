@@ -122,7 +122,7 @@ public class CustomerTest
         cst.createRepuests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
         Request request = cst.getRequests().get(0);
         Visit visit = new Visit(request);
-        Evaluation eval = new Evaluation(tech, visit);
+        Evaluation eval = cst.evaluate(tech, visit);
         String comment = "A very good technician.";
         eval.setComment(comment);
         Assert.assertEquals(eval.getComment(), comment);
