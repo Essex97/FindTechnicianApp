@@ -14,11 +14,22 @@ public class Service
     private List<Category> categories;
     private List<OfferedService> OfferedServices;
 
+    /**
+     * Default Constructor
+     */
     public Service()
     {
         this.serviceCode = ++counter+"";
     }
 
+    /**
+     * Helped Constructor which initialize the state
+     * of a new service
+     *
+     * @param description A description of this service
+     * @param categories A list of categories in which the service belongs to
+     * @param OfferedServices A List of OfferedServices which can provide this service
+     */
     public Service(String description, List<Category> categories, List<OfferedService> OfferedServices)
     {
         this();
@@ -27,41 +38,66 @@ public class Service
         this.OfferedServices = OfferedServices;
     }
 
+    /**
+     * @return the unique code of the object
+     */
     public String getServiceCode()
     {
         return serviceCode;
     }
 
     /**
-     * @return the static counter of the class
+     * @return the static counter of the class which
+     * help as to give a specific code of each object
      */
     public static int getCounter() {
         return counter;
     }
 
+    /**
+     * @return the description of each Service Object
+     */
     public String getDescription()
     {
         return description;
     }
 
+    /**
+     * This is a setter which sets the description
+     * @param description - the description to be set
+     */
     public void setDescription(String description)
     {
         this.description = description;
     }
 
+    /**
+     * @return the categories of each Service Object
+     */
     public List<Category> getCategories()
     {
         return categories;
     }
 
+    /**
+     * This is a setter which sets the categories
+     * @param categories - the categories to be set
+     */
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
 
+    /**
+     * @return the OfferedServices of each Service Object
+     */
     public List<OfferedService> getOfferedServices() {
         return OfferedServices;
     }
 
+    /**
+     * This is a setter which sets the offeredServices
+     * @param categories - the offeredServices to be set
+     */
     public void setOfferedServices(List<OfferedService> offeredServices) {
         OfferedServices = offeredServices;
     }

@@ -17,6 +17,14 @@ public class OfferedService
     {
     }
 
+    /**
+     * Helped Constructor which initialize the state
+     * of a new OfferedService
+     *
+     * @param technician  The technician of this OfferedService
+     * @param service The service offered by the technician
+     * @param cost The cost charged by the technician
+     */
     public OfferedService(Technician technician, Service service, double cost)
     {
         this.technician = technician;
@@ -24,31 +32,52 @@ public class OfferedService
         this.cost = cost;
     }
 
+    /**
+     * @return the technician of this OfferedService Object
+     */
     public Technician getTechnician()
     {
         return technician;
     }
 
+    /**
+     * This is a setter which sets the technician
+     * @param technician - the technician to be set
+     */
     public void setTechnician(Technician technician)
     {
         this.technician = technician;
     }
 
+    /**
+     * @return the service of this OfferedService Object
+     */
     public Service getService()
     {
         return service;
     }
 
+    /**
+     * This is a setter which sets the service
+     * @param service - the service to be set
+     */
     public void setService(Service service)
     {
         this.service = service;
     }
 
+    /**
+     * @return the cost of this OfferedService Object
+     */
     public double getCost()
     {
         return cost;
     }
 
+    /**
+     * This is a setter which sets the cost
+     * @param cost - the cost to be set in case it's bigger than 0
+     */
     public void setCost(double cost)
     {
         this.cost = cost < 0.0 ? 0.0 : cost;

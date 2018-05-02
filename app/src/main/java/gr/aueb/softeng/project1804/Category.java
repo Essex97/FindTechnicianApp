@@ -33,30 +33,51 @@ public class Category
         this.description = description;
     }
 
+    /**
+     * @return the unique code of the object
+     */
     public String getCode()
     {
         return code;
     }
 
+    /**
+     * @return the static counter of the class which
+     * help as to give a specific code of each object
+     */
     public static int getCounter() {
         return counter;
     }
 
+    /**
+     * @return the title of the category
+     */
     public String getTitle()
     {
         return title;
     }
 
+    /**
+     * This is a setter which sets the title
+     * @param title - the title to be set
+     */
     public void setTitle(String title)
     {
         this.title = title;
     }
 
+    /**
+     * @return the description of each Category Object
+     */
     public String getDescription()
     {
         return description;
     }
 
+    /**
+     * This is a setter which sets the description
+     * @param description - the description to be set
+     */
     public void setDescription(String description) {
         this.description = description;
     }
