@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804;
+package gr.aueb.softeng.project1804.domain;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -9,6 +9,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import gr.aueb.softeng.project1804.domain.Category;
+import gr.aueb.softeng.project1804.domain.OfferedService;
+import gr.aueb.softeng.project1804.domain.Service;
+import gr.aueb.softeng.project1804.domain.Technician;
+
 /**
  * Created by Stratos on 25/4/2018.
  */

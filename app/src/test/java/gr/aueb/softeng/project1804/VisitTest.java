@@ -1,7 +1,5 @@
 package gr.aueb.softeng.project1804;
 
-import android.content.res.Resources;
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -11,6 +9,15 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import gr.aueb.softeng.project1804.domain.Category;
+import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.OfferedService;
+import gr.aueb.softeng.project1804.domain.Request;
+import gr.aueb.softeng.project1804.domain.Resource;
+import gr.aueb.softeng.project1804.domain.Service;
+import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.domain.Visit;
 
 /**
  * Created by Stratos on 21/4/2018.

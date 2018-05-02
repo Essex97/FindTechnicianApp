@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804;
+package gr.aueb.softeng.project1804.domain;
 
 /**
  * Created by Stratos on 11/4/2018.

@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804;
+package gr.aueb.softeng.project1804.domain;
 
 /**
  * Created by dimitrisstaratzis on 4/20/18.

@@ -10,6 +10,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import gr.aueb.softeng.project1804.domain.Category;
+import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.OfferedService;
+import gr.aueb.softeng.project1804.domain.Request;
+import gr.aueb.softeng.project1804.domain.Service;
+import gr.aueb.softeng.project1804.domain.Technician;
+
 /**
  * Created by dimitrisstaratzis on 4/21/18.
  */

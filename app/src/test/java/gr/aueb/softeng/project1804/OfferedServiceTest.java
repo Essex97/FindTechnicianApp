@@ -5,6 +5,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import gr.aueb.softeng.project1804.domain.OfferedService;
+import gr.aueb.softeng.project1804.domain.Service;
+import gr.aueb.softeng.project1804.domain.Technician;
+
 /**
  * Created by Stratos on 25/4/2018.
  */

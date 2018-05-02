@@ -9,6 +9,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import gr.aueb.softeng.project1804.domain.Payment;
+
 
 public class PaymentTest
 {

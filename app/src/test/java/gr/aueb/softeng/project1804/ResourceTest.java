@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import gr.aueb.softeng.project1804.domain.Resource;
+
 /**
  * Created by Stratos on 25/4/2018.
  */
