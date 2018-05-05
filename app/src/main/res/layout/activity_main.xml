@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="gr.aueb.softeng.project1804.view.HomePage.MainActivity"
-    android:background="#5A5A5A">
+    android:background="@drawable/gradient_backround">
 
 
     <TextView
@@ -15,9 +15,11 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="92dp"
+        android:fontFamily="serif"
         android:text="Welcome"
         android:textColor="#000000"
         android:textSize="30sp"
+        android:typeface="serif"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,13 +28,13 @@
         android:id="@+id/techbutton"
         android:layout_width="144dp"
         android:layout_height="43dp"
-        android:layout_marginEnd="120dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="96dp"
-        android:background="@drawable/roundedlayout"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/roundedlayout1"
         android:text="Technician"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -44,32 +46,36 @@
         android:layout_marginTop="108dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/techimage" />
+        app:srcCompat="@drawable/techimage"
+        android:layout_marginLeft="64dp"
+        tools:ignore="VectorDrawableCompat" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/customerButton"
         android:layout_width="144dp"
         android:layout_height="43dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="36dp"
-        android:background="@drawable/roundedlayout"
+        android:background="@drawable/roundedlayout1"
         android:text="Customer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/techbutton" />
+        app:layout_constraintTop_toBottomOf="@+id/techbutton"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="12dp" />
 
-    <ImageButton
+    <ImageView
         android:id="@+id/imageButton"
         android:layout_width="44dp"
-        android:layout_height="30dp"
+        android:layout_height="34dp"
         android:layout_marginStart="64dp"
-        android:alpha="05"
-        android:background="#FFFFF"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/userimage"
-        tools:layout_editor_absoluteY="321dp" />
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
 
 </android.support.constraint.ConstraintLayout>
