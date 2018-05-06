@@ -1,7 +1,7 @@
 package gr.aueb.softeng.project1804.domain;
 
 /**
- * Created by marios on 4/15/18.
+ * Created by marios on 5/15/18.
  */
 
 public class Address
