@@ -1,5 +1,6 @@
 package gr.aueb.softeng.project1804.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by marios on 4/15/18.
  */
 
-public class Technician extends User
+public class Technician extends User implements Serializable
 {
     private List<Request> requests;
     private List<OfferedService> services;

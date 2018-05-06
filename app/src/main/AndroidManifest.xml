@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.LogIn" />
-        <activity android:name=".view.SignUp"></activity>
-        <activity android:name=".view.SignUpCategories"></activity>
+        <activity android:name=".view.SignUp" />
+        <activity android:name=".view.SignUpCategories" />
+        <activity android:name=".view.ServicesAssign"></activity>
     </application>
 
 </manifest>

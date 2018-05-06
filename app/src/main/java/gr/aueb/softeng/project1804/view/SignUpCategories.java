@@ -14,15 +14,22 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.domain.Technician;
 
 public class SignUpCategories extends AppCompatActivity {
 
     String [] categoriesList;
     String [] citiesList;
+    String [] daysList;
+    String [] hoursList;
     boolean[] categoriesChecked;
     boolean[] citiesChecked;
+    boolean[] daysChecked;
+    boolean[] hoursChecked;
     ArrayList<Integer> selectedCategories;
     ArrayList<Integer> selectedCities;
+    ArrayList<Integer> selectedDays;
+    ArrayList<Integer> selectedHours;
 
 
     @Override
@@ -32,15 +39,23 @@ public class SignUpCategories extends AppCompatActivity {
 
         final Button categoriesToChoose = findViewById(R.id.button);
         final Button citiesToChoose = findViewById(R.id.button5);
+        final Button daysToChoose = findViewById(R.id.daysToChoose);
+        final Button hoursToChoose = findViewById(R.id.hoursToChoose);
         Button signUp = findViewById(R.id.techSignUp);
 
         categoriesList = getResources().getStringArray(R.array.categories_array);
         citiesList = getResources().getStringArray(R.array.cities_array);
+        daysList = getResources().getStringArray(R.array.days_array);
+        hoursList = getResources().getStringArray(R.array.hours_array);
 
         categoriesChecked = new boolean[categoriesList.length];
         selectedCategories = new ArrayList<>();
         citiesChecked = new boolean[citiesList.length];
         selectedCities = new ArrayList<>();
+        daysChecked = new boolean[daysList.length];
+        selectedDays = new ArrayList<>();
+        hoursChecked = new boolean[hoursList.length];
+        selectedHours = new ArrayList<>();
 
 
         Bundle extradata = getIntent().getExtras();
@@ -49,6 +64,8 @@ public class SignUpCategories extends AppCompatActivity {
             return;
         }
         final String type = extradata.getString("TYPE");
+        final Technician technician = (Technician)extradata.getSerializable("TECHNICIAN");
+        System.out.println(technician.getEmail() + "signUpCategories");
 
 
         categoriesToChoose.setOnClickListener(new View.OnClickListener() {
@@ -108,6 +125,61 @@ public class SignUpCategories extends AppCompatActivity {
             }
         });
 
+        daysToChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpCategories.this);
+                mBuilder.setTitle("Select Days");
+                mBuilder.setMultiChoiceItems(daysList, daysChecked, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
+                        if (isChecked) {
+                            selectedDays.add(position);
+
+                        }else{
+                            selectedDays.remove((Integer.valueOf(position)));
+                        }
+                    }
+                });
+
+                mBuilder.setCancelable(false);
+                mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) { }
+                });
+
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+            }
+        });
+
+        hoursToChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpCategories.this);
+                mBuilder.setTitle("Select Hours");
+                mBuilder.setMultiChoiceItems(hoursList, hoursChecked, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
+                        if (isChecked) {
+                            selectedDays.add(position);
+
+                        }else{
+                            selectedDays.remove((Integer.valueOf(position)));
+                        }
+                    }
+                });
+
+                mBuilder.setCancelable(false);
+                mBuilder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int which) { }
+                });
+
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+            }
+        });
 
         
         
@@ -115,8 +187,11 @@ public class SignUpCategories extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(SignUpCategories.this, LogIn.class);
+                Intent i = new Intent(SignUpCategories.this, ServicesAssign.class);
                 i.putExtra("TYPE", type);
+                i.putExtra("CATEGORY", selectedCategories.get(0));
+
+                i.putExtra("TECHNICIAN", technician);
                 startActivity(i);
 
             }

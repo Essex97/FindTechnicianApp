@@ -98,6 +98,8 @@ public class SignUp extends AppCompatActivity {
 
                 Intent i = new Intent(SignUp.this, SignUpCategories.class);
                 i.putExtra("TYPE", type);
+                System.out.println(newTechnician.getEmail() + "signUp");
+                i.putExtra("TECHNICIAN", newTechnician);
                 startActivity(i);
             }
         });
