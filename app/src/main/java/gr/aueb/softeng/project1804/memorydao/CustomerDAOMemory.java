@@ -1,5 +1,7 @@
 package gr.aueb.softeng.project1804.memorydao;
 
+import android.app.Application;
+
 import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.domain.Customer;
@@ -9,14 +11,15 @@ import gr.aueb.softeng.project1804.domain.Customer;
  * Created by Stratos on 2/5/2018.
  */
 
-public class CustomerDAOMemory {
+public class CustomerDAOMemory extends Application
+{
     protected static ArrayList<Customer> customers = new ArrayList<Customer>();
 
     /**
      * Save a customer into the list
      * @param customer The customer we want to add
      */
-    public void add(Customer customer){
+    public void addCustomer(Customer customer){
         customers.add(customer);
     }
 

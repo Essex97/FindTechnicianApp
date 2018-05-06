@@ -4,18 +4,20 @@ import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.domain.Technician;
 
+import android.app.Application;
+
 /**
  * Created by Stratos on 2/5/2018.
  */
 
-public class TechnicianDAOMemory {
+public class TechnicianDAOMemory extends CustomerDAOMemory {
     protected static ArrayList<Technician> technicians = new ArrayList<Technician>();
 
     /**
      * Save a technician into the array
      * @param tech The technician we want to add
      */
-    public void add(Technician tech){
+    public void addTechnician(Technician tech){
         technicians.add(tech);
     }
 
@@ -28,4 +30,6 @@ public class TechnicianDAOMemory {
         result.addAll(technicians);
         return result;
     }
+
+
 }

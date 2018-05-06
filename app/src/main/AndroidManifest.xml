@@ -3,6 +3,7 @@
     package="gr.aueb.softeng.project1804">
 
     <application
+        android:name=".memorydao.TechnicianDAOMemory"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,7 +20,11 @@
         <activity android:name=".view.LogIn" />
         <activity android:name=".view.SignUp" />
         <activity android:name=".view.SignUpCategories" />
-        <activity android:name=".view.ServicesAssign"></activity>
+        <activity android:name=".view.ServicesAssign" />
+        <activity android:name=".view.HomeScreenCustomer"></activity>
     </application>
+
+
+
 
 </manifest>

@@ -51,7 +51,9 @@ public class LogIn extends AppCompatActivity {
                 String userDetails = preferences.getString(email + password + "data", "Email or Password is Incorrect");
 
                 if(userDetails.equals(password + "/n")){
-                    Toast.makeText(getApplicationContext(), "LogingIn", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(LogIn.this, HomeScreenCustomer.class);
+                    startActivity(i);
                 }else{
                     Toast.makeText(getApplicationContext(), "Email or Password is Incorrect", Toast.LENGTH_SHORT).show();
                 }

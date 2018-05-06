@@ -22,6 +22,8 @@ import gr.aueb.softeng.project1804.domain.Category;
 import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Service;
 import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
+import gr.aueb.softeng.project1804.view.HomePage.MainActivity;
 
 public class ServicesAssign extends AppCompatActivity {
 
@@ -41,8 +43,9 @@ public class ServicesAssign extends AppCompatActivity {
         }
         final String type = extradata.getString("TYPE");
         final int category = extradata.getInt("CATEGORY");
-        final Technician technician = (Technician)extradata.getSerializable("TECHNICIAN");
-        System.out.println(technician.getEmail() + "Service");
+        int size = ((TechnicianDAOMemory)getApplication()).getTechnicians().size();
+        final Technician tech = ((TechnicianDAOMemory) getApplication()).getTechnicians().get(size-1);
+
 
         final Button technicianSignUp = findViewById(R.id.techniciannSignUp);
         final EditText etValue = findViewById(R.id.value);
@@ -101,12 +104,13 @@ public class ServicesAssign extends AppCompatActivity {
                 Service service = new Service();
                 service.setDescription(spinner.getSelectedItem().toString());
                 service.setCategories(new ArrayList<Category>());
-                OfferedService ofsv = new OfferedService(technician, service, Double.parseDouble(etValue.getText().toString()));
+                OfferedService ofsv = new OfferedService(tech, service, Double.parseDouble(etValue.getText().toString()));
                 List<OfferedService> ofsvList = new ArrayList<OfferedService>();
                 ofsvList.add(ofsv);
-                technician.setServices(ofsvList);
+                tech.setServices(ofsvList);
+                System.out.println(tech.getEmail() + "ServiceMALAKAS");
 
-                Intent i = new Intent(ServicesAssign.this, LogIn.class);
+                Intent i = new Intent(ServicesAssign.this, MainActivity.class);
                 startActivity(i);
 
             }

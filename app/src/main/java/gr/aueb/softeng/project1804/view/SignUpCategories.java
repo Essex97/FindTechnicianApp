@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 
 public class SignUpCategories extends AppCompatActivity {
 
@@ -64,8 +65,7 @@ public class SignUpCategories extends AppCompatActivity {
             return;
         }
         final String type = extradata.getString("TYPE");
-        final Technician technician = (Technician)extradata.getSerializable("TECHNICIAN");
-        System.out.println(technician.getEmail() + "signUpCategories");
+       /* System.out.println(technician.getEmail() + "signUpCategories");*/
 
 
         categoriesToChoose.setOnClickListener(new View.OnClickListener() {
@@ -190,8 +190,6 @@ public class SignUpCategories extends AppCompatActivity {
                 Intent i = new Intent(SignUpCategories.this, ServicesAssign.class);
                 i.putExtra("TYPE", type);
                 i.putExtra("CATEGORY", selectedCategories.get(0));
-
-                i.putExtra("TECHNICIAN", technician);
                 startActivity(i);
 
             }

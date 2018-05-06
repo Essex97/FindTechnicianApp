@@ -12,6 +12,9 @@ import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Address;
 import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
+import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
+import gr.aueb.softeng.project1804.view.HomePage.MainActivity;
 
 public class SignUp extends AppCompatActivity {
 
@@ -40,6 +43,9 @@ public class SignUp extends AppCompatActivity {
 
         if(type.equals("Technician")){
             signUp.setVisibility(View.INVISIBLE);
+        }else
+        {
+            nextSignUp.setVisibility(View.INVISIBLE);
         }
 
         signUp.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +65,7 @@ public class SignUp extends AppCompatActivity {
                 String [] splitedName = name.split("\\s+");
 
                 Customer newCustomer = new Customer(splitedName[0], splitedName[1], phone, email );
+                ((CustomerDAOMemory) getApplication()).addCustomer(newCustomer);
 
                 SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
@@ -66,8 +73,7 @@ public class SignUp extends AppCompatActivity {
                 editor.putString(email + password + "data", password + "/n");
                 editor.commit();
 
-                Intent i = new Intent(SignUp.this, LogIn.class);
-                //Intent i = new Intent(SignUp.this, SignUpCategories.class);
+                Intent i = new Intent(SignUp.this, MainActivity.class);
                 i.putExtra("TYPE", type);
                 startActivity(i);
             }
@@ -89,6 +95,7 @@ public class SignUp extends AppCompatActivity {
                 String [] splitedName = name.split("\\s+");
 
                 Technician newTechnician = new Technician(splitedName[0], splitedName[1], phone, email );
+                ((TechnicianDAOMemory) getApplication()).addTechnician(newTechnician);
 
                 SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
@@ -98,8 +105,6 @@ public class SignUp extends AppCompatActivity {
 
                 Intent i = new Intent(SignUp.this, SignUpCategories.class);
                 i.putExtra("TYPE", type);
-                System.out.println(newTechnician.getEmail() + "signUp");
-                i.putExtra("TECHNICIAN", newTechnician);
                 startActivity(i);
             }
         });
