@@ -27,7 +27,7 @@
         android:layout_marginStart="56dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/rounded_white"
-        android:drawableLeft="@drawable/userimage"
+        android:drawableLeft="@drawable/email_icon"
         android:drawablePadding="5dp"
         android:hint="Email"
         android:paddingStart="10dp"

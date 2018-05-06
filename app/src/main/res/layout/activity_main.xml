@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="96dp"
         android:fontFamily="serif"
         android:text="Welcome"
         android:textColor="#000000"
@@ -34,7 +34,7 @@
         android:background="@drawable/roundedlayout1"
         android:text="Technician"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -54,17 +54,15 @@
         android:id="@+id/customerButton"
         android:layout_width="144dp"
         android:layout_height="43dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:background="@drawable/roundedlayout1"
         android:text="Customer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/techbutton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageButton"
         app:layout_constraintTop_toBottomOf="@+id/techbutton"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="12dp" />
+        android:layout_marginLeft="8dp" />
 
     <ImageView
         android:id="@+id/imageButton"
@@ -75,7 +73,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:srcCompat="@drawable/userimage"
-        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+        tools:ignore="MissingConstraints,VectorDrawableCompat"
+        android:layout_marginLeft="64dp" />
 
 
 </android.support.constraint.ConstraintLayout>

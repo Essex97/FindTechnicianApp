@@ -2,10 +2,28 @@
     <string name="app_name">project1804</string>
 
     <string-array name="categories_array">
-        <item>Select a Category</item>
         <item>Ydraulikos</item>
         <item>Hlektrologos</item>
         <item>Xilokopos</item>
     </string-array>
+
+    <string-array name="cities_array">
+        <item>Kaisariani</item>
+        <item>Ilisia</item>
+        <item>Ilioupoli</item>
+        <item>Gerakas</item>
+        <item>Vyrwnas</item>
+    </string-array>
+
+    <string-array name="days_array">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
 
 </resources>
