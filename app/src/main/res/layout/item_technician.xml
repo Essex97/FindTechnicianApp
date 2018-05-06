@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:padding="4dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_white">
+
+    <ImageView
+        android:padding="4dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/channel_icon" />
+
+    <TextView
+        android:id="@+id/tech_name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_toEndOf="@+id/channel_icon"
+        android:gravity="center_vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="20sp"
+        android:hint="fsdfsdgsa"
+        android:layout_toRightOf="@+id/channel_icon" />
+
+    <!--<TextView
+        android:id="@+id/channel_id"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />-->
+
+</RelativeLayout>

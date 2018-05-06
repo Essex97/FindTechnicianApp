@@ -1,6 +1,5 @@
 package gr.aueb.softeng.project1804.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.view.HomePage.MainActivity;
+import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
+//import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
 
 public class LogIn extends AppCompatActivity {
 
@@ -52,7 +51,7 @@ public class LogIn extends AppCompatActivity {
 
                 if(userDetails.equals(password + "/n")){
                     Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(LogIn.this, HomeScreenCustomer.class);
+                    Intent i = new Intent(LogIn.this, HomeScreenCustomerActivity.class);
                     startActivity(i);
                 }else{
                     Toast.makeText(getApplicationContext(), "Email or Password is Incorrect", Toast.LENGTH_SHORT).show();

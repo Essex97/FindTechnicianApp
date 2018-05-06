@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.HomePage.MainActivity">
+        <activity android:name=".view.MainScreen.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,10 +21,7 @@
         <activity android:name=".view.SignUp" />
         <activity android:name=".view.SignUpCategories" />
         <activity android:name=".view.ServicesAssign" />
-        <activity android:name=".view.HomeScreenCustomer"></activity>
+        <activity android:name=".view.HomeScreenCustomerActivity.HomeScreenCustomerActivity"></activity>
     </application>
-
-
-
 
 </manifest>

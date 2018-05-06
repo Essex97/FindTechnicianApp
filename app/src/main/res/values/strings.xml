@@ -36,7 +36,7 @@
     </string-array>
 
     <string-array name="ydraylikos_services">
-        <item> Επιλέξτε Κατηγορία   </item>
+        <item> Επιλέξτε Service   </item>
         <item>Επισκευή Βρύσης</item>
         <item>Tuesday</item>
         <item>Wednesday</item>
@@ -47,7 +47,7 @@
     </string-array>
 
     <string-array name="hlektrologos_services">
-        <item> Επιλέξτε Κατηγορία   </item>
+        <item> Επιλέξτε Service   </item>
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>
@@ -58,7 +58,7 @@
     </string-array>
 
     <string-array name="xilokopos_services">
-        <item> Επιλέξτε Κατηγορία   </item>
+        <item> Επιλέξτε Service   </item>
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>

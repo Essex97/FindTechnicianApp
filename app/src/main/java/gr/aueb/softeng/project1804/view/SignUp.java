@@ -14,7 +14,7 @@ import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.HomePage.MainActivity;
+import gr.aueb.softeng.project1804.view.MainScreen.MainScreenActivity;
 
 public class SignUp extends AppCompatActivity {
 
@@ -73,7 +73,7 @@ public class SignUp extends AppCompatActivity {
                 editor.putString(email + password + "data", password + "/n");
                 editor.commit();
 
-                Intent i = new Intent(SignUp.this, MainActivity.class);
+                Intent i = new Intent(SignUp.this, MainScreenActivity.class);
                 i.putExtra("TYPE", type);
                 startActivity(i);
             }

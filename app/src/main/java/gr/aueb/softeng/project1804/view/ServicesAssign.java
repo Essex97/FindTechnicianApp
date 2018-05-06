@@ -1,18 +1,14 @@
 package gr.aueb.softeng.project1804.view;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +19,7 @@ import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Service;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.HomePage.MainActivity;
+import gr.aueb.softeng.project1804.view.MainScreen.MainScreenActivity;
 
 public class ServicesAssign extends AppCompatActivity {
 
@@ -110,7 +106,7 @@ public class ServicesAssign extends AppCompatActivity {
                 tech.setServices(ofsvList);
                 System.out.println(tech.getEmail() + "ServiceMALAKAS");
 
-                Intent i = new Intent(ServicesAssign.this, MainActivity.class);
+                Intent i = new Intent(ServicesAssign.this, MainScreenActivity.class);
                 startActivity(i);
 
             }
