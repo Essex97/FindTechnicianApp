@@ -16,7 +16,7 @@ public class SignUpPresenter {
         view.startSignUpOption();
     }
 
-    public void onClickNetx(){
+    public void onClickNext(){
         view.startNextOption();
     }
 

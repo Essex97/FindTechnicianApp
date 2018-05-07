@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gr.aueb.softeng.project1804.view.SignUpCategories"
+    tools:context="gr.aueb.softeng.project1804.view.signup_categories_screen.SignUpCategoriesActivity"
     android:background="@drawable/gradient_backround">
 
     <TextView
@@ -23,7 +23,7 @@
 
 
     <Button
-        android:id="@+id/techSignUp"
+        android:id="@+id/continueSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -63,7 +63,7 @@
         android:layout_marginLeft="40dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/chooseCatery"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -75,18 +75,19 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="32dp" />
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="8dp" />
 
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/chooseCities"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@drawable/roundedlayout1"
         android:text="choose         cities"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintEnd_toEndOf="@+id/chooseCatery"
+        app:layout_constraintTop_toBottomOf="@+id/chooseCatery" />
 
     <TextView
         android:id="@+id/days"
@@ -103,14 +104,14 @@
         android:layout_marginLeft="56dp" />
 
     <Button
-        android:id="@+id/daysToChoose"
+        android:id="@+id/chooseDays"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/roundedlayout1"
         android:text="Choose            days"
-        app:layout_constraintEnd_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintEnd_toEndOf="@+id/chooseCities"
+        app:layout_constraintTop_toBottomOf="@+id/chooseCities" />
 
     <TextView
         android:id="@+id/hours"
@@ -127,14 +128,14 @@
         android:layout_marginLeft="56dp" />
 
     <Button
-        android:id="@+id/hoursToChoose"
+        android:id="@+id/chooseHours"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@drawable/roundedlayout1"
         android:text="choose        hours"
-        app:layout_constraintEnd_toEndOf="@+id/daysToChoose"
-        app:layout_constraintTop_toBottomOf="@+id/daysToChoose" />
+        app:layout_constraintEnd_toEndOf="@+id/chooseDays"
+        app:layout_constraintTop_toBottomOf="@+id/chooseDays" />
 
 
 </android.support.constraint.ConstraintLayout>

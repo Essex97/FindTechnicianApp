@@ -44,7 +44,7 @@ public class TechnicianInfo extends AppCompatActivity {
         TextDrawable drawable = TextDrawable.builder().buildRound(etName.getText().toString().substring(0,2), Color.RED);
         image.setImageDrawable(drawable);
 
-        
+
 
     }
 }

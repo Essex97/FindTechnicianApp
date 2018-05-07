@@ -13,7 +13,7 @@ import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.SignUpCategories;
+import gr.aueb.softeng.project1804.view.signup_categories_screen.SignUpCategoriesActivity;
 import gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity;
 
 public class SignUpActivity extends AppCompatActivity implements SignUpView{
@@ -55,7 +55,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         editor.putString(getEmail() + getPassword() + "data", getPassword() + "/n");
         editor.commit();
 
-        Intent i = new Intent(SignUpActivity.this, SignUpCategories.class);
+        Intent i = new Intent(SignUpActivity.this, SignUpCategoriesActivity.class);
         i.putExtra("TYPE", type);
         startActivity(i);
     }
@@ -127,7 +127,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         findViewById(R.id.signUpNextButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.onClickNetx();
+                presenter.onClickNext();
             }
         });
     }
