@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.MainScreen;
+package gr.aueb.softeng.project1804.view.main_screen;
 
 /**
  * Created by Stratos on 6/5/2018.
@@ -13,10 +13,10 @@ public class MainScreenPresenter {
     }
 
     public void onClickCustomer(){
-        view.strartCustomerOprion();
+        view.startCustomerOption();
     }
 
     public void onClickTechnician(){
-        view.strartTechnicianOprion();
+        view.startTechnicianOption();
     }
 }

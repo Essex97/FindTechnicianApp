@@ -10,18 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainScreen.MainScreenActivity">
+        <activity android:name=".view.main_screen.MainScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.LogIn" />
-        <activity android:name=".view.SignUp" />
+        <activity android:name=".view.login_screen.LogInActivity" />
+        <activity android:name=".view.signup_screen.SignUpActivity" />
         <activity android:name=".view.SignUpCategories" />
         <activity android:name=".view.ServicesAssign" />
-        <activity android:name=".view.HomeScreenCustomerActivity.HomeScreenCustomerActivity"></activity>
+        <activity android:name=".view.HomeScreenCustomerActivity.HomeScreenCustomerActivity" />
+        <activity android:name=".view.TechnicianInfo"></activity>
     </application>
 
 </manifest>

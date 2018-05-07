@@ -11,7 +11,9 @@ import android.app.Application;
  */
 
 public class TechnicianDAOMemory extends CustomerDAOMemory {
-    protected static ArrayList<Technician> technicians = new ArrayList<Technician>();
+    public static ArrayList<Technician> technicians = new ArrayList<Technician>();
+
+
 
     /**
      * Save a technician into the array
@@ -27,6 +29,7 @@ public class TechnicianDAOMemory extends CustomerDAOMemory {
      */
     public ArrayList<Technician> getTechnicians() {
         ArrayList<Technician> result = new ArrayList<Technician>();
+
         result.addAll(technicians);
         return result;
     }

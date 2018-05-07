@@ -19,7 +19,7 @@ import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Service;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.MainScreen.MainScreenActivity;
+import gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity;
 
 public class ServicesAssign extends AppCompatActivity {
 

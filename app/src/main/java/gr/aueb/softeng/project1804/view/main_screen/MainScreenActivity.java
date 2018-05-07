@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.MainScreen;
+package gr.aueb.softeng.project1804.view.main_screen;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,21 +7,23 @@ import android.view.View;
 import android.widget.Button;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.view.LogIn;
+import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
+import gr.aueb.softeng.project1804.view.login_screen.LogInActivity;
 
 public class MainScreenActivity extends AppCompatActivity implements MainScreenView
 {
 
     @Override
-    public void strartCustomerOprion() {
-        Intent i = new Intent(MainScreenActivity.this, LogIn.class);
+    public void startCustomerOption() {
+        Intent i = new Intent(MainScreenActivity.this, LogInActivity.class);
         i.putExtra("TYPE" , "Technician");
         startActivity(i);
     }
 
     @Override
-    public void strartTechnicianOprion() {
-        Intent i = new Intent(MainScreenActivity.this, LogIn.class);
+    public void startTechnicianOption() {
+        Intent i = new Intent(MainScreenActivity.this, LogInActivity.class);
         i.putExtra("TYPE" , "Customer");
         startActivity(i);
     }
@@ -32,19 +34,23 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button technician = findViewById(R.id.techbutton);
-        Button customer = findViewById(R.id.customerButton);
+        //Initialize Technicians
+        if(TechnicianDAOMemory.technicians.size() == 0){
+            TechnicianDAOMemory.technicians.add(new Technician("Statos", "Xenouleas", "69xxxx", "stratos@gmail.com"));
+            TechnicianDAOMemory.technicians.add(new Technician("Dimitris", "Staratzis", "xxxxx", "xxxxx"));
+        }
+
 
         final MainScreenPresenter presenter = new MainScreenPresenter(this);
 
-        technician.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.techbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.onClickCustomer();
             }
         });
 
-        customer.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.customerButton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.onClickTechnician();

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gr.aueb.softeng.project1804.view.LogIn"
+    tools:context="gr.aueb.softeng.project1804.view.login_screen.LogInActivity"
     android:background="@drawable/gradient_backround">
 
     <TextView
@@ -60,7 +60,7 @@
         android:layout_marginLeft="56dp" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/logIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -79,15 +79,15 @@
         android:layout_marginStart="16dp"
         android:text="OR"
         android:textAlignment="center"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintBaseline_toBaselineOf="@+id/logIn"
+        app:layout_constraintEnd_toStartOf="@+id/signUp"
         app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/logIn"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="16dp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/signUp"
         android:layout_width="wrap_content"
         android:layout_height="46dp"
         android:layout_marginEnd="68dp"
