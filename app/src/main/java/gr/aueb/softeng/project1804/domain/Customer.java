@@ -11,11 +11,21 @@ public class Customer extends User
     private List<Request> requests;
     private List<Evaluation> evaluations;
 
+    /**
+     * This is the default constructor of the Customer class.
+     */
     public Customer()
     {
         super();
     }
 
+    /**
+     * This is the constructor of the Customer class.
+     * @param firstName The first name of the Customer.
+     * @param lastName The last name of the Customer.
+     * @param phone The phone of the Costomer.
+     * @param email The email of the Customer.
+     */
     public Customer(String firstName, String lastName, String phone, String email)
     {
         super(firstName, lastName, phone, email);
@@ -23,11 +33,19 @@ public class Customer extends User
         evaluations = new ArrayList<Evaluation>();
     }
 
+    /**
+     * This is the getter of the requests list.
+     * @return The list that contains the requests that this user has created.
+     */
     public List<Request> getRequests()
     {
         return requests;
     }
 
+    /**
+     * This method returns a list with all the approved requests.
+     * @return A list with the approved requests.
+     */
     public List<Request> getApprovedRequests()
     {
         if (requests == null)
@@ -41,6 +59,10 @@ public class Customer extends User
         return approved;
     }
 
+    /**
+     * This method returns a list with all the pending requests.
+     * @return A lists with all the pending requests.
+     */
     public List<Request> getPendingRequests()
     {
         if (requests == null)
@@ -54,11 +76,22 @@ public class Customer extends User
         return pending;
     }
 
+    /**
+     * The getter for the evaluations list.
+     * @return The evaluations.
+     */
     public List<Evaluation> getEvaluations()
     {
         return evaluations;
     }
 
+    /**
+     * This method creates a new requests with the specified attributes.
+     * @param date The date that the visit will take place.
+     * @param time The time that the visit will take place.
+     * @param technician The technician that will go to the visit.
+     * @param services The lists with the services that the customer wants.
+     */
     public void createRequests(String date, String time, Technician technician, List<OfferedService> services)
     {
         if (date == null)
@@ -79,6 +112,13 @@ public class Customer extends User
         technician.setRequest(request);
     }
 
+    /**
+     * This method is responsible for paying the technician of
+     * a given request with a certain amount. If the amount is
+     * not enough then an IllegalArgumentException is thrown.
+     * @param request The request that is to be paid.
+     * @param givenAmount The amount of money.
+     */
     public void pay(Request request, double givenAmount)
     {
         if (request == null)
@@ -93,6 +133,12 @@ public class Customer extends User
             visit.createPayment(givenAmount);
     }
 
+    /**
+     * This method evaluates a technician according to a specific visit.
+     * @param technician The technician that has to be evaluated.
+     * @param visit The visit.
+     * @return The evaluation object.
+     */
     public Evaluation evaluate(Technician technician, Visit visit)
     {
         if (technician == null)

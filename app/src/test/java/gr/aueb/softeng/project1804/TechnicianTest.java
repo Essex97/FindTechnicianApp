@@ -44,6 +44,9 @@ public class TechnicianTest {
 
     }
 
+    /**
+     * This method tests the getter for the approved requests.
+     */
     @Test
     public void getApprovedRequestsTest(){
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
@@ -60,6 +63,9 @@ public class TechnicianTest {
         Assert.assertEquals(approved, tech.getApprovedRequests());
     }
 
+    /**
+     * This method tests the getter for the pending requests.
+     */
     @Test
     public void getPendingRequestsTest(){
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
@@ -75,6 +81,9 @@ public class TechnicianTest {
         Assert.assertEquals(pending, tech.getPendingRequests());
     }
 
+    /**
+     * This method tests the approval of a request by a Technician.
+     */
     @Test
     public void approveTest()
     {
@@ -88,12 +97,18 @@ public class TechnicianTest {
         Assert.assertTrue(tech.getRequests().get(1).isApproved());
     }
 
+    /**
+     * This method tests the behavior of the approve method, given wrong arguments.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void approveWithNullTest()
     {
         tech.approve(null);
     }
 
+    /**
+     * This method tests the equals method of the Technician class.
+     */
     @Test
     public void equalsTest()
     {
