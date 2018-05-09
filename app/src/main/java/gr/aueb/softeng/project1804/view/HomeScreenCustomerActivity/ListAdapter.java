@@ -69,6 +69,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
         public void onClick(View view) {
             Intent i = new Intent(homeActivity, TechnicianInfoActivity.class);
             i.putExtra("POSITION", getAdapterPosition());
+            i.putExtra("TYPE", HomeScreenCustomerActivity.type);
             homeActivity.startActivity(i);
         }
     }

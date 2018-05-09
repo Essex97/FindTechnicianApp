@@ -28,6 +28,7 @@ import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.login_screen.LogInActivity;
 
 public class TechnicianInfoActivity extends AppCompatActivity implements TechnicianInfoView{
 
@@ -75,7 +76,7 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
         selectedTechnician = TechnicianDAOMemory.technicians.get(position);
 
-        /*if(type.equals("Visitor")){
+        if(type.equals(LogInActivity.TYPE_VISITOR)){
             findViewById(R.id.spinner2).setEnabled(false);
             findViewById(R.id.spinner2).setClickable(false);
             findViewById(R.id.spinner3).setEnabled(false);
@@ -86,7 +87,10 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
             findViewById(R.id.textView10).setEnabled(false);
             findViewById(R.id.textView11).setEnabled(false);
             findViewById(R.id.selectofsv).setEnabled(false);
-        }*/
+            findViewById(R.id.requaet).setEnabled(false);
+            findViewById(R.id.requaet).setClickable(false);
+
+        }
 
         etName = findViewById(R.id.infoName);
         etMail = findViewById(R.id.infoMail);

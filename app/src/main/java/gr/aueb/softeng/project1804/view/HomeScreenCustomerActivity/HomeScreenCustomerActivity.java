@@ -12,11 +12,16 @@ import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 public class HomeScreenCustomerActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+    public static String type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen_customer);
+
+        Bundle extradata = getIntent().getExtras();
+        if(extradata == null) return;
+        type = extradata.getString("TYPE");
 
         recyclerView = findViewById(R.id.recycler_view);
 

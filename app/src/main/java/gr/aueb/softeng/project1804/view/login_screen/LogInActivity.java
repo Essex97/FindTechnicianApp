@@ -48,6 +48,7 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
     public void startVisitorOption() {
         Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
         i.putExtra("TYPE", TYPE_VISITOR);
+        System.out.println(i.getExtras().getString("TYPE"));
         startActivity(i);
     }
 

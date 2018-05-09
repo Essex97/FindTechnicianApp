@@ -20,7 +20,7 @@ import gr.aueb.softeng.project1804.view.login_screen.LogInActivity;
 public class MainScreenActivity extends AppCompatActivity implements MainScreenView
 {
     public static final String TYPE_CUSTOMER = "Customer";
-    public static final String TYPE_TECHNICIAN = "Customer";
+    public static final String TYPE_TECHNICIAN = "Technician";
 
     @Override
     public void startCustomerOption() {
