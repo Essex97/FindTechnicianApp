@@ -20,7 +20,7 @@ import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.home.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
 import gr.aueb.softeng.project1804.view.login.LogInActivity;
 
 public class TechnicianInfoActivity extends AppCompatActivity implements TechnicianInfoView{
@@ -65,7 +65,6 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
         type = extradata.getString("TYPE");
         position = extradata.getInt("POSITION");
-        //final int category = extradata.getInt("CATEGORY");
 
         selectedTechnician = TechnicianDAOMemory.technicians.get(position);
 

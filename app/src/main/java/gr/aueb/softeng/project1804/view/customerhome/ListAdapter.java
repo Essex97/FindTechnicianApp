@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.home;
+package gr.aueb.softeng.project1804.view.customerhome;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -55,7 +55,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
         TechnicianHolder(View itemView){
             super(itemView);
             techName = itemView.findViewById(R.id.tech_name);
-            image = itemView.findViewById(R.id.infoPhoto);
+            image = itemView.findViewById(R.id.tech_infoPhoto);
             itemView.setOnClickListener(this);
         }
 

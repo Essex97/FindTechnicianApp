@@ -21,8 +21,9 @@
         <activity android:name=".view.signup.SignUpActivity" />
         <activity android:name=".view.signupcategories.SignUpCategoriesActivity" />
         <activity android:name=".view.service.ServicesAssignActivity" />
-        <activity android:name=".view.home.HomeScreenCustomerActivity" />
-        <activity android:name=".view.info.TechnicianInfoActivity"></activity>
+        <activity android:name=".view.customerhome.HomeScreenCustomerActivity" />
+        <activity android:name=".view.info.TechnicianInfoActivity" />
+        <activity android:name=".view.technicianhome.TechnicianHomeActivity"></activity>
     </application>
 
 </manifest>
