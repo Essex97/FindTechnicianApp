@@ -22,55 +22,18 @@ import gr.aueb.softeng.project1804.view.info.TechnicianInfoActivity;
  * Created by Stratos on 6/5/2018.
  */
 
-public class HomeScreenCustomerPresenter extends RecyclerView.Adapter<HomeScreenCustomerPresenter.TechnicianHolder>{
+public class HomeScreenCustomerPresenter {
 
     private HomeScreenCustomerActivity homeActivity;
-    private List<Technician> technicianList;
+    private ListAdapter listAdapter;
 
-    public HomeScreenCustomerPresenter(HomeScreenCustomerActivity hsc, TechnicianDAOMemory tdm){
+    public HomeScreenCustomerPresenter(HomeScreenCustomerActivity hsc, ListAdapter listAdapter){
         homeActivity = hsc;
-        technicianList = tdm.getTechnicians();
-    }
-
-    @Override
-    public TechnicianHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new TechnicianHolder(LayoutInflater.from(homeActivity.getBaseContext()).inflate(R.layout.item_technician, parent, false));
+        this.listAdapter = listAdapter;
     }
 
 
-    @Override
-    public void onBindViewHolder(TechnicianHolder holder, int position) {
-        holder.apply(technicianList.get(position));
-    }
 
-    @Override
-    public int getItemCount() {
-        return technicianList.size();
-    }
 
-    class TechnicianHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView techName;
-        private ImageView image;
-
-        TechnicianHolder(View itemView){
-            super(itemView);
-            techName = itemView.findViewById(R.id.tech_name);
-            image = itemView.findViewById(R.id.infoPhoto);
-            itemView.setOnClickListener(this);
-        }
-
-        void apply(Technician technician) {
-            techName.setText(technician.getFirstName() +" " + technician.getLastName());
-            TextDrawable drawable = TextDrawable.builder().buildRound(techName.getText().toString().substring(0,2), Color.RED);
-            image.setImageDrawable(drawable);
-        }
-
-        @Override
-        public void onClick(View view) {
-            Intent i = new Intent(homeActivity, TechnicianInfoActivity.class);
-            i.putExtra("POSITION", getAdapterPosition());
-            homeActivity.startActivity(i);
-        }
-    }
 }

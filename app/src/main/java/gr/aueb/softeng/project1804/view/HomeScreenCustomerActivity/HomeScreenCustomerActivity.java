@@ -12,6 +12,7 @@ import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 public class HomeScreenCustomerActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,12 +20,20 @@ public class HomeScreenCustomerActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
 
-        HomeScreenCustomerPresenter presenter = new HomeScreenCustomerPresenter(this, new TechnicianDAOMemory());
+        ListAdapter listAdapter = new ListAdapter(HomeScreenCustomerActivity.this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(presenter);
-        presenter.notifyDataSetChanged();
+        recyclerView.setAdapter(listAdapter);
+
+        listAdapter.notifyDataSetChanged();
+
+        HomeScreenCustomerPresenter presenter = new HomeScreenCustomerPresenter(this, listAdapter);
+
+
+
+
+
 
     }
 }

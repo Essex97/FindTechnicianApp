@@ -76,7 +76,16 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
         selectedTechnician = TechnicianDAOMemory.technicians.get(position);
 
         /*if(type.equals("Visitor")){
-            findViewById(R.id.spinner2).setFocusable(false);
+            findViewById(R.id.spinner2).setEnabled(false);
+            findViewById(R.id.spinner2).setClickable(false);
+            findViewById(R.id.spinner3).setEnabled(false);
+            findViewById(R.id.spinner3).setClickable(false);
+            findViewById(R.id.spinner4).setEnabled(false);
+            findViewById(R.id.spinner4).setClickable(false);
+            findViewById(R.id.textView8).setEnabled(false);
+            findViewById(R.id.textView10).setEnabled(false);
+            findViewById(R.id.textView11).setEnabled(false);
+            findViewById(R.id.selectofsv).setEnabled(false);
         }*/
 
         etName = findViewById(R.id.infoName);
