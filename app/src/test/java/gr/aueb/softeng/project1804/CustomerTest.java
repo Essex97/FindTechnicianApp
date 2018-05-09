@@ -49,6 +49,9 @@ public class CustomerTest
 
     }
 
+    /**
+     * This method tests the getter for the approved requests.
+     */
     @Test
     public void getApprovedRequestsTest(){
         List<Request> requests = new ArrayList<Request>();
@@ -63,6 +66,9 @@ public class CustomerTest
         Assert.assertEquals(approved, cst.getApprovedRequests());
     }
 
+    /**
+     * This method tests the getter for the pending requests.
+     */
     @Test
     public void getPendingRequestsTest(){
         List<Request> requests = new ArrayList<Request>();
@@ -77,6 +83,9 @@ public class CustomerTest
         Assert.assertEquals(pending, cst.getPendingRequests());
     }
 
+    /**
+     * This method tests the creation of a request.
+     */
     @Test
     public void createRequestTest()
     {
@@ -84,6 +93,9 @@ public class CustomerTest
         Assert.assertEquals(1, cst.getRequests().size());
     }
 
+    /**
+     * This method tests the successful payment of a request.
+     */
     @Test
     public void payCompletedTest()
     {
@@ -95,6 +107,9 @@ public class CustomerTest
         Assert.assertNotNull(cst.getRequests().get(0).getVisit().getPayment());
     }
 
+    /**
+     * This method tests the unsuccessful payment of a request.
+     */
     @Test
     public void payNotCompletedTest()
     {
@@ -106,6 +121,9 @@ public class CustomerTest
         Assert.assertNull(cst.getRequests().get(0).getVisit().getPayment());
     }
 
+    /**
+     * This method tests the evaluation of a Technician from a Customer.
+     */
     @Test
     public void evaluateTest()
     {
@@ -117,6 +135,9 @@ public class CustomerTest
         Assert.assertEquals(1, cst.getEvaluations().size());
     }
 
+    /**
+     * This method tests the equals method of the Customer class.
+     */
     @Test
     public void testEquals()
     {
@@ -124,6 +145,9 @@ public class CustomerTest
         Assert.assertTrue(cst2.equals(cst));
     }
 
+    /**
+     * This method tests the comment addition to an evaluation by a Customer.
+     */
     @Test
     public void evaluateTechnicianComment()
     {
@@ -136,6 +160,9 @@ public class CustomerTest
         Assert.assertEquals(eval.getComment(), comment);
     }
 
+    /**
+     * This method tests the evaluation of the behavior of a Technician by a Customer.
+     */
     @Test
     public void evaluateTechnicianBehavior()
     {
@@ -148,6 +175,9 @@ public class CustomerTest
         Assert.assertEquals(eval.getTechnicianBehavior(), scale);
     }
 
+    /**
+     * This method tests the evaluation of the work quality of a Technician by a Customer.
+     */
     @Test
     public void evaluateTechnicianWorkQuality()
     {
@@ -160,6 +190,9 @@ public class CustomerTest
         Assert.assertEquals(eval.getWorkQuality(), scale);
     }
 
+    /**
+     * This method tests the evaluation of the price that a Technician charges the Customer.
+     */
     @Test
     public void evaluateTechnicianPriceEvaluation()
     {
@@ -172,6 +205,10 @@ public class CustomerTest
         Assert.assertEquals(eval.getPriceEvaluation(), scale);
     }
 
+    /**
+     * This method tests the correct addition of an evaluation to the list of the Customer
+     * that created it.
+     */
     @Test
     public void evaluateTechnicianEvaluationsSize()
     {
@@ -182,12 +219,18 @@ public class CustomerTest
         Assert.assertEquals(1, cst.getEvaluations().size());
     }
 
+    /**
+     * This method tests the behavior of the evaluate method, given wrong arguments.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void evaluateTechnicianInvalidVisit()
     {
         Evaluation eval = cst.evaluate(tech, null);
     }
 
+    /**
+     * This method tests the behavior of the evaluate method, given wrong arguments.
+     */
     @Test(expected = IllegalArgumentException.class)
     public void evaluateTechnicianInvalidTechnician()
     {
