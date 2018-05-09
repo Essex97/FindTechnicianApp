@@ -6,17 +6,24 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.view.ServicesAssign;
+import gr.aueb.softeng.project1804.domain.Category;
+import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.memorydao.CategoryDAOMemory;
+import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
+import gr.aueb.softeng.project1804.view.service_assign_screen.ServicesAssignActivity;
 
 public class SignUpCategoriesActivity extends AppCompatActivity implements SignUpCategoriesView{
 
     private String type ;
+    private int size;
+    private Technician tech;
     private String [] categoriesList;
+
     private String [] citiesList;
     private String [] daysList;
     private String [] hoursList;
@@ -24,10 +31,10 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
     private boolean[] citiesChecked;
     private boolean[] daysChecked;
     private boolean[] hoursChecked;
-    private ArrayList<Integer> selectedCategories;
-    private ArrayList<Integer> selectedCities;
-    private ArrayList<Integer> selectedDays;
-    private ArrayList<Integer> selectedHours;
+    private ArrayList<String> selectedCategories;
+    private ArrayList<String> selectedCities;
+    private ArrayList<String> selectedDays;
+    private ArrayList<String> selectedHours;
 
     @Override
     public void startChooseCategoryOption() {
@@ -37,10 +44,10 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
             @Override
             public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
                 if (isChecked) {
-                    selectedCategories.add(position);
+                    selectedCategories.add(categoriesList[position]);
 
                 }else{
-                    selectedCategories.remove((Integer.valueOf(position)));
+                    selectedCategories.remove(categoriesList[position]);
                 }
             }
         });
@@ -63,10 +70,10 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
             @Override
             public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
                 if (isChecked) {
-                    selectedCities.add(position);
+                    selectedCities.add(citiesList[position]);
 
                 }else{
-                    selectedCities.remove((Integer.valueOf(position)));
+                    selectedCities.remove(citiesList[position]);
                 }
             }
         });
@@ -89,10 +96,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
             @Override
             public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
                 if (isChecked) {
-                    selectedDays.add(position);
-
+                    selectedHours.add(hoursList[position]);
                 }else{
-                    selectedDays.remove((Integer.valueOf(position)));
+                    selectedHours.remove(hoursList[position]);
                 }
             }
         });
@@ -102,6 +108,8 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
             @Override
             public void onClick(DialogInterface dialogInterface, int which) { }
         });
+
+        tech.setAvailableHours(selectedHours);
 
         AlertDialog mDialog = mBuilder.create();
         mDialog.show();
@@ -115,10 +123,10 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
             @Override
             public void onClick(DialogInterface dialogInterface, int position, boolean isChecked) {
                 if (isChecked) {
-                    selectedDays.add(position);
+                    selectedDays.add(daysList[position]);
 
                 }else{
-                    selectedDays.remove((Integer.valueOf(position)));
+                    selectedDays.remove(daysList[position]);
                 }
             }
         });
@@ -129,13 +137,15 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
             public void onClick(DialogInterface dialogInterface, int which) { }
         });
 
+        tech.setAvailableDays(selectedDays);
+
         AlertDialog mDialog = mBuilder.create();
         mDialog.show();
     }
 
     @Override
     public void startContinueOption(){
-        Intent i = new Intent(SignUpCategoriesActivity.this, ServicesAssign.class);
+        Intent i = new Intent(SignUpCategoriesActivity.this, ServicesAssignActivity.class);
         i.putExtra("TYPE", type);
         i.putExtra("CATEGORY", selectedCategories.get(0));
         startActivity(i);
@@ -145,8 +155,14 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         Bundle extradata = getIntent().getExtras();
         if(extradata == null) return;
         type = extradata.getString("TYPE");
+        size = ((TechnicianDAOMemory)getApplication()).getTechnicians().size();
+        tech = ((TechnicianDAOMemory) getApplication()).getTechnicians().get(size-1);
 
-        categoriesList = getResources().getStringArray(R.array.categories_array);
+        //categoriesList = getResources().getStringArray(R.array.categories_array);
+        categoriesList = new String[CategoryDAOMemory.categories.size()];
+        for(int i = 0; i < CategoryDAOMemory.categories.size(); i++){
+            categoriesList[i] = CategoryDAOMemory.categories.get(i).getTitle();
+        }
         citiesList = getResources().getStringArray(R.array.cities_array);
         daysList = getResources().getStringArray(R.array.days_array);
         hoursList = getResources().getStringArray(R.array.hours_array);
@@ -174,7 +190,7 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         findViewById(R.id.chooseCatery).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            presenter.onClickChooseCategory();
+                presenter.onClickChooseCategory();
             }
         });
 

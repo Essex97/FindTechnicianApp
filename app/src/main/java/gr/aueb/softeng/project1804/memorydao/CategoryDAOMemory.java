@@ -9,7 +9,8 @@ import gr.aueb.softeng.project1804.domain.Category;
  */
 
 public class CategoryDAOMemory {
-    protected static ArrayList<Category> categories = new ArrayList<Category>();
+    public static ArrayList<Category> categories = new ArrayList<Category>();
+
 
     /**
      * Save a category into the list

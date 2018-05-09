@@ -36,11 +36,9 @@ public class CustomerTest
         tech = new Technician("Pepe", "TheFrog", "666", "pepetheforg@gmail.com");
         Category c1 = new Category("graa", "grae");
         Category c2 = new Category("giuolha", "kjglrae");
-        List<Category> categories = new ArrayList<Category>();
-        categories.add(c1);
-        categories.add(c2);
-        Service s1 = new Service("tghh", categories, null);
-        Service s2 = new Service("jyy", categories, null);
+
+        Service s1 = new Service("tghh", c1);
+        Service s2 = new Service("jyy", c2);
         ofserv = new ArrayList<OfferedService>();
         ofserv.add(new OfferedService(tech, s1, 23.4));
         ofserv.add(new OfferedService(tech, s2, 255));
@@ -54,8 +52,8 @@ public class CustomerTest
     @Test
     public void getApprovedRequestsTest(){
         List<Request> requests = new ArrayList<Request>();
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
+        cst.createRequests("2015, 5, 10", "15, 56, 4", tech, ofserv);
 
         tech.approve(cst.getRequests().get(0));
 
@@ -68,8 +66,8 @@ public class CustomerTest
     @Test
     public void getPendingRequestsTest(){
         List<Request> requests = new ArrayList<Request>();
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
+        cst.createRequests("2015, 5, 10", "15, 56, 4", tech, ofserv);
 
         tech.approve(cst.getRequests().get(0));
 
@@ -82,14 +80,14 @@ public class CustomerTest
     @Test
     public void createRequestTest()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         Assert.assertEquals(1, cst.getRequests().size());
     }
 
     @Test
     public void payCompletedTest()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         tech.approve(cst.getRequests().get(0));
         double amount = 100000;
         cst.pay(cst.getRequests().get(0), amount);
@@ -100,7 +98,7 @@ public class CustomerTest
     @Test
     public void payNotCompletedTest()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         tech.approve(cst.getRequests().get(0));
         double amount = 200;
         cst.pay(cst.getRequests().get(0), amount);
@@ -111,7 +109,7 @@ public class CustomerTest
     @Test
     public void evaluateTest()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         tech.approve(cst.getRequests().get(0));
 
         cst.evaluate(tech, cst.getRequests().get(0).getVisit());
@@ -129,7 +127,7 @@ public class CustomerTest
     @Test
     public void evaluateTechnicianComment()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         Request request = cst.getRequests().get(0);
         Visit visit = new Visit(request);
         Evaluation eval = cst.evaluate(tech, visit);
@@ -141,7 +139,7 @@ public class CustomerTest
     @Test
     public void evaluateTechnicianBehavior()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         Request request = cst.getRequests().get(0);
         Visit visit = new Visit(request);
         Evaluation eval = cst.evaluate(tech, visit);
@@ -153,7 +151,7 @@ public class CustomerTest
     @Test
     public void evaluateTechnicianWorkQuality()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         Request request = cst.getRequests().get(0);
         Visit visit = new Visit(request);
         Evaluation eval = cst.evaluate(tech, visit);
@@ -165,7 +163,7 @@ public class CustomerTest
     @Test
     public void evaluateTechnicianPriceEvaluation()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         Request request = cst.getRequests().get(0);
         Visit visit = new Visit(request);
         Evaluation eval = cst.evaluate(tech, visit);
@@ -177,7 +175,7 @@ public class CustomerTest
     @Test
     public void evaluateTechnicianEvaluationsSize()
     {
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
         Request request = cst.getRequests().get(0);
         Visit visit = new Visit(request);
         Evaluation eval = cst.evaluate(tech, visit);

@@ -124,8 +124,7 @@ public class Evaluation
      * @return true or false
      */
     @Override
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -141,8 +140,7 @@ public class Evaluation
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         int result = comment != null ? comment.hashCode() : 0;
         result = 31 * result + (technician != null ? technician.hashCode() : 0);
         result = 31 * result + (visit != null ? visit.hashCode() : 0);

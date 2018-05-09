@@ -1,14 +1,13 @@
 package gr.aueb.softeng.project1804.domain;
 
-import java.sql.Time;
 import java.util.*;
 
 public class Request
 {
     private static int counter = 0;
     private String requestCode;
-    private Date date;
-    private Time time;
+    private String date;
+    private String time;
     private Visit visit;
     private Technician technician;
     private Customer customer;
@@ -23,7 +22,7 @@ public class Request
      * @param customer the customer who initialized the request
      * @param offeredServices
      */
-    public Request(Date date, Time time, Technician technician, Customer customer, List<OfferedService> offeredServices)
+    public Request(String date, String time, Technician technician, Customer customer, List<OfferedService> offeredServices)
     {
         this.requestCode = ++counter + "";
         this.date = date;
@@ -41,7 +40,7 @@ public class Request
      * @param customer the customer who initialized the request
      * @param offeredServices
      */
-    public Request(Date date, Time time, Customer customer, ArrayList<OfferedService> offeredServices)
+    public Request(String date, String time, Customer customer, ArrayList<OfferedService> offeredServices)
     {
         this(date, time, null, customer, offeredServices );
     }
@@ -79,7 +78,7 @@ public class Request
     /**
      * @return the date of the Request
      */
-    public Date getDate()
+    public String getDate()
     {
         return date;
     }
@@ -87,7 +86,7 @@ public class Request
     /**
      * @param newDate sets the Request's date to newDate
      */
-    public void setDate(Date newDate)
+    public void setDate(String newDate)
     {
         date = newDate;
     }
@@ -95,7 +94,7 @@ public class Request
     /**
      * @return the time of the Request
      */
-    public Time getTime()
+    public String getTime()
     {
         return time;
     }
@@ -103,7 +102,7 @@ public class Request
     /**
      * @param newTime sets the Request's time to newTime
      */
-    public void setTime(Time newTime)
+    public void setTime(String newTime)
     {
         time = newTime;
     }
@@ -162,8 +161,7 @@ public class Request
      * @return true or false
      */
     @Override
-    public boolean equals(Object o)
-    {
+    public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
@@ -180,9 +178,8 @@ public class Request
     }
 
     @Override
-    public int hashCode()
-    {
-        int result =0;
+    public int hashCode() {
+        int result =  0;
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (time != null ? time.hashCode() : 0);
         result = 31 * result + (visit != null ? visit.hashCode() : 0);

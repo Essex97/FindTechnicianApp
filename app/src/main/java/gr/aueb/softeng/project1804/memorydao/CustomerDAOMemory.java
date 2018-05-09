@@ -13,7 +13,17 @@ import gr.aueb.softeng.project1804.domain.Customer;
 
 public class CustomerDAOMemory extends Application
 {
-    protected static ArrayList<Customer> customers = new ArrayList<Customer>();
+    public static ArrayList<Customer> customers = new ArrayList<Customer>();
+
+    public static Customer logedInCustomer;
+
+    public static Customer getLogedInCustomer() {
+        return logedInCustomer;
+    }
+
+    public static void setLogedInCustomer(Customer logedInCustomer) {
+        CustomerDAOMemory.logedInCustomer = logedInCustomer;
+    }
 
     /**
      * Save a customer into the list
@@ -31,5 +41,12 @@ public class CustomerDAOMemory extends Application
         ArrayList<Customer> result = new ArrayList<Customer>();
         result.addAll(customers);
         return result;
+    }
+
+    public static Customer findCustomeByEmail(String email){
+        for(Customer customer : customers){
+            if (customer.getEmail().equals(email)) return customer;
+        }
+        return null;
     }
 }

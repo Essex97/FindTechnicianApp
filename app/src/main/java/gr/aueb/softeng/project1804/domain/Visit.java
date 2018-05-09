@@ -1,6 +1,5 @@
 package gr.aueb.softeng.project1804.domain;
 
-import java.util.Date;
 import java.util.ArrayList;
 
 public class Visit
@@ -41,7 +40,7 @@ public class Visit
     /**
      * @return the date that the visit will take place
      */
-    public Date getDate()
+    public String getDate()
     {
         return request.getDate();
     }
@@ -49,7 +48,7 @@ public class Visit
     /**
      * @param date sets the Visit's date to date
      */
-    public void setDate(Date date)
+    public void setDate(String date)
     {
         request.setDate(date);
     }
@@ -148,7 +147,6 @@ public class Visit
     public int hashCode()
     {
         int result = request != null ? request.hashCode() : 0;
-        result = 31 * result + visitID.hashCode();
         result = 31 * result + (resources != null ? resources.hashCode() : 0);
         result = 31 * result + (payment != null ? payment.hashCode() : 0);
         return result;

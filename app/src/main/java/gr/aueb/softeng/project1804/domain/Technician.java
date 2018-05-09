@@ -12,6 +12,9 @@ public class Technician extends User implements Serializable
 {
     private List<Request> requests;
     private List<OfferedService> services;
+    private List<String> availableDays;
+    private List<String> availableHours;
+
 
     public Technician(String firstName, String lastName, String phone, String email) {
         super(firstName, lastName, phone, email);
@@ -38,6 +41,22 @@ public class Technician extends User implements Serializable
 
     public void setServices(List<OfferedService> services) {
         this.services = services;
+    }
+
+    public List<String> getAvailableDays() {
+        return availableDays;
+    }
+
+    public void setAvailableDays(List<String> availableDays){
+        this.availableDays = availableDays;
+    }
+
+    public List<String> getAvailableHours() {
+        return availableHours;
+    }
+
+    public void setAvailableHours(List<String> availableHours) {
+        this.availableHours = availableHours;
     }
 
     public List<Request> getApprovedRequests()
@@ -88,7 +107,11 @@ public class Technician extends User implements Serializable
 
         if (requests != null ? !requests.equals(that.requests) : that.requests != null)
             return false;
-        return services != null ? services.equals(that.services) : that.services == null;
+        if (services != null ? !services.equals(that.services) : that.services != null)
+            return false;
+        if (availableDays != null ? !availableDays.equals(that.availableDays) : that.availableDays != null)
+            return false;
+        return availableHours != null ? availableHours.equals(that.availableHours) : that.availableHours == null;
     }
 
     @Override
@@ -96,6 +119,8 @@ public class Technician extends User implements Serializable
         int result = super.hashCode();
         result = 31 * result + (requests != null ? requests.hashCode() : 0);
         result = 31 * result + (services != null ? services.hashCode() : 0);
+        result = 31 * result + (availableDays != null ? availableDays.hashCode() : 0);
+        result = 31 * result + (availableHours != null ? availableHours.hashCode() : 0);
         return result;
     }
 }

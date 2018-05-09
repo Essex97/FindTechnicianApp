@@ -1,8 +1,6 @@
 package gr.aueb.softeng.project1804.domain;
 
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 /**
  * Created by marios on 4/15/18.
@@ -61,7 +59,7 @@ public class Customer extends User
         return evaluations;
     }
 
-    public void createRequests(Date date, Time time, Technician technician, List<OfferedService> services)
+    public void createRequests(String date, String time, Technician technician, List<OfferedService> services)
     {
         if (date == null)
             throw new IllegalArgumentException();

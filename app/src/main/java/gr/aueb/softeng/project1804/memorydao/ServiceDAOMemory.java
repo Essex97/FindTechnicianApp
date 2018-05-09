@@ -2,6 +2,7 @@ package gr.aueb.softeng.project1804.memorydao;
 
 import java.util.ArrayList;
 
+import gr.aueb.softeng.project1804.domain.Category;
 import gr.aueb.softeng.project1804.domain.Service;
 
 
@@ -10,7 +11,7 @@ import gr.aueb.softeng.project1804.domain.Service;
  */
 
 public class ServiceDAOMemory {
-    protected static ArrayList<Service> services = new ArrayList<Service>();
+    public static ArrayList<Service> services = new ArrayList<Service>();
 
     /**
      * Save a Service into the list
@@ -20,13 +21,21 @@ public class ServiceDAOMemory {
         services.add(service);
     }
 
-    /**
-     * Returns all the services
-     * @return the services list
-     */
-    public ArrayList<Service> getOfferedService() {
-        ArrayList<Service> result = new ArrayList<Service>();
-        result.addAll(services);
-        return result;
+
+    public static ArrayList<Service> getServicesByCategory(String title){
+        ArrayList<Service> toReturn = new ArrayList<>();
+        for (int i = 0; i < services.size(); i++){
+            if(services.get(i).getCategory().getTitle().equals(title)){
+                toReturn.add(services.get(i));
+            }
+        }
+        return toReturn;
+    }
+
+    public static Service findServiceByTitle(String title){
+        for(Service service : services){
+            if(service.getDescription().equals(title)) return service;
+        }
+        return null;
     }
 }

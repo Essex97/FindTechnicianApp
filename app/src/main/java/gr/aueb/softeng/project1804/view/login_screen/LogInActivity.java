@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
 import gr.aueb.softeng.project1804.view.signup_screen.SignUpActivity;
 
@@ -24,11 +25,14 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
 
         if(userDetails.equals(getPassword() + "/n")){
             Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
+            CustomerDAOMemory.setLogedInCustomer(CustomerDAOMemory.findCustomeByEmail(getEmail()));
             Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
             startActivity(i);
         }else{
             Toast.makeText(getApplicationContext(), "Email or Password is Incorrect", Toast.LENGTH_SHORT).show();
         }
+
+
     }
 
     @Override

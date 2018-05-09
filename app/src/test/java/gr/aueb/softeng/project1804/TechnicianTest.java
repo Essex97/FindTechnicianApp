@@ -31,11 +31,9 @@ public class TechnicianTest {
         tech = new Technician("Statos", "Xenouleas", "69xxxx", "stratos@gmail.com");
         Category c1 = new Category("graa", "grae");
         Category c2 = new Category("giuolha", "kjglrae");
-        List<Category> categories = new ArrayList<Category>();
-        categories.add(c1);
-        categories.add(c2);
-        Service s1 = new Service("tghh", categories, null);
-        Service s2 = new Service("jyy", categories, null);
+
+        Service s1 = new Service("tghh", c1);
+        Service s2 = new Service("jyy", c2);
         ofserv = new ArrayList<OfferedService>();
         ofserv.add(new OfferedService(tech, s1, 23.4));
         ofserv.add(new OfferedService(tech, s2, 255));
@@ -50,8 +48,8 @@ public class TechnicianTest {
     public void getApprovedRequestsTest(){
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
         List<Request> requests = new ArrayList<Request>();
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
+        cst.createRequests("2015, 5, 10", "15, 56, 4", tech, ofserv);
 
         tech.approve(tech.getRequests().get(0));
 
@@ -66,8 +64,8 @@ public class TechnicianTest {
     public void getPendingRequestsTest(){
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
         List<Request> requests = new ArrayList<Request>();
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
+        cst.createRequests("2015, 5, 10", "15, 56, 4", tech, ofserv);
 
         tech.approve(tech.getRequests().get(0));
 
@@ -82,8 +80,8 @@ public class TechnicianTest {
     {
         Customer cst = new Customer("fdsf", "gfsd", "gra", "dhsf");
         List<Request> requests = new ArrayList<Request>();
-        cst.createRequests(new Date(2017, 3, 13), new Time(21, 24, 45), tech, ofserv);
-        cst.createRequests(new Date(2015, 5, 10), new Time(15, 56, 4), tech, ofserv);
+        cst.createRequests("2017, 3, 13", "21, 24, 45", tech, ofserv);
+        cst.createRequests("2015, 5, 10", "15, 56, 4", tech, ofserv);
 
         //Assert.assertTrue(!tech.getRequests().get(1).isApproved());
         tech.approve(tech.getRequests().get(1));

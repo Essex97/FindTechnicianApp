@@ -39,15 +39,13 @@ public class VisitTest {
         tech = new Technician("Statos", "Xenouleas", "69xxxx", "stratos@gmail.com");
         Category c1 = new Category("graa", "grae");
         Category c2 = new Category("giuolha", "kjglrae");
-        categories = new ArrayList<Category>();
-        categories.add(c1);
-        categories.add(c2);
-        Service s1 = new Service("tghh", categories, null);
-        Service s2 = new Service("jyy", categories, null);
+
+        Service s1 = new Service("tghh", c1);
+        Service s2 = new Service("jyy", c2);
         ofserv = new ArrayList<OfferedService>();
         ofserv.add(new OfferedService(tech, s1, 23.4));
         ofserv.add(new OfferedService(tech, s2, 255));
-        rq = new Request(new Date(2017, 3, 13), new Time(21, 24, 45),tech, cst, ofserv);
+        rq = new Request("2017, 3, 13", "21, 24, 45",tech, cst, ofserv);
         visit = new Visit(rq);
     }
 
@@ -81,20 +79,20 @@ public class VisitTest {
 
     @Test
     public void notEqualsTest(){
-        Request rq1 = new Request(new Date(2021, 6, 1), new Time(2, 2, 4), cst, (ArrayList<OfferedService>) ofserv);
+        Request rq1 = new Request("2021, 6, 1", "2, 2, 4", cst, (ArrayList<OfferedService>) ofserv);
         Visit visit2 = new Visit(rq1);
         Assert.assertFalse(visit.equals(visit2));
     }
 
     @Test
     public void getDateTest(){
-        Assert.assertTrue(visit.getDate().equals(new Date(2017, 3, 13)) );
+        Assert.assertTrue(visit.getDate().equals("2017, 3, 13") );
     }
 
     @Test
     public void setDateTest(){
-        visit.setDate(new Date(2019, 4, 34));
-        Assert.assertTrue(visit.getDate().equals(new Date(2019, 4, 34)) );
+        visit.setDate("2019, 4, 34");
+        Assert.assertTrue(visit.getDate().equals("2019, 4, 34") );
     }
 
     @Test
@@ -124,10 +122,10 @@ public class VisitTest {
 
     @Test
     public void setRecourcesTest(){
-       ArrayList<Resource> resources = new ArrayList<Resource>();
-       resources.add(new Resource("solhnas", 2, 2));
-       visit.setResources(resources);
-       Assert.assertTrue(visit.getResources().equals(resources));
+        ArrayList<Resource> resources = new ArrayList<Resource>();
+        resources.add(new Resource("solhnas", 2, 2));
+        visit.setResources(resources);
+        Assert.assertTrue(visit.getResources().equals(resources));
     }
 
 

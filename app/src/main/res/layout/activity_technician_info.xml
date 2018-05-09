@@ -47,7 +47,7 @@
 
     <TextView
         android:id="@+id/infoMail"
-        android:layout_width="113dp"
+        android:layout_width="245dp"
         android:layout_height="22dp"
         android:layout_marginTop="16dp"
         android:hint="Emai :"
@@ -68,29 +68,17 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <TextView
-        android:id="@+id/infoCategory"
-        android:layout_width="112dp"
-        android:layout_height="22dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:hint="Category : "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/infoPhone"
-        app:layout_constraintTop_toBottomOf="@+id/infoPhone" />
-
-    <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
-        android:text="Make an Appointment"
+        android:layout_marginTop="28dp"
         android:fontFamily="serif"
+        android:text="Make an Appointment"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoMail" />
 
@@ -99,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:text="Select the hour of \nyour appointment :"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
@@ -107,17 +95,17 @@
 
     <Spinner
         android:id="@+id/spinner2"
-        android:layout_width="178dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="8dp" />
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="24dp" />
 
     <TextView
         android:id="@+id/textView11"
@@ -132,13 +120,13 @@
 
     <Spinner
         android:id="@+id/spinner3"
-        android:layout_width="178dp"
+        android:layout_width="194dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintEnd_toEndOf="@+id/spinner2"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/spinner2"
         android:layout_marginRight="8dp"
@@ -156,8 +144,32 @@
         android:text="Make a Request"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/selectofsv" />
+
+    <TextView
+        android:id="@+id/selectofsv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text=" Select the services \n you want to be \n offered to you:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        android:layout_marginLeft="28dp" />
+
+    <Spinner
+        android:id="@+id/spinner4"
+        android:layout_width="194dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="@+id/spinner3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/selectofsv"
+        app:layout_constraintTop_toBottomOf="@+id/spinner3"
+        android:layout_marginLeft="8dp" />
 
 
 </android.support.constraint.ConstraintLayout>

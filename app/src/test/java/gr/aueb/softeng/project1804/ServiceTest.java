@@ -10,9 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gr.aueb.softeng.project1804.domain.Category;
-import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Service;
-import gr.aueb.softeng.project1804.domain.Technician;
 
 /**
  * Created by Stratos on 25/4/2018.
@@ -57,26 +55,10 @@ public class ServiceTest {
      */
     @Test
     public void get_setCategoriesTest(){
-        List<Category> categories = new ArrayList<Category>();
-        categories.add(new Category());
-        s1.setCategories(categories);
-        Assert.assertTrue(s1.getCategories().equals(categories));
+
+        Category c = new Category();
+        s1.setCategory(c);
+        Assert.assertTrue(s1.getCategory().equals(c));
     }
-
-    /**
-     * Set and get the OfferedServices of the object.
-     * @result The OfferedServices we get must be equals with the OfferedServices we set
-     */
-    @Test
-    public void get_setOfferedServiceTest(){
-        Technician tech = new Technician("Pepe", "TheFrog", "666", "pepetheforg@gmail.com");
-        OfferedService ofsv = new OfferedService(tech, s1, 25);
-        List<OfferedService> ofsvlist = new ArrayList<>();
-        ofsvlist.add(ofsv);
-        s1.setOfferedServices(ofsvlist);
-        Assert.assertTrue(s1.getOfferedServices().equals(ofsvlist));
-    }
-
-
 
 }

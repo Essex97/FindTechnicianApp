@@ -11,8 +11,7 @@ public class Service
     private String serviceCode;
     private static int counter = 0;
     private String description;
-    private List<Category> categories;
-    private List<OfferedService> OfferedServices;
+    private Category category;
 
     /**
      * Default Constructor
@@ -27,15 +26,13 @@ public class Service
      * of a new service
      *
      * @param description A description of this service
-     * @param categories A list of categories in which the service belongs to
-     * @param OfferedServices A List of OfferedServices which can provide this service
+     * @param category A category in which the service belongs to
      */
-    public Service(String description, List<Category> categories, List<OfferedService> OfferedServices)
+    public Service(String description, Category category)
     {
         this();
         this.description = description;
-        this.categories = categories;
-        this.OfferedServices = OfferedServices;
+        this.category = category;
     }
 
     /**
@@ -74,32 +71,17 @@ public class Service
     /**
      * @return the categories of each Service Object
      */
-    public List<Category> getCategories()
+    public Category getCategory()
     {
-        return categories;
+        return category;
     }
 
     /**
      * This is a setter which sets the categories
-     * @param categories - the categories to be set
+     * @param category - the categories to be set
      */
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-
-    /**
-     * @return the OfferedServices of each Service Object
-     */
-    public List<OfferedService> getOfferedServices() {
-        return OfferedServices;
-    }
-
-    /**
-     * This is a setter which sets the offeredServices
-     * @param categories - the offeredServices to be set
-     */
-    public void setOfferedServices(List<OfferedService> offeredServices) {
-        OfferedServices = offeredServices;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
@@ -109,18 +91,18 @@ public class Service
 
         Service service = (Service) o;
 
+        if (serviceCode != null ? !serviceCode.equals(service.serviceCode) : service.serviceCode != null)
+            return false;
         if (description != null ? !description.equals(service.description) : service.description != null)
             return false;
-        if (categories != null ? !categories.equals(service.categories) : service.categories != null)
-            return false;
-        return OfferedServices != null ? OfferedServices.equals(service.OfferedServices) : service.OfferedServices == null;
+        return category != null ? category.equals(service.category) : service.category == null;
     }
 
     @Override
     public int hashCode() {
-        int result = description != null ? description.hashCode() : 0;
-        result = 31 * result + (categories != null ? categories.hashCode() : 0);
-        result = 31 * result + (OfferedServices != null ? OfferedServices.hashCode() : 0);
+        int result = serviceCode != null ? serviceCode.hashCode() : 0;
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + (category != null ? category.hashCode() : 0);
         return result;
     }
 }
