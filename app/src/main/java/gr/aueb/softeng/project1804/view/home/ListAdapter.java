@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity;
+package gr.aueb.softeng.project1804.view.home;
 
 import android.content.Intent;
 import android.graphics.Color;

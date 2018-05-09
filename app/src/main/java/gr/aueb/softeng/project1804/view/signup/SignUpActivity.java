@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.signup_screen;
+package gr.aueb.softeng.project1804.view.signup;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,8 +13,8 @@ import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.signup_categories_screen.SignUpCategoriesActivity;
-import gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity;
+import gr.aueb.softeng.project1804.view.signupcategories.SignUpCategoriesActivity;
+import gr.aueb.softeng.project1804.view.main.MainScreenActivity;
 
 public class SignUpActivity extends AppCompatActivity implements SignUpView{
 

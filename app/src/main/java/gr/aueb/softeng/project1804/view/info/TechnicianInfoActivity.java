@@ -12,14 +12,7 @@ import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 
-import java.sql.Time;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.OfferedService;
@@ -27,8 +20,8 @@ import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
-import gr.aueb.softeng.project1804.view.login_screen.LogInActivity;
+import gr.aueb.softeng.project1804.view.home.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.login.LogInActivity;
 
 public class TechnicianInfoActivity extends AppCompatActivity implements TechnicianInfoView{
 

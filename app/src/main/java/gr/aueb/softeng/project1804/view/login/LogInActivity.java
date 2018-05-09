@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.login_screen;
+package gr.aueb.softeng.project1804.view.login;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
-import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
-import gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity;
-import gr.aueb.softeng.project1804.view.signup_screen.SignUpActivity;
+import gr.aueb.softeng.project1804.view.home.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.main.MainScreenActivity;
+import gr.aueb.softeng.project1804.view.signup.SignUpActivity;
 
 public class LogInActivity extends AppCompatActivity implements LogInView{
 

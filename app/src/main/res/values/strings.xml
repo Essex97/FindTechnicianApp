@@ -30,8 +30,8 @@
     </string-array>
 
     <string-array name="ydraylikos_services">
-        <item> Επιλέξτε Service   </item>
-        <item>Επισκευή Βρύσης</item>
+        <item> Choose a Service   </item>
+        <item>Faucet Repair</item>
         <item>Tuesday</item>
         <item>Wednesday</item>
         <item>Thursday</item>
@@ -41,7 +41,7 @@
     </string-array>
 
     <string-array name="hlektrologos_services">
-        <item> Επιλέξτε Service   </item>
+        <item> Choose a Service   </item>
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>
@@ -52,7 +52,7 @@
     </string-array>
 
     <string-array name="xilokopos_services">
-        <item> Επιλέξτε Service   </item>
+        <item> Choose a Service   </item>
         <item>Monday</item>
         <item>Tuesday</item>
         <item>Wednesday</item>

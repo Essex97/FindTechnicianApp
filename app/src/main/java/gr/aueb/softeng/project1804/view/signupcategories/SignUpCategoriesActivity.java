@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.signup_categories_screen;
+package gr.aueb.softeng.project1804.view.signupcategories;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -6,16 +6,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.domain.Category;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CategoryDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.service_assign_screen.ServicesAssignActivity;
+import gr.aueb.softeng.project1804.view.service.ServicesAssignActivity;
 
 public class SignUpCategoriesActivity extends AppCompatActivity implements SignUpCategoriesView{
 

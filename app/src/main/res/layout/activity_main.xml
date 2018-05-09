@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity"
+    tools:context="gr.aueb.softeng.project1804.view.main.MainScreenActivity"
     android:background="@drawable/gradient_backround">
 
 

@@ -1,11 +1,10 @@
-package gr.aueb.softeng.project1804.view.service_assign_screen;
+package gr.aueb.softeng.project1804.view.service;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -14,13 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.domain.Category;
 import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Service;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.ServiceDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity;
+import gr.aueb.softeng.project1804.view.main.MainScreenActivity;
 
 public class ServicesAssignActivity extends AppCompatActivity implements ServiceAssignView{
 

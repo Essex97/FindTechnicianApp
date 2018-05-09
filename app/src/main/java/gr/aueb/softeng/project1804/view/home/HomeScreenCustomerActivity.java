@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity;
+package gr.aueb.softeng.project1804.view.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 
 public class HomeScreenCustomerActivity extends AppCompatActivity {
 

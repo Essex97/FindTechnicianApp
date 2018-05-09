@@ -1,12 +1,9 @@
-package gr.aueb.softeng.project1804.view.main_screen;
+package gr.aueb.softeng.project1804.view.main;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-
-import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Category;
@@ -15,7 +12,7 @@ import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CategoryDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.ServiceDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.login_screen.LogInActivity;
+import gr.aueb.softeng.project1804.view.login.LogInActivity;
 
 public class MainScreenActivity extends AppCompatActivity implements MainScreenView
 {

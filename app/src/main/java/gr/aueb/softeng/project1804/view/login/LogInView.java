@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.login_screen;
+package gr.aueb.softeng.project1804.view.login;
 
 /**
  * Created by Stratos on 7/5/2018.
