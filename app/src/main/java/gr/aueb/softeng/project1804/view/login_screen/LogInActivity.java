@@ -11,10 +11,12 @@ import android.widget.Toast;
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.view.HomeScreenCustomerActivity.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.main_screen.MainScreenActivity;
 import gr.aueb.softeng.project1804.view.signup_screen.SignUpActivity;
 
 public class LogInActivity extends AppCompatActivity implements LogInView{
 
+    public static final String TYPE_VISITOR = "Visitor";
     private String type;
 
     @Override
@@ -45,7 +47,7 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
     @Override
     public void startVisitorOption() {
         Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
-        i.putExtra("TYPE", "Visitor");
+        i.putExtra("TYPE", TYPE_VISITOR);
         startActivity(i);
     }
 
@@ -64,7 +66,7 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         if(extradata == null) return;
         type = extradata.getString("TYPE");
 
-        if(type.equals("Technician")){
+        if(type.equals(MainScreenActivity.TYPE_TECHNICIAN)){
             findViewById(R.id.button4).setVisibility(View.INVISIBLE); //set Visitor Button false
         }
     }

@@ -19,18 +19,20 @@ import gr.aueb.softeng.project1804.view.login_screen.LogInActivity;
 
 public class MainScreenActivity extends AppCompatActivity implements MainScreenView
 {
+    public static final String TYPE_CUSTOMER = "Customer";
+    public static final String TYPE_TECHNICIAN = "Customer";
 
     @Override
     public void startCustomerOption() {
         Intent i = new Intent(MainScreenActivity.this, LogInActivity.class);
-        i.putExtra("TYPE" , "Technician");
+        i.putExtra("TYPE" , TYPE_TECHNICIAN);
         startActivity(i);
     }
 
     @Override
     public void startTechnicianOption() {
         Intent i = new Intent(MainScreenActivity.this, LogInActivity.class);
-        i.putExtra("TYPE" , "Customer");
+        i.putExtra("TYPE" , TYPE_CUSTOMER);
         startActivity(i);
     }
 
