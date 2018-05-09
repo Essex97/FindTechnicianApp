@@ -101,7 +101,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
 
         type = extradata.getString("TYPE");
 
-        if(type.equals("Technician")){
+        if(type.equals(MainScreenActivity.TYPE_TECHNICIAN)){
             findViewById(R.id.signUpButton).setVisibility(View.INVISIBLE);
         }else {
             findViewById(R.id.signUpNextButton).setVisibility(View.INVISIBLE);
