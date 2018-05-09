@@ -29,38 +29,4 @@
         <item>14:00 PM - 15:00 PM</item>
     </string-array>
 
-    <string-array name="ydraylikos_services">
-        <item> Choose a Service   </item>
-        <item>Faucet Repair</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
-    </string-array>
-
-    <string-array name="hlektrologos_services">
-        <item> Choose a Service   </item>
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
-    </string-array>
-
-    <string-array name="xilokopos_services">
-        <item> Choose a Service   </item>
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
-    </string-array>
-
-
 </resources>

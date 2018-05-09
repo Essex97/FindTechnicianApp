@@ -46,15 +46,16 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
         }
 
         if(CategoryDAOMemory.categories.size() == 0){
-            CategoryDAOMemory.categories.add(new Category("Υδραυλικός", "Ο ανθρωπος που φτιαχνει τα υδραυλικά"));
-            CategoryDAOMemory.categories.add(new Category("Ηλεκτρολόγος", "Ο ανθρωπος που φτιαχνει τα ηλεκτρολογικά"));
+            CategoryDAOMemory.categories.add(new Category("Plumber",
+                    "A plumber is a tradesperson who specializes in installing and maintaining systems used for potable (drinking) water, sewage and drainage in plumbing systems."));
+            CategoryDAOMemory.categories.add(new Category("Electrician", "An electrician is a tradesman specializing in electrical wiring of buildings, stationary machines, and related equipment."));
         }
 
         if(ServiceDAOMemory.services.size() == 0){
-            ServiceDAOMemory.services.add(new Service("Αλλαγή Βρύσης", CategoryDAOMemory.categories.get(0)));
-            ServiceDAOMemory.services.add(new Service("Αλλαγή Ηλιακού", CategoryDAOMemory.categories.get(0)));
-            ServiceDAOMemory.services.add(new Service("Αλλαγή Λάμπας", CategoryDAOMemory.categories.get(1)));
-            ServiceDAOMemory.services.add(new Service("Αλλαγή Μπρίζας", CategoryDAOMemory.categories.get(1)));
+            ServiceDAOMemory.services.add(new Service("Faucet Repair", CategoryDAOMemory.categories.get(0)));
+            ServiceDAOMemory.services.add(new Service("Change Solar Panel", CategoryDAOMemory.categories.get(0)));
+            ServiceDAOMemory.services.add(new Service("Change Lamp", CategoryDAOMemory.categories.get(1)));
+            ServiceDAOMemory.services.add(new Service("Change The Socket", CategoryDAOMemory.categories.get(1)));
         }
 
 
