@@ -16,7 +16,7 @@ import java.util.List;
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.TechnicianInfo;
+import gr.aueb.softeng.project1804.view.info.TechnicianInfoActivity;
 
 /**
  * Created by Stratos on 6/5/2018.
@@ -68,7 +68,7 @@ public class HomeScreenCustomerPresenter extends RecyclerView.Adapter<HomeScreen
 
         @Override
         public void onClick(View view) {
-            Intent i = new Intent(homeActivity, TechnicianInfo.class);
+            Intent i = new Intent(homeActivity, TechnicianInfoActivity.class);
             i.putExtra("POSITION", getAdapterPosition());
             homeActivity.startActivity(i);
         }

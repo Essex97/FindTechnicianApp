@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gr.aueb.softeng.project1804.view.TechnicianInfo"
+    tools:context="gr.aueb.softeng.project1804.view.info.TechnicianInfoActivity"
     android:background="@drawable/gradient_backround">
 
 
@@ -77,6 +77,7 @@
         android:fontFamily="serif"
         android:text="Make an Appointment"
         android:textSize="20dp"
+        android:focusableInTouchMode="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +90,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="Select the hour of \nyour appointment :"
+        android:focusable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
         android:layout_marginLeft="28dp" />
@@ -101,6 +103,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:focusableInTouchMode="false"
         app:layout_constraintHorizontal_bias="0.413"
         app:layout_constraintStart_toEndOf="@+id/textView10"
         app:layout_constraintTop_toBottomOf="@+id/textView8"
@@ -155,6 +158,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:text=" Select the services \n you want to be \n offered to you:"
+        android:focusable="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11"
         android:layout_marginLeft="28dp" />

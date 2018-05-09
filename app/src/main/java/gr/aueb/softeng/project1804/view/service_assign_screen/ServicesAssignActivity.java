@@ -61,8 +61,7 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
         spinners[4] = findViewById(R.id.type_spinner4);
 
         for(int i = 0; i <5; i++){
-            if(spinners[i].getSelectedItemPosition() != 0 && values[i].getText().toString() != null){
-                //String serviceDescription = values[i].getText().toString().trim();
+            if(spinners[i].getSelectedItemPosition() != 0 && !values[i].getText().toString().equals("")){
                 String serviceDescription = (String) spinners[i].getSelectedItem();
                 ofsvList.add(new OfferedService(tech, ServiceDAOMemory.findServiceByTitle(serviceDescription), Double.parseDouble(values[i].getText().toString())));
             }
@@ -85,6 +84,7 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
 
         ArrayList<Service> servicesByCategory = ServiceDAOMemory.getServicesByCategory(category);
         ArrayList<String> servicesTitlesByCategory = new ArrayList<>();
+        servicesTitlesByCategory.add("--Επέλεξε υπηρεσία--"); //Default value on spinner
         for(Service s : servicesByCategory)
         {
             servicesTitlesByCategory.add(s.getDescription());

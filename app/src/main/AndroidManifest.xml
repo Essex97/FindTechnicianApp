@@ -22,7 +22,7 @@
         <activity android:name=".view.signup_categories_screen.SignUpCategoriesActivity" />
         <activity android:name=".view.service_assign_screen.ServicesAssignActivity" />
         <activity android:name=".view.HomeScreenCustomerActivity.HomeScreenCustomerActivity" />
-        <activity android:name=".view.TechnicianInfo"></activity>
+        <activity android:name=".view.info.TechnicianInfoActivity"></activity>
     </application>
 
 </manifest>
