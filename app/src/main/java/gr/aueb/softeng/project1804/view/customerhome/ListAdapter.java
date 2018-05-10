@@ -26,10 +26,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
 
     private List<Technician> technicianList;
     private HomeScreenCustomerActivity homeActivity;
+    public static Technician selectedTechnician;
 
     public ListAdapter(HomeScreenCustomerActivity homeActivity){
         this.homeActivity = homeActivity;
         technicianList = TechnicianDAOMemory.technicians;
+        System.out.println(technicianList.get(0).getFirstName());
     }
 
     @Override
@@ -63,6 +65,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
             techName.setText(technician.getFirstName() +" " + technician.getLastName());
             TextDrawable drawable = TextDrawable.builder().buildRound(techName.getText().toString().substring(0,2), Color.RED);
             image.setImageDrawable(drawable);
+            selectedTechnician = technician;
         }
 
         @Override

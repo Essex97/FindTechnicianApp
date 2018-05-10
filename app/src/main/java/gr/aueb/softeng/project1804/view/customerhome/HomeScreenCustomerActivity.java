@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.domain.Technician;
 
 public class HomeScreenCustomerActivity extends AppCompatActivity {
 

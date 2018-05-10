@@ -30,8 +30,11 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_CUSTOMER)) {
 
             Toast.makeText(getApplicationContext(), "CorrectCustomer", Toast.LENGTH_SHORT).show();
-            CustomerDAOMemory.setLogedInCustomer(CustomerDAOMemory.findCustomeByEmail(getEmail()));
+
+            CustomerDAOMemory.logedInCustomer = CustomerDAOMemory.findCustomeByEmail(getEmail());
             Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
+            i.putExtra("TYPE", MainScreenActivity.TYPE_CUSTOMER);
+
             startActivity(i);
 
         }else if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_TECHNICIAN)){
@@ -39,6 +42,7 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
             Toast.makeText(getApplicationContext(), "CorrectTechnician", Toast.LENGTH_SHORT).show();
             TechnicianDAOMemory.setLogedInTechnician(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
             Intent i = new Intent(LogInActivity.this, TechnicianHomeActivity.class);
+            i.putExtra("TYPE", MainScreenActivity.TYPE_TECHNICIAN);
             startActivity(i);
 
         }else{

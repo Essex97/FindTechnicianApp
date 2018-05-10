@@ -13,30 +13,26 @@ import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 public class TechnicianHomeActivity extends AppCompatActivity implements TechnicianHomeView{
 
     private RecyclerView recyclerView;
-    public static String type;
 
     @Override
     public void startRequestsOption() {
         findViewById(R.id.btn_tech_request).setEnabled(false);
         findViewById(R.id.btn_tech_visit).setEnabled(true);
+        findViewById(R.id.textView9).setVisibility(View.VISIBLE);
     }
 
     @Override
     public void startVisitsOption() {
         findViewById(R.id.btn_tech_request).setEnabled(true);
         findViewById(R.id.btn_tech_visit).setEnabled(false);
+        findViewById(R.id.textView9).setVisibility(View.INVISIBLE);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_technician_info);
+        setContentView(R.layout.activity_technician_home);
 
-
-        Bundle extradata = getIntent().getExtras();
-        if(extradata == null) return;
-
-        type = extradata.getString("TYPE");
         recyclerView = findViewById(R.id.requestList);
 
         RequestAdapter adapter = new RequestAdapter(TechnicianHomeActivity.this);
