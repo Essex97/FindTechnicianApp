@@ -16,13 +16,15 @@ public class TechnicianScreenPresenter {
     }
 
     public void onClickRequests(){
-        view.startRequestsOption();
         adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getPendingRequests());
+        adapter.notifyDataSetChanged();
+        view.startRequestsOption();
     }
 
     public void onClickVisits(){
-        view.startVisitsOption();
         adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests());
+        adapter.notifyDataSetChanged();
+        view.startVisitsOption();
     }
 
 }

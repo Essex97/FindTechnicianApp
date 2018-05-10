@@ -74,13 +74,15 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
             image.setImageDrawable(drawable);
         }
 
+
+
         @Override
         public void onClick(View view) {
-            /*Intent i = new Intent(homeActivity, TechnicianInfoActivity.class);
-            i.putExtra("POSITION", getAdapterPosition());
-            i.putExtra("TYPE", HomeScreenCustomerActivity.type);
-            homeActivity.startActivity(i);*/
             Toast.makeText(view.getContext(), "Approved" , Toast.LENGTH_SHORT).show();
+            Request selectedRequest = requestList.get(getAdapterPosition());
+            selectedRequest.setApproved(true);
+            requestList = selectedRequest.getTechnician().getPendingRequests();
+            homeActivity.startRequestsOption();
         }
     }
 }

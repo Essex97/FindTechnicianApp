@@ -53,14 +53,7 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
         Request request = new Request(date, time,  selectedTechnician, CustomerDAOMemory.logedInCustomer, offeredServices);
 
-        System.out.println(date);
-        System.out.println(time);
-        System.out.println(selectedTechnician);
-        System.out.println(CustomerDAOMemory.logedInCustomer);
-        System.out.println(offeredServices.get(0).getService().getDescription());
-
-
-        System.out.println(request.getCustomer().getFirstName() + " " +request.getTechnician().getFirstName());
+        selectedTechnician.setRequest(request);
 
         Intent i = new Intent(TechnicianInfoActivity.this, HomeScreenCustomerActivity.class);
         i.putExtra("TYPE", type);

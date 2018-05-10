@@ -31,7 +31,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
     public ListAdapter(HomeScreenCustomerActivity homeActivity){
         this.homeActivity = homeActivity;
         technicianList = TechnicianDAOMemory.technicians;
-        System.out.println(technicianList.get(0).getFirstName());
     }
 
     @Override
