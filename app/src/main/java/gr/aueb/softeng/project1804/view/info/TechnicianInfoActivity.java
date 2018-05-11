@@ -20,7 +20,8 @@ import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
-import gr.aueb.softeng.project1804.view.home.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.view.customerhome.ListAdapter;
 import gr.aueb.softeng.project1804.view.login.LogInActivity;
 
 public class TechnicianInfoActivity extends AppCompatActivity implements TechnicianInfoView{
@@ -45,12 +46,14 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
         String service = adapterOffered.getItem(services.getSelectedItemPosition());
 
+        selectedTechnician = ListAdapter.selectedTechnician;
+
         ArrayList<OfferedService> offeredServices = new ArrayList<>();
         offeredServices.add(selectedTechnician.getServices().get(services.getSelectedItemPosition()));
 
         Request request = new Request(date, time,  selectedTechnician, CustomerDAOMemory.logedInCustomer, offeredServices);
 
-        System.out.println(request.getCustomer().getFirstName() + " " +request.getTechnician().getFirstName());
+        selectedTechnician.setRequest(request);
 
         Intent i = new Intent(TechnicianInfoActivity.this, HomeScreenCustomerActivity.class);
         i.putExtra("TYPE", type);
@@ -65,7 +68,6 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
         type = extradata.getString("TYPE");
         position = extradata.getInt("POSITION");
-        //final int category = extradata.getInt("CATEGORY");
 
         selectedTechnician = TechnicianDAOMemory.technicians.get(position);
 

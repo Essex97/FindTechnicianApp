@@ -10,9 +10,11 @@ import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
-import gr.aueb.softeng.project1804.view.home.HomeScreenCustomerActivity;
+import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
+import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
 import gr.aueb.softeng.project1804.view.main.MainScreenActivity;
 import gr.aueb.softeng.project1804.view.signup.SignUpActivity;
+import gr.aueb.softeng.project1804.view.technicianhome.TechnicianHomeActivity;
 
 public class LogInActivity extends AppCompatActivity implements LogInView{
 
@@ -25,11 +27,24 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
 
         String userDetails = preferences.getString(getEmail() + getPassword() + "data", "Email or Password is Incorrect");
 
-        if(userDetails.equals(getPassword() + "/n")){
-            Toast.makeText(getApplicationContext(), "Correct", Toast.LENGTH_SHORT).show();
-            CustomerDAOMemory.setLogedInCustomer(CustomerDAOMemory.findCustomeByEmail(getEmail()));
+        if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_CUSTOMER)) {
+
+            Toast.makeText(getApplicationContext(), "CorrectCustomer", Toast.LENGTH_SHORT).show();
+
+            CustomerDAOMemory.logedInCustomer = CustomerDAOMemory.findCustomeByEmail(getEmail());
             Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
+            i.putExtra("TYPE", MainScreenActivity.TYPE_CUSTOMER);
+
             startActivity(i);
+
+        }else if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_TECHNICIAN)){
+
+            Toast.makeText(getApplicationContext(), "CorrectTechnician", Toast.LENGTH_SHORT).show();
+            TechnicianDAOMemory.setLogedInTechnician(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
+            Intent i = new Intent(LogInActivity.this, TechnicianHomeActivity.class);
+            i.putExtra("TYPE", MainScreenActivity.TYPE_TECHNICIAN);
+            startActivity(i);
+
         }else{
             Toast.makeText(getApplicationContext(), "Email or Password is Incorrect", Toast.LENGTH_SHORT).show();
         }

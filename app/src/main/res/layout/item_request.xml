@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:padding="4dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_white"
+    android:paddingTop="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp" >
+
+    <ImageView
+        android:padding="4dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:id="@+id/requestPhoto" />
+
+    <TextView
+        android:id="@+id/cust_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/requestPhoto"
+        android:layout_toRightOf="@+id/requestPhoto"
+        android:gravity="center_vertical"
+        android:hint="Name:"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/day_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/cust_name"
+        android:layout_toRightOf="@+id/cust_name"
+        android:hint="Day:"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/hour_request"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/day_request"
+        android:layout_toRightOf="@+id/day_request"
+        android:hint="Hour:"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:textSize="20sp"/>
+
+
+
+
+</RelativeLayout>

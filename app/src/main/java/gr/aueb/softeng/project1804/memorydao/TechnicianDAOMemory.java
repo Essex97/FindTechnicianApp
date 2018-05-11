@@ -13,7 +13,19 @@ import android.app.Application;
 public class TechnicianDAOMemory extends CustomerDAOMemory {
     public static ArrayList<Technician> technicians = new ArrayList<Technician>();
 
+    public static Technician logedInTechnician;
 
+    public static void setTechnicians(ArrayList<Technician> technicians) {
+        TechnicianDAOMemory.technicians = technicians;
+    }
+
+    public static Technician getLogedInTechnician() {
+        return logedInTechnician;
+    }
+
+    public static void setLogedInTechnician(Technician logedInTechnician) {
+        TechnicianDAOMemory.logedInTechnician = logedInTechnician;
+    }
 
     /**
      * Save a technician into the array
@@ -32,6 +44,13 @@ public class TechnicianDAOMemory extends CustomerDAOMemory {
 
         result.addAll(technicians);
         return result;
+    }
+
+    public static Technician findTechnicianByEmail(String email){
+        for(Technician technician : technicians){
+            if(technician.getEmail().equals(email)) return technician;
+        }
+        return null;
     }
 
 

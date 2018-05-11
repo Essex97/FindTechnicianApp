@@ -12,21 +12,21 @@
         android:padding="4dp"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:id="@+id/infoPhoto" />
+        android:id="@+id/tech_infoPhoto" />
 
     <TextView
         android:id="@+id/tech_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/infoPhoto"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/tech_infoPhoto"
+        android:layout_toRightOf="@+id/tech_infoPhoto"
         android:gravity="center_vertical"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textSize="20sp"
         android:hint="fsdfsdgsa"
+        android:paddingEnd="12dp"
+        android:paddingStart="12dp"
         android:paddingTop="10dp"
-        android:layout_toRightOf="@+id/infoPhoto"
-        />
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

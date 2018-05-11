@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.home;
+package gr.aueb.softeng.project1804.view.customerhome;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.domain.Technician;
 
 public class HomeScreenCustomerActivity extends AppCompatActivity {
 
@@ -20,8 +21,8 @@ public class HomeScreenCustomerActivity extends AppCompatActivity {
 
         Bundle extradata = getIntent().getExtras();
         if(extradata == null) return;
-        type = extradata.getString("TYPE");
 
+        type = extradata.getString("TYPE");
         recyclerView = findViewById(R.id.recycler_view);
 
         ListAdapter listAdapter = new ListAdapter(HomeScreenCustomerActivity.this);
@@ -33,11 +34,6 @@ public class HomeScreenCustomerActivity extends AppCompatActivity {
         listAdapter.notifyDataSetChanged();
 
         HomeScreenCustomerPresenter presenter = new HomeScreenCustomerPresenter(this, listAdapter);
-
-
-
-
-
 
     }
 }

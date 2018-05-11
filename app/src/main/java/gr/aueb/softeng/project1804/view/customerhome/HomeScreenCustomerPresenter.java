@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.home;
+package gr.aueb.softeng.project1804.view.customerhome;
 
 /**
  * Created by Stratos on 6/5/2018.
@@ -13,9 +13,5 @@ public class HomeScreenCustomerPresenter {
         homeActivity = hsc;
         this.listAdapter = listAdapter;
     }
-
-
-
-
 
 }

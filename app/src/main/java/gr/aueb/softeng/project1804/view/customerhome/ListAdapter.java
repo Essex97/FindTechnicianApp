@@ -1,4 +1,4 @@
-package gr.aueb.softeng.project1804.view.home;
+package gr.aueb.softeng.project1804.view.customerhome;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -26,6 +26,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
 
     private List<Technician> technicianList;
     private HomeScreenCustomerActivity homeActivity;
+    public static Technician selectedTechnician;
 
     public ListAdapter(HomeScreenCustomerActivity homeActivity){
         this.homeActivity = homeActivity;
@@ -55,7 +56,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
         TechnicianHolder(View itemView){
             super(itemView);
             techName = itemView.findViewById(R.id.tech_name);
-            image = itemView.findViewById(R.id.infoPhoto);
+            image = itemView.findViewById(R.id.tech_infoPhoto);
             itemView.setOnClickListener(this);
         }
 
@@ -63,6 +64,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
             techName.setText(technician.getFirstName() +" " + technician.getLastName());
             TextDrawable drawable = TextDrawable.builder().buildRound(techName.getText().toString().substring(0,2), Color.RED);
             image.setImageDrawable(drawable);
+            selectedTechnician = technician;
         }
 
         @Override
