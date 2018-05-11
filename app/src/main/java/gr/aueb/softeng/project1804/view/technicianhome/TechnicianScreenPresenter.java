@@ -18,12 +18,15 @@ public class TechnicianScreenPresenter {
     public void onClickRequests(){
         adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getPendingRequests());
         adapter.notifyDataSetChanged();
+        adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getPendingRequests().size());
         view.startRequestsOption();
     }
 
     public void onClickVisits(){
         adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests());
         adapter.notifyDataSetChanged();
+        adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests().size());
+
         view.startVisitsOption();
     }
 

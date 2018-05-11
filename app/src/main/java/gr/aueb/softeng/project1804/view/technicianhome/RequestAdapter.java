@@ -1,6 +1,5 @@
 package gr.aueb.softeng.project1804.view.technicianhome;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import java.util.List;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Request;
-import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 
 /**
  * Created by Stratos on 9/5/2018.
@@ -82,6 +80,8 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
             Request selectedRequest = requestList.get(getAdapterPosition());
             selectedRequest.setApproved(true);
             requestList = selectedRequest.getTechnician().getPendingRequests();
+            notifyItemRemoved(getAdapterPosition());
+            notifyItemRangeChanged(getAdapterPosition(), requestList.size());
             homeActivity.startRequestsOption();
         }
     }
