@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,6 +69,7 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
                     price = price >= 0.0f ? price : 0.0f;
                 }catch (NumberFormatException nfe)
                 {
+                    Toast.makeText(getApplicationContext(), "The value of your service was sett to 0", Toast.LENGTH_SHORT).show();
                     price = 0;
                 }
                 ofsvList.add(new OfferedService(tech, ServiceDAOMemory.findServiceByTitle(serviceDescription), price));

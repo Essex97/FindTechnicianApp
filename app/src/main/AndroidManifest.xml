@@ -24,7 +24,7 @@
         <activity android:name=".view.customerhome.HomeScreenCustomerActivity" />
         <activity android:name=".view.info.TechnicianInfoActivity" />
         <activity android:name=".view.technicianhome.TechnicianHomeActivity" />
-        <activity android:name=".view.payment.paymentActivity"></activity>
+        <activity android:name=".view.payment.paymentActivity" />
     </application>
 
 </manifest>

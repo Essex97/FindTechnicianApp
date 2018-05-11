@@ -14,4 +14,7 @@ public class HomeScreenCustomerPresenter {
         this.listAdapter = listAdapter;
     }
 
+    public void onClickCreatePayment(){
+        homeActivity.startPaymentOption();
+    }
 }

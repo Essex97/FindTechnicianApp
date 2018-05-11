@@ -1,18 +1,26 @@
 package gr.aueb.softeng.project1804.view.customerhome;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.view.payment.paymentActivity;
 
-public class HomeScreenCustomerActivity extends AppCompatActivity {
+public class HomeScreenCustomerActivity extends AppCompatActivity implements HomeScreenCustomerView{
 
     private RecyclerView recyclerView;
     public static String type;
+
+    @Override
+    public void startPaymentOption() {
+        Intent i = new Intent(this, paymentActivity.class);
+        startActivity(i);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +41,14 @@ public class HomeScreenCustomerActivity extends AppCompatActivity {
 
         listAdapter.notifyDataSetChanged();
 
-        HomeScreenCustomerPresenter presenter = new HomeScreenCustomerPresenter(this, listAdapter);
+        final HomeScreenCustomerPresenter presenter = new HomeScreenCustomerPresenter(this, listAdapter);
+
+        findViewById(R.id.btn_pay).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onClickCreatePayment();
+            }
+        });
 
     }
 }
