@@ -44,9 +44,14 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
     public void startNextOption() {
         Address address = new Address(getStreetName(), getPostalCode(), getStreetNumber());
 
+        Technician newTechnician;
         String [] splitedName = getName().split("\\s+");
 
-        Technician newTechnician = new Technician(splitedName[0], splitedName[1], getPhone(), getEmail() );
+        if (splitedName.length == 1)
+            newTechnician = new Technician(splitedName[0], "", getPhone(), getEmail() );
+        else
+            newTechnician = new Technician(splitedName[0], splitedName[1], getPhone(), getEmail() );
+
         ((TechnicianDAOMemory) getApplication()).addTechnician(newTechnician);
 
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
