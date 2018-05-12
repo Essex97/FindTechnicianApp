@@ -30,6 +30,11 @@ public class RequestDAOMemory {
         return result;
     }
 
-
+    /*public Request findRequestByCode(String code){
+        for(Request request : requests){
+            if(request.getRequestCode().equals(code)) return request;
+        }
+        return null;
+    }*/
 
 }

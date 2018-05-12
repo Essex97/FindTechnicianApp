@@ -106,7 +106,7 @@ public class Visit
      * This method will create a Payment object as soon as the customer pays for the service
      * @param amount the amount of money
      */
-    public void createPayment(double amount)
+    public boolean createPayment(double amount)
     {
         double totalCost = 0;
 
@@ -122,7 +122,10 @@ public class Visit
 
         if(amount >= totalCost){
             payment = new Payment(amount);
+            return true;
         }
+
+        return false;
     }
 
     /**
