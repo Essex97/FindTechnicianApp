@@ -51,11 +51,17 @@ public class RequestTest
 
     }
 
+    /**
+     * This method tests the getter for the request's code.
+     */
     @Test
     public void getRequestCodeTest(){
         Assert.assertTrue(re2.getRequestCode().equals(re2.getCounter() + ""));
     }
 
+    /**
+     * This method tests if a request gets approved correctly.
+     */
     @Test
     public void setApprovedTest()
     {
@@ -65,12 +71,19 @@ public class RequestTest
         Assert.assertFalse(re2.isApproved());
     }
 
+    /**
+     * This method tests if the method isApproved test returns the correct results.
+     */
     @Test
     public void isApprovedTest()
     {
         re2.setApproved(true);
         Assert.assertTrue(re2.isApproved());
     }
+
+    /**
+     * This method tests if the equals method
+     */
     @Test
     public void equalsTest()
     {
@@ -79,6 +92,10 @@ public class RequestTest
         Assert.assertTrue(re5.equals(re4));
     }
     @Test
+
+    /**
+     * This method tests if the equals method
+     */
     public void NotEqualsTest()
     {
         Request re5 = new  Request("2018, 3, 13", "21, 24, 45", tech, cst, ofserv);
@@ -86,6 +103,9 @@ public class RequestTest
         Assert.assertFalse(re5.equals(re4));
     }
 
+    /**
+     * This method tests if the hashCode method
+     */
     @Test
     public void hashCodeTest()
     {
@@ -94,6 +114,9 @@ public class RequestTest
         Assert.assertTrue(re5.hashCode() == re4.hashCode());
     }
 
+    /**
+     * This method tests the time's getter and setter.
+     */
     @Test
     public void getTimeTest()
     {

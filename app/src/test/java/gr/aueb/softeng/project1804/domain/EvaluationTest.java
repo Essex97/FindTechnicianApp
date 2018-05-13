@@ -57,12 +57,18 @@ public class EvaluationTest
 
 	}
 
+	/**
+	 * This method checks the getter and setter for the id.
+	 */
 	@Test
 	public void getEvaluationIdTest()
 	{
 		Assert.assertTrue(eval.getEvaluationID().equals(eval.getCounter() +"") );
 	}
 
+	/**
+	 * This method checks the getter and setter for the behaviour.
+	 */
 	@Test
 	public void getTechnicianBehaviourTest()
 	{
@@ -71,6 +77,9 @@ public class EvaluationTest
 		Assert.assertEquals(s, eval.getTechnicianBehavior());
 	}
 
+	/**
+	 * This method checks the getter and setter for the work quality.
+	 */
 	@Test
 	public void getWorkQualityTest()
 	{
@@ -79,6 +88,9 @@ public class EvaluationTest
 		Assert.assertEquals(s, eval.getWorkQuality());
 	}
 
+	/**
+	 * This method checks the getter and setter for the price Evaluation.
+	 */
 	@Test
 	public void getPriceEvaluationTest()
 	{
@@ -87,6 +99,9 @@ public class EvaluationTest
 		Assert.assertEquals(s, eval.getPriceEvaluation());
 	}
 
+	/**
+	 * This method checks the getter and setter for the comment.
+	 */
 	@Test
 	public void getCommentTest()
 	{
@@ -94,6 +109,9 @@ public class EvaluationTest
 		Assert.assertEquals("Works!", eval.getComment());
 	}
 
+	/**
+	 * This method checks the getter and setter for the visit.
+	 */
 	@Test
 	public void getVisitTest()
 	{
@@ -101,6 +119,9 @@ public class EvaluationTest
 		Assert.assertEquals(visit2, eval.getVisit());
 	}
 
+	/**
+	 * This method checks the equals method.
+	 */
 	@Test
 	public void equalsTest()
 	{

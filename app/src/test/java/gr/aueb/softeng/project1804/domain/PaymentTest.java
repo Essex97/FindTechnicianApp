@@ -28,12 +28,18 @@ public class PaymentTest
 
     }
 
+    /**
+     * This method checks the getter for the id.
+     */
     @Test
     public void getEvaluationIdTest()
     {
         Assert.assertTrue(b.getPaymentCode().equals(b.getCounter() +"") );
     }
 
+    /**
+     * This method checks the equals method.
+     */
     @Test
     public void equalsTest()
     {
@@ -41,6 +47,9 @@ public class PaymentTest
         Assert.assertTrue(a.equals(b));
     }
 
+    /**
+     * This method checks the equals method.
+     */
     @Test
     public void NotEqualsTest()
     {
@@ -49,6 +58,9 @@ public class PaymentTest
         Assert.assertFalse(c.equals(d));
     }
 
+    /**
+     * This method checks the getter and setter for the Total Cost.
+     */
     @Test
     public void getTotalCostTest()
     {
@@ -56,6 +68,9 @@ public class PaymentTest
         Assert.assertTrue(46.0 == a.getTotalCost());
     }
 
+    /**
+     * This method checks the hasCode method for the date.
+     */
     @Test
     public void notEqualHashCodeTest()
     {
