@@ -8,7 +8,7 @@ public class ServiceAssignPresenter {
 
     private ServiceAssignView view;
 
-    public ServiceAssignPresenter(ServicesAssignActivity view){
+    public ServiceAssignPresenter(ServiceAssignView view){
         this.view = view;
     }
 

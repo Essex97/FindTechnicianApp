@@ -6,10 +6,10 @@ package gr.aueb.softeng.project1804.view.customerhome;
 
 public class HomeScreenCustomerPresenter {
 
-    private HomeScreenCustomerActivity homeActivity;
+    private HomeScreenCustomerViewStub homeActivity;
     private ListAdapter listAdapter;
 
-    public HomeScreenCustomerPresenter(HomeScreenCustomerActivity hsc, ListAdapter listAdapter){
+    public HomeScreenCustomerPresenter(HomeScreenCustomerViewStub hsc, ListAdapter listAdapter){
         homeActivity = hsc;
         this.listAdapter = listAdapter;
     }
