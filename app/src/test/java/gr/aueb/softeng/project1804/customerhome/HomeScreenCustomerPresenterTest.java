@@ -30,7 +30,7 @@ public class HomeScreenCustomerPresenterTest
      * handling the presses of the -pay- button.
      */
     @Test
-    public void onClickCreatePaymet()
+    public void onClickCreatePayment()
     {
         presenter.onClickCreatePayment();
 

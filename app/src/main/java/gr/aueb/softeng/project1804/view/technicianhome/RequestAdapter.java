@@ -15,6 +15,7 @@ import java.util.List;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Request;
+import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 
 /**
  * Created by Stratos on 9/5/2018.
@@ -79,6 +80,7 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
             Toast.makeText(view.getContext(), "Approved" , Toast.LENGTH_SHORT).show();
             Request selectedRequest = requestList.get(getAdapterPosition());
             selectedRequest.setApproved(true);
+            CustomerDAOMemory.logedInCustomer.addRequest(selectedRequest);
             requestList = selectedRequest.getTechnician().getPendingRequests();
             notifyItemRemoved(getAdapterPosition());
             notifyItemRangeChanged(getAdapterPosition(), requestList.size());

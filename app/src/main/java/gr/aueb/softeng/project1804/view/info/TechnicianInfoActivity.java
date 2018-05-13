@@ -15,6 +15,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Technician;
@@ -52,8 +53,11 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
         offeredServices.add(selectedTechnician.getServices().get(services.getSelectedItemPosition()));
 
         Request request = new Request(date, time,  selectedTechnician, CustomerDAOMemory.logedInCustomer, offeredServices);
-
         selectedTechnician.setRequest(request);
+
+
+        //Customer logedInCustomer = CustomerDAOMemory.getLogedInCustomer();
+        //logedInCustomer.createRequests(date, time,  selectedTechnician, offeredServices);
 
         Intent i = new Intent(TechnicianInfoActivity.this, HomeScreenCustomerActivity.class);
         i.putExtra("TYPE", type);

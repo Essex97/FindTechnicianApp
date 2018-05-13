@@ -15,14 +15,19 @@ import java.util.List;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.Evaluation;
 import gr.aueb.softeng.project1804.domain.Payment;
 import gr.aueb.softeng.project1804.domain.Request;
+import gr.aueb.softeng.project1804.domain.Scale;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 
 public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     private ArrayAdapter<Request> requestAdapter;
     private List<Request> approvedRequests;
+    private float technicianBehavior;
+    private float workQuality;
+    private float priceEvaluation;
 
     @Override
     public void startPayOption() {
@@ -53,11 +58,19 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     @Override
     public void startEvaluateOption() {
-        float technicianBehavior = ((RatingBar)findViewById(R.id.ratingBar)).getRating();
-        float workQuality = ((RatingBar)findViewById(R.id.ratingBar)).getRating();
-        float priceEvaluation = ((RatingBar)findViewById(R.id.ratingBar)).getRating();
-        String comment = ((AutoCompleteTextView)findViewById(R.id.comment_arrea)).getText().toString();
 
+        String comment = ((AutoCompleteTextView)findViewById(R.id.comment_arrea)).getText().toString();
+        Evaluation eval = new Evaluation(approvedRequests.get(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition()).getTechnician(), requestAdapter.getItem(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition()).getVisit());
+        eval.setComment(comment);
+        if(technicianBehavior <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
+        if(technicianBehavior <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
+        if(technicianBehavior <= 3.0f) eval.setTechnicianBehaviour(Scale.VERY_GOOD);
+        if(workQuality <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
+        if(workQuality <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
+        if(workQuality <= 3.0f) eval.setTechnicianBehaviour(Scale.VERY_GOOD);
+        if(priceEvaluation <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
+        if(priceEvaluation <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
+        if(priceEvaluation <= 3.0f) eval.setTechnicianBehaviour(Scale.VERY_GOOD);
 
     }
 
@@ -98,8 +111,9 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     public void customActivity(){
         Customer logedIn = CustomerDAOMemory.getLogedInCustomer();
+        //approvedRequests = logedIn.getRequests();
         approvedRequests = logedIn.getApprovedRequests();
-        List<Request> pr = logedIn.getPendingRequests();
+        //List<Request> pr = logedIn.getPendingRequests();
 
         ArrayList<String> requestsByID = new ArrayList<>();
         requestsByID.add("--Choose a request First--");
@@ -136,10 +150,38 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
             }
         });
 
-        findViewById(R.id.payment_ammount).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btn_pay).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 presenter.onClickPay();
+            }
+        });
+
+        findViewById(R.id.btn_evaluate).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                presenter.onClickEvaluate();
+            }
+        });
+
+        ((RatingBar)findViewById(R.id.ratingBar)).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                technicianBehavior = v;
+            }
+        });
+
+        ((RatingBar)findViewById(R.id.ratingBar2)).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                workQuality = v;
+            }
+        });
+
+        ((RatingBar)findViewById(R.id.ratingBar3)).setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                priceEvaluation = v;
             }
         });
     }

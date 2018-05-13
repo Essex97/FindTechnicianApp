@@ -77,6 +77,14 @@ public class Customer extends User
     }
 
     /**
+     * This method adds a request into the list
+     * @param request new request
+     */
+    public void addRequest(Request request){
+        requests.add(request);
+    }
+
+    /**
      * The getter for the evaluations list.
      * @return The evaluations.
      */

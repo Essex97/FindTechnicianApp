@@ -21,6 +21,9 @@ public class CustomerDAOMemory extends Application
         return logedInCustomer;
     }
 
+    public static void setLogedInCustomer(Customer logedInCustomer) {
+        CustomerDAOMemory.logedInCustomer = logedInCustomer;
+    }
 
     /**
      * Save a customer into the list
