@@ -16,9 +16,11 @@ import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.LogedInUser;
 import gr.aueb.softeng.project1804.domain.OfferedService;
 import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.domain.User;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
@@ -50,7 +52,15 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
         ArrayList<OfferedService> offeredServices = new ArrayList<>();
         offeredServices.add(selectedTechnician.getServices().get(services.getSelectedItemPosition()));
 
-        Customer logedInCustomer = CustomerDAOMemory.getLogedInCustomer();
+        //Customer logedInCustomer = CustomerDAOMemory.getLogedInCustomer();
+        Customer logedInCustomer = null;
+        LogedInUser login = LogedInUser.getInstance();
+        User user = login.getUser();
+        if (user instanceof Customer)
+        {
+            logedInCustomer = (Customer)user;
+        }
+
         logedInCustomer.createRequests(date, time,  selectedTechnician, offeredServices);
 
         Intent i = new Intent(TechnicianInfoActivity.this, HomeScreenCustomerActivity.class);

@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.domain.LogedInUser;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
@@ -30,7 +31,9 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_CUSTOMER)) {
 
             Toast.makeText(getApplicationContext(), "CorrectCustomer", Toast.LENGTH_SHORT).show();
-            CustomerDAOMemory.setLogedInCustomer(CustomerDAOMemory.findCustomeByEmail(getEmail())) ;
+            //CustomerDAOMemory.setLogedInCustomer(CustomerDAOMemory.findCustomeByEmail(getEmail())) ;
+            LogedInUser logedin = LogedInUser.getInstance();
+            logedin.setUser(CustomerDAOMemory.findCustomeByEmail(getEmail()));
             Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
             i.putExtra("TYPE", MainScreenActivity.TYPE_CUSTOMER);
             startActivity(i);
@@ -38,7 +41,9 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         }else if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_TECHNICIAN)){
 
             Toast.makeText(getApplicationContext(), "CorrectTechnician", Toast.LENGTH_SHORT).show();
-            TechnicianDAOMemory.setLogedInTechnician(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
+            //TechnicianDAOMemory.setLogedInTechnician(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
+            LogedInUser logedin = LogedInUser.getInstance();
+            logedin.setUser(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
             Intent i = new Intent(LogInActivity.this, TechnicianHomeActivity.class);
             i.putExtra("TYPE", MainScreenActivity.TYPE_TECHNICIAN);
             startActivity(i);

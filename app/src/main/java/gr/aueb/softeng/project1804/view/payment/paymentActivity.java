@@ -18,9 +18,11 @@ import java.util.List;
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.Evaluation;
+import gr.aueb.softeng.project1804.domain.LogedInUser;
 import gr.aueb.softeng.project1804.domain.Payment;
 import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Scale;
+import gr.aueb.softeng.project1804.domain.User;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 
 public class paymentActivity extends AppCompatActivity implements PaymentView{
@@ -67,7 +69,15 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
     public void startEvaluateOption() {
 
         String comment = ((AutoCompleteTextView)findViewById(R.id.comment_arrea)).getText().toString();
-        Evaluation eval = CustomerDAOMemory.getLogedInCustomer().evaluate(selectedRequest.getTechnician(), selectedRequest.getVisit());
+        // Evaluation eval = CustomerDAOMemory.getLogedInCustomer().evaluate(selectedRequest.getTechnician(), selectedRequest.getVisit());
+        LogedInUser login = LogedInUser.getInstance();
+        User user = login.getUser();
+        Evaluation eval = null;
+        if (user instanceof Customer)
+        {
+            eval = ((Customer)user).evaluate(selectedRequest.getTechnician(), selectedRequest.getVisit());
+        }
+
         eval.setComment(comment);
         if(technicianBehavior <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
         if(technicianBehavior <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
@@ -119,7 +129,14 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
     }
 
     public void customActivity(){
-        Customer logedIn = CustomerDAOMemory.getLogedInCustomer();
+        //Customer logedIn = CustomerDAOMemory.getLogedInCustomer();
+        Customer logedIn = null;
+        LogedInUser login = LogedInUser.getInstance();
+        User user = login.getUser();
+        if (user instanceof Customer)
+        {
+            logedIn = (Customer)user;
+        }
 
         ArrayList<String> requestsByID = new ArrayList<>();
         requestsByID.add("--Choose a request First--");

@@ -1,4 +1,8 @@
 package gr.aueb.softeng.project1804.view.technicianhome;
+import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.LogedInUser;
+import gr.aueb.softeng.project1804.domain.Technician;
+import gr.aueb.softeng.project1804.domain.User;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 
 /**
@@ -16,17 +20,35 @@ public class TechnicianScreenPresenter {
     }
 
     public void onClickRequests(){
-        adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getPendingRequests());
+        LogedInUser login = LogedInUser.getInstance();
+        User user = login.getUser();
+        Technician tech = null;
+        if (user instanceof Technician)
+        {
+            tech = (Technician) user;
+        }
+        adapter.setList(tech.getPendingRequests());
+        //adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getPendingRequests());
         adapter.notifyDataSetChanged();
-        adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getPendingRequests().size());
+        //adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getPendingRequests().size());
+
+        adapter.notifyItemRangeChanged(0, tech.getPendingRequests().size());
         view.startRequestsOption();
     }
 
     public void onClickVisits(){
-        adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests());
+        LogedInUser login = LogedInUser.getInstance();
+        User user = login.getUser();
+        Technician tech = null;
+        if (user instanceof Technician)
+        {
+            tech = (Technician) user;
+        }
+        //adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests());
+        adapter.setList(tech.getApprovedRequests());
         adapter.notifyDataSetChanged();
-        adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests().size());
-
+        //adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests().size());
+        adapter.notifyItemRangeChanged(0, tech.getApprovedRequests().size());
         view.startVisitsOption();
     }
 
