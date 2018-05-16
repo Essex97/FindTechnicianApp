@@ -1,5 +1,6 @@
 package gr.aueb.softeng.project1804.view.payment;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,49 +30,56 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
     private float technicianBehavior;
     private float workQuality;
     private float priceEvaluation;
+    private Request selectedRequest;
 
     @Override
     public void startPayOption() {
 
         double payAmount = Double.parseDouble(((AutoCompleteTextView)findViewById(R.id.payment_ammount)).getText().toString());
-        Request selectedRequest = approvedRequests.get(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition());
+        selectedRequest = approvedRequests.get(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition()-1);
         Boolean successPay = selectedRequest.getVisit().createPayment(payAmount);
 
         if(successPay){
-            findViewById(R.id.textView15).setEnabled(true);
-            findViewById(R.id.textView16).setEnabled(true);
-            findViewById(R.id.textView17).setEnabled(true);
-            findViewById(R.id.textView18).setEnabled(true);
-            findViewById(R.id.textView19).setEnabled(true);
-            findViewById(R.id.ratingBar).setEnabled(true);
-            findViewById(R.id.ratingBar).setClickable(true);
-            findViewById(R.id.ratingBar2).setEnabled(true);
-            findViewById(R.id.ratingBar2).setClickable(true);
-            findViewById(R.id.ratingBar3).setEnabled(true);
-            findViewById(R.id.ratingBar3).setClickable(true);
-            findViewById(R.id.comment_arrea).setEnabled(true);
-            findViewById(R.id.comment_arrea).setClickable(true);
-            findViewById(R.id.btn_evaluate).setEnabled(true);
-            findViewById(R.id.btn_evaluate).setClickable(true);
+            enableRating();
         }
 
+    }
+
+    private void enableRating(){
+        findViewById(R.id.textView15).setEnabled(true);
+        findViewById(R.id.textView16).setEnabled(true);
+        findViewById(R.id.textView17).setEnabled(true);
+        findViewById(R.id.textView18).setEnabled(true);
+        findViewById(R.id.textView19).setEnabled(true);
+        findViewById(R.id.ratingBar).setEnabled(true);
+        findViewById(R.id.ratingBar).setClickable(true);
+        findViewById(R.id.ratingBar2).setEnabled(true);
+        findViewById(R.id.ratingBar2).setClickable(true);
+        findViewById(R.id.ratingBar3).setEnabled(true);
+        findViewById(R.id.ratingBar3).setClickable(true);
+        findViewById(R.id.comment_arrea).setEnabled(true);
+        findViewById(R.id.comment_arrea).setClickable(true);
+        findViewById(R.id.btn_evaluate).setEnabled(true);
+        findViewById(R.id.btn_evaluate).setClickable(true);
     }
 
     @Override
     public void startEvaluateOption() {
 
         String comment = ((AutoCompleteTextView)findViewById(R.id.comment_arrea)).getText().toString();
-        Evaluation eval = new Evaluation(approvedRequests.get(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition()).getTechnician(), requestAdapter.getItem(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition()).getVisit());
+        Evaluation eval = CustomerDAOMemory.getLogedInCustomer().evaluate(selectedRequest.getTechnician(), selectedRequest.getVisit());
         eval.setComment(comment);
         if(technicianBehavior <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
         if(technicianBehavior <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
         if(technicianBehavior <= 3.0f) eval.setTechnicianBehaviour(Scale.VERY_GOOD);
-        if(workQuality <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
-        if(workQuality <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
-        if(workQuality <= 3.0f) eval.setTechnicianBehaviour(Scale.VERY_GOOD);
-        if(priceEvaluation <= 1.0f) eval.setTechnicianBehaviour(Scale.BAD);
-        if(priceEvaluation <= 2.0f) eval.setTechnicianBehaviour(Scale.GOOD);
-        if(priceEvaluation <= 3.0f) eval.setTechnicianBehaviour(Scale.VERY_GOOD);
+        if(workQuality <= 1.0f) eval.setWorkQuality(Scale.BAD);
+        if(workQuality <= 2.0f) eval.setWorkQuality(Scale.GOOD);
+        if(workQuality <= 3.0f) eval.setWorkQuality(Scale.VERY_GOOD);
+        if(priceEvaluation <= 1.0f) eval.setPriceEvaluation(Scale.BAD);
+        if(priceEvaluation <= 2.0f) eval.setPriceEvaluation(Scale.GOOD);
+        if(priceEvaluation <= 3.0f) eval.setPriceEvaluation(Scale.VERY_GOOD);
+
+        Toast.makeText(getApplicationContext(), "Success Evaluation", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -111,22 +120,24 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     public void customActivity(){
         Customer logedIn = CustomerDAOMemory.getLogedInCustomer();
-        //approvedRequests = logedIn.getRequests();
-        approvedRequests = logedIn.getApprovedRequests();
-        //List<Request> pr = logedIn.getPendingRequests();
 
         ArrayList<String> requestsByID = new ArrayList<>();
         requestsByID.add("--Choose a request First--");
 
-        for(Request request : approvedRequests){
-            requestsByID.add(request.getRequestCode());
+        if(logedIn != null){
+            approvedRequests = logedIn.getApprovedRequests();
+
+            for(Request request : approvedRequests){
+                requestsByID.add(request.getRequestCode());
+            }
+
         }
 
         requestAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, requestsByID);
-
         requestAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         ((Spinner)findViewById(R.id.payment_spinner)).setAdapter(requestAdapter);
+
     }
 
     @Override

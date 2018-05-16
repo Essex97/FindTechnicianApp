@@ -11,7 +11,7 @@ import gr.aueb.softeng.project1804.domain.Resource;
 
 public class ResourceDAOMemory {
 
-    protected static ArrayList<Resource> resources = new ArrayList<Resource>();
+    public static ArrayList<Resource> resources = new ArrayList<Resource>();
 
     /**
      * Save a resources into the list
