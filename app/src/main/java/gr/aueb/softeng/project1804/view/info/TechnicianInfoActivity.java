@@ -16,12 +16,10 @@ import java.util.ArrayList;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
-import gr.aueb.softeng.project1804.domain.LogedInUser;
+import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.domain.OfferedService;
-import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.domain.User;
-import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
 import gr.aueb.softeng.project1804.view.customerhome.ListAdapter;

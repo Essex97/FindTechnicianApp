@@ -1,9 +1,7 @@
 package gr.aueb.softeng.project1804.view.technicianhome;
-import gr.aueb.softeng.project1804.domain.Customer;
-import gr.aueb.softeng.project1804.domain.LogedInUser;
+import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.domain.User;
-import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 
 /**
  * Created by Stratos on 9/5/2018.
@@ -27,12 +25,16 @@ public class TechnicianScreenPresenter {
         {
             tech = (Technician) user;
         }
-        adapter.setList(tech.getPendingRequests());
-        //adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getPendingRequests());
-        adapter.notifyDataSetChanged();
-        //adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getPendingRequests().size());
 
-        adapter.notifyItemRangeChanged(0, tech.getPendingRequests().size());
+        if (adapter != null) {
+            adapter.setList(tech.getPendingRequests());
+            //adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getPendingRequests());
+            adapter.notifyDataSetChanged();
+            //adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getPendingRequests().size());
+
+            adapter.notifyItemRangeChanged(0, tech.getPendingRequests().size());
+        }
+
         view.startRequestsOption();
     }
 
@@ -44,11 +46,15 @@ public class TechnicianScreenPresenter {
         {
             tech = (Technician) user;
         }
-        //adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests());
-        adapter.setList(tech.getApprovedRequests());
-        adapter.notifyDataSetChanged();
-        //adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests().size());
-        adapter.notifyItemRangeChanged(0, tech.getApprovedRequests().size());
+
+        if(adapter != null){
+            //adapter.setList(TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests());
+            adapter.setList(tech.getApprovedRequests());
+            adapter.notifyDataSetChanged();
+            //adapter.notifyItemRangeChanged(0, TechnicianDAOMemory.getLogedInTechnician().getApprovedRequests().size());
+            adapter.notifyItemRangeChanged(0, tech.getApprovedRequests().size());
+        }
+
         view.startVisitsOption();
     }
 

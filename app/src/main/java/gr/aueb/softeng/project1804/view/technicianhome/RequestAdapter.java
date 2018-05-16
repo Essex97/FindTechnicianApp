@@ -2,7 +2,6 @@ package gr.aueb.softeng.project1804.view.technicianhome;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +15,9 @@ import java.util.List;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
-import gr.aueb.softeng.project1804.domain.LogedInUser;
+import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.User;
-import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 
 /**
  * Created by Stratos on 9/5/2018.

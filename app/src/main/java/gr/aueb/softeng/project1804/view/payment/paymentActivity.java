@@ -1,10 +1,8 @@
 package gr.aueb.softeng.project1804.view.payment;
 
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -18,12 +16,10 @@ import java.util.List;
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
 import gr.aueb.softeng.project1804.domain.Evaluation;
-import gr.aueb.softeng.project1804.domain.LogedInUser;
-import gr.aueb.softeng.project1804.domain.Payment;
+import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.Scale;
 import gr.aueb.softeng.project1804.domain.User;
-import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 
 public class paymentActivity extends AppCompatActivity implements PaymentView{
 

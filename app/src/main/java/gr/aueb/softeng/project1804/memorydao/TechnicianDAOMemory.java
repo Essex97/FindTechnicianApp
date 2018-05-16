@@ -13,20 +13,6 @@ import android.app.Application;
 public class TechnicianDAOMemory extends CustomerDAOMemory {
     public static ArrayList<Technician> technicians = new ArrayList<Technician>();
 
-    public static Technician logedInTechnician;
-
-    public static void setTechnicians(ArrayList<Technician> technicians) {
-        TechnicianDAOMemory.technicians = technicians;
-    }
-
-    public static Technician getLogedInTechnician() {
-        return logedInTechnician;
-    }
-
-    public static void setLogedInTechnician(Technician logedInTechnician) {
-        TechnicianDAOMemory.logedInTechnician = logedInTechnician;
-    }
-
     /**
      * Save a technician into the array
      * @param tech The technician we want to add

@@ -15,16 +15,6 @@ public class CustomerDAOMemory extends Application
 {
     public static ArrayList<Customer> customers = new ArrayList<Customer>();
 
-    public static Customer logedInCustomer;
-
-    public static Customer getLogedInCustomer() {
-        return logedInCustomer;
-    }
-
-    public static void setLogedInCustomer(Customer logedInCustomer) {
-        CustomerDAOMemory.logedInCustomer = logedInCustomer;
-    }
-
     /**
      * Save a customer into the list
      * @param customer The customer we want to add

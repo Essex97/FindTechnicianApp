@@ -24,6 +24,7 @@ public class TechnicianHomePresenterTest
     public void setUp() throws Exception
     {
         stub = new TechnicianHomeViewStub();
+        a = null;
         presenter = new TechnicianScreenPresenter(stub,a);
     }
 

@@ -9,7 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
-import gr.aueb.softeng.project1804.domain.LogedInUser;
+import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
 import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;

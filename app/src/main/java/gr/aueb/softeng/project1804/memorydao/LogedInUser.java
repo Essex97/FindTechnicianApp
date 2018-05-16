@@ -1,4 +1,6 @@
-package gr.aueb.softeng.project1804.domain;
+package gr.aueb.softeng.project1804.memorydao;
+
+import gr.aueb.softeng.project1804.domain.User;
 
 /**
  * Created by marios on 5/16/18.
