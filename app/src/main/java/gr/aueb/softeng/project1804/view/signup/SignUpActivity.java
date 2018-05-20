@@ -24,9 +24,14 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
     public void startSignUpOption() {
         Address address = new Address(getStreetName(), getPostalCode(), getStreetNumber());
 
+        Customer newCustomer;
         String [] splitedName = getName().split("\\s+");
 
-        Customer newCustomer = new Customer(splitedName[0], splitedName[1], getPhone(), getEmail() );
+        if (splitedName.length == 1)
+            newCustomer = new Customer(splitedName[0], "", getPhone(), getEmail() );
+        else
+            newCustomer = new Customer(splitedName[0], splitedName[1], getPhone(), getEmail() );
+
         ((CustomerDAOMemory) getApplication()).addCustomer(newCustomer);
 
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);

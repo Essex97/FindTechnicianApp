@@ -9,6 +9,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import gr.aueb.softeng.project1804.R;
+import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.Technician;
 import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.memorydao.CustomerDAOMemory;
 import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
@@ -30,20 +32,30 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
 
         if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_CUSTOMER)) {
 
-            Toast.makeText(getApplicationContext(), "CorrectCustomer", Toast.LENGTH_SHORT).show();
-            //CustomerDAOMemory.setLogedInCustomer(CustomerDAOMemory.findCustomeByEmail(getEmail())) ;
             LogedInUser logedin = LogedInUser.getInstance();
-            logedin.setUser(CustomerDAOMemory.findCustomeByEmail(getEmail()));
+            Customer tempCustomer = CustomerDAOMemory.findCustomeByEmail(getEmail());
+            if(tempCustomer == null){
+                Toast.makeText(getApplicationContext(), "YOU AR NOT A CUSTOMER", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Toast.makeText(getApplicationContext(), "CorrectCustomer", Toast.LENGTH_SHORT).show();
+
+            logedin.setUser(tempCustomer);
             Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
             i.putExtra("TYPE", MainScreenActivity.TYPE_CUSTOMER);
             startActivity(i);
 
         }else if(userDetails.equals(getPassword() + "/n") && type.equals(MainScreenActivity.TYPE_TECHNICIAN)){
 
-            Toast.makeText(getApplicationContext(), "CorrectTechnician", Toast.LENGTH_SHORT).show();
-            //TechnicianDAOMemory.setLogedInTechnician(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
             LogedInUser logedin = LogedInUser.getInstance();
-            logedin.setUser(TechnicianDAOMemory.findTechnicianByEmail(getEmail()));
+            Technician tempTecnician = TechnicianDAOMemory.findTechnicianByEmail(getEmail());
+            if(tempTecnician == null){
+                Toast.makeText(getApplicationContext(), "YOU AR NOT A TECHNICIAN", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Toast.makeText(getApplicationContext(), "CorrectTechnician", Toast.LENGTH_SHORT).show();
+
+            logedin.setUser(tempTecnician);
             Intent i = new Intent(LogInActivity.this, TechnicianHomeActivity.class);
             i.putExtra("TYPE", MainScreenActivity.TYPE_TECHNICIAN);
             startActivity(i);
@@ -51,7 +63,6 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         }else{
             Toast.makeText(getApplicationContext(), "Email or Password is Incorrect", Toast.LENGTH_SHORT).show();
         }
-
 
     }
 

@@ -11,10 +11,12 @@ import android.widget.Toast;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import gr.aueb.softeng.project1804.R;
 import gr.aueb.softeng.project1804.domain.Customer;
+import gr.aueb.softeng.project1804.domain.Resource;
 import gr.aueb.softeng.project1804.memorydao.LogedInUser;
 import gr.aueb.softeng.project1804.domain.Request;
 import gr.aueb.softeng.project1804.domain.User;
@@ -79,10 +81,17 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
 
         @Override
         public void onClick(View view) {
+
             Toast.makeText(view.getContext(), "Approved" , Toast.LENGTH_SHORT).show();
             Request selectedRequest = requestList.get(getAdapterPosition());
             selectedRequest.setApproved(true);
-            //CustomerDAOMemory.logedInCustomer.addRequest(selectedRequest);
+
+            if(selectedRequest.isApproved()){
+                ArrayList<Resource> resources = homeActivity.addResources();
+                selectedRequest.getVisit().setResources(resources);
+            }
+
+
             LogedInUser login = LogedInUser.getInstance();
             User user = login.getUser();
             if (user instanceof Customer)

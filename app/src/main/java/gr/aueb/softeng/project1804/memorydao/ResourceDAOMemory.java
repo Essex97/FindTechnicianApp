@@ -1,6 +1,7 @@
 package gr.aueb.softeng.project1804.memorydao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import gr.aueb.softeng.project1804.domain.Resource;
 
@@ -29,5 +30,13 @@ public class ResourceDAOMemory {
         ArrayList<Resource> result = new ArrayList<Resource>();
         result.addAll(resources);
         return result;
+    }
+
+    public ArrayList<String> getResourcesNames(){
+        ArrayList<String> resourcesNames = new ArrayList<>();
+        for(Resource resource : resources){
+            resourcesNames.add(resource.getName());
+        }
+        return resourcesNames;
     }
 }
