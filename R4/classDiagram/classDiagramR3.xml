@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>3</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>616</x>
-      <y>0</y>
-      <w>256</w>
-      <h>208</h>
+      <x>957</x>
+      <y>312</y>
+      <w>96</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>/User/
 --
@@ -32,10 +32,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>392</y>
-      <w>408</w>
-      <h>176</h>
+      <x>726</x>
+      <y>459</y>
+      <w>153</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>Customer
 --
@@ -53,10 +53,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>928</x>
-      <y>424</y>
-      <w>304</w>
-      <h>160</h>
+      <x>1074</x>
+      <y>471</y>
+      <w>114</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Tecnician
 --
@@ -74,10 +74,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>912</x>
-      <y>1128</y>
-      <w>216</w>
-      <h>112</h>
+      <x>1068</x>
+      <y>735</y>
+      <w>81</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Payment
 --
@@ -94,10 +94,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>336</y>
-      <w>304</w>
-      <h>272</h>
+      <x>921</x>
+      <y>438</y>
+      <w>114</w>
+      <h>102</h>
     </coordinates>
     <panel_attributes>Evaluation
 --
@@ -127,10 +127,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>24</y>
-      <w>192</w>
-      <h>152</h>
+      <x>798</x>
+      <y>321</y>
+      <w>72</w>
+      <h>57</h>
     </coordinates>
     <panel_attributes>Address
 --
@@ -150,10 +150,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>1120</y>
-      <w>184</w>
-      <h>144</h>
+      <x>798</x>
+      <y>732</y>
+      <w>69</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>Resource 
 --
@@ -172,10 +172,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>1072</y>
-      <w>256</w>
-      <h>232</h>
+      <x>921</x>
+      <y>714</y>
+      <w>96</w>
+      <h>87</h>
     </coordinates>
     <panel_attributes>Visit
 --
@@ -199,10 +199,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>664</y>
-      <w>280</w>
-      <h>288</h>
+      <x>921</x>
+      <y>561</y>
+      <w>105</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>Request
 --
@@ -232,10 +232,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1672</x>
-      <y>416</y>
-      <w>280</w>
-      <h>184</h>
+      <x>1353</x>
+      <y>468</y>
+      <w>105</w>
+      <h>69</h>
     </coordinates>
     <panel_attributes>Service
 --
@@ -257,10 +257,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1696</x>
-      <y>128</y>
-      <w>224</w>
-      <h>160</h>
+      <x>1362</x>
+      <y>360</y>
+      <w>84</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>Category
 --
@@ -281,10 +281,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1328</x>
-      <y>432</y>
-      <w>200</w>
-      <h>144</h>
+      <x>1224</x>
+      <y>474</y>
+      <w>75</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>OfferedService
 --
@@ -303,10 +303,10 @@ _+getCounter() : int {query}_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>176</x>
-      <y>920</y>
-      <w>168</w>
-      <h>80</h>
+      <x>792</x>
+      <y>657</y>
+      <w>63</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enumeration&gt;&gt;
 Scale
@@ -319,10 +319,10 @@ BAD</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>376</x>
-      <y>88</y>
-      <w>256</w>
-      <h>40</h>
+      <x>867</x>
+      <y>345</y>
+      <w>96</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 -addresses
@@ -332,10 +332,10 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>192</x>
-      <y>200</y>
-      <w>496</w>
-      <h>208</h>
+      <x>798</x>
+      <y>387</y>
+      <w>186</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
@@ -344,10 +344,10 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>752</x>
-      <y>200</y>
-      <w>344</w>
-      <h>240</h>
+      <x>1008</x>
+      <y>387</y>
+      <w>129</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
@@ -356,10 +356,10 @@ m2=1..*</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>792</x>
-      <y>576</y>
-      <w>280</w>
-      <h>224</h>
+      <x>1023</x>
+      <y>528</y>
+      <w>105</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;
 m2=0..*
@@ -369,10 +369,10 @@ requests </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>400</x>
-      <y>472</y>
-      <w>136</w>
-      <h>40</h>
+      <x>876</x>
+      <y>489</y>
+      <w>51</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 m1=0..*
@@ -382,10 +382,10 @@ evaluations </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>816</x>
-      <y>496</y>
-      <w>128</w>
-      <h>40</h>
+      <x>1032</x>
+      <y>498</y>
+      <w>48</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;
 m2=1
@@ -395,10 +395,10 @@ technician </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>184</x>
-      <y>560</y>
-      <w>352</w>
-      <h>240</h>
+      <x>795</x>
+      <y>522</y>
+      <w>132</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 m2=0..*
@@ -408,10 +408,10 @@ requests </panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>768</x>
-      <y>1176</y>
-      <w>160</w>
-      <h>40</h>
+      <x>1014</x>
+      <y>753</y>
+      <w>60</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 -payment 
@@ -421,10 +421,10 @@ m2=0..1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>632</x>
-      <y>944</y>
-      <w>72</w>
-      <h>144</h>
+      <x>963</x>
+      <y>666</y>
+      <w>27</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 -payment 
@@ -434,10 +434,10 @@ m1=1.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>1184</y>
-      <w>168</w>
-      <h>40</h>
+      <x>864</x>
+      <y>756</y>
+      <w>63</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 -payment 
@@ -447,10 +447,10 @@ m2=0..*.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1224</x>
-      <y>488</y>
-      <w>120</w>
-      <h>40</h>
+      <x>1185</x>
+      <y>495</y>
+      <w>45</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;
 m2=0..*
@@ -460,10 +460,10 @@ m2=0..*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1520</x>
-      <y>488</y>
-      <w>168</w>
-      <h>40</h>
+      <x>1296</x>
+      <y>495</y>
+      <w>63</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;
 m2=0..*
@@ -473,14 +473,1196 @@ m2=0..*
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1792</x>
-      <y>280</y>
-      <w>80</w>
-      <h>152</h>
+      <x>1398</x>
+      <y>417</y>
+      <w>30</w>
+      <h>57</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-
 -categories 
 m2=0..*</panel_attributes>
     <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1185</x>
+      <y>348</y>
+      <w>63</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+HomeScreenCustomerView
+-
++ startPaymentOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1182</x>
+      <y>273</y>
+      <w>72</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>HomeScreenCustomerActivity
+--
+- recyclerView : RecyclerView
+_+ type : String_
+--
+# onCreate(savedInstanceState : Bundle)
++ startPaymentOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1212</x>
+      <y>303</y>
+      <w>9</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1083</x>
+      <y>348</y>
+      <w>72</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>HomeScreenCustomerPresenter
+--
++ onClickCreatePayment()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>351</y>
+      <w>39</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - homeActivity</panel_attributes>
+    <additional_attributes>110.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1083</x>
+      <y>303</y>
+      <w>63</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>ListAdapter
+   </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1110</x>
+      <y>315</y>
+      <w>33</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - listAdapter </panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1182</x>
+      <y>390</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>HomeScreenCustomerViewStub
+--
+- payments: int
+--
++ startPaymentOption()
++ getPayments() : int {query}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1212</x>
+      <y>363</y>
+      <w>9</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1071</x>
+      <y>306</y>
+      <w>84</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+ - technicianList</panel_attributes>
+    <additional_attributes>240.0;550.0;240.0;240.0;10.0;240.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1143</x>
+      <y>288</y>
+      <w>45</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - homeActivity</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1065</x>
+      <y>300</y>
+      <w>75</w>
+      <h>177</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+_ - selectedTechnician_</panel_attributes>
+    <additional_attributes>230.0;570.0;230.0;310.0;10.0;310.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1275</x>
+      <y>96</y>
+      <w>63</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+TechnicianInfoView
+-
++ startRequestOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1263</x>
+      <y>171</y>
+      <w>81</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>TechnicianInfoActivity
+--
+- etName : TextView
+- etMail : TextView
+- etPhone: TextView
+- hours: Spinner
+- days: Spinner
+- services: Spinner
+- adapterHours: ArrayAdapter&lt;String&gt;
+- adapterDays: ArrayAdapter&lt;String&gt;
+- adapterOffered: ArrayAdapter&lt;String&gt;
+- type: String
+- position: int
+--
++ customActivity()
++ startRequestOption()
+# onCreate(savedInstanceState :Bundle )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1302</x>
+      <y>111</y>
+      <w>9</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1158</x>
+      <y>96</y>
+      <w>72</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>TechnicianInfoPresenter
+--
++ onClickRequest()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1227</x>
+      <y>99</y>
+      <w>54</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1356</x>
+      <y>177</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>TechnicianInfoViewStub
+--
+- startSignupOption: int
+--
++ startRequestOption()
++ getStartSignupOption() : int{quuery}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1335</x>
+      <y>102</y>
+      <w>60</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1152</x>
+      <y>249</y>
+      <w>153</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - selectedTechnician </panel_attributes>
+    <additional_attributes>10.0;740.0;10.0;640.0;490.0;640.0;490.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1236</x>
+      <y>633</y>
+      <w>63</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+PaymentView
+-
++ startPayOption()
++ startEvaluateOption()
++ startChooseTechnician()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>621</y>
+      <w>72</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>PaymentActivity
+--
+- technicianBehavior: float
+- workQuality: float
+- priceEvaluation: float
+- selectedRequest: Request
+-
++ startPayOption()
++ startEvaluateOption()
++ startChooseTechnician()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1179</x>
+      <y>648</y>
+      <w>63</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1224</x>
+      <y>573</y>
+      <w>75</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>PaymentPresenter
+--
++ onClickPay()
++ onClickEvaluate()
++ onChooseTechnician()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1260</x>
+      <y>597</y>
+      <w>21</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1356</x>
+      <y>618</y>
+      <w>84</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>PaymentViewStub
+--
+- startPayOption: int
+- startEvaluationOption: int
+- startChooseTechnician : int
+--
++ startPayOption()
++ startEvaluateOption()
++ startChooseTechnician()
++ getStartPayOption() : int {query}
++ getStartEvaluationOption() : int {query}
++ getStartChooseTechnician() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1296</x>
+      <y>648</y>
+      <w>66</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;200.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1023</x>
+      <y>636</y>
+      <w>93</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+ - requestAdapter </panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1023</x>
+      <y>654</y>
+      <w>93</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+ - approvedRequests</panel_attributes>
+    <additional_attributes>10.0;20.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1023</x>
+      <y>615</y>
+      <w>93</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..1
+ - selectedRequest</panel_attributes>
+    <additional_attributes>10.0;30.0;290.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1470</x>
+      <y>69</y>
+      <w>63</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ServiceAssignView
+-
++ startSignUpOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1467</x>
+      <y>162</y>
+      <w>81</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>ServicesAssignActivity
+--
+- parentLinearLayout: LinearLayout
+- servicesList: ArrayList
+- type: String
+- category: String
+- size: int
+-
++ startSignUpOption()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1497</x>
+      <y>87</y>
+      <w>9</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1350</x>
+      <y>72</y>
+      <w>72</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>ServiceAssignPresenter
+--
++ onClickSignUp()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1419</x>
+      <y>78</y>
+      <w>57</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1560</x>
+      <y>153</y>
+      <w>72</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>ServiceAssignViewStub
+--
+- servicesAssigned: int
+--
++ startSignUpOption()
++ getServicesAssigned() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1530</x>
+      <y>87</y>
+      <w>69</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1167</x>
+      <y>210</y>
+      <w>342</w>
+      <h>267</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+ - tech</panel_attributes>
+    <additional_attributes>10.0;870.0;10.0;810.0;500.0;810.0;500.0;250.0;1120.0;250.0;1120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1584</x>
+      <y>21</y>
+      <w>66</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>SignUpCategoriesPresenter
+--
++ onClickChooseCategory()
++ onClickChooseCities()
++ onClickChooseHours()
++ onClickChooseDays()
++ onClickContinue()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1647</x>
+      <y>39</y>
+      <w>48</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1689</x>
+      <y>21</y>
+      <w>75</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+SignUpCategoriesView
+-
++ startChooseCategoryOption()
++ startChooseCitiesOption()
++ startChooseHoursOption()
++ startChooseDaysOption()
++ startContinueOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1719</x>
+      <y>63</y>
+      <w>9</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1680</x>
+      <y>108</y>
+      <w>90</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>SignUpCategoriesActivity
+--
+- type: String
+-
++ startChooseCategoryOption()
++ startChooseCitiesOption()
++ startChooseHoursOption()
++ startChooseDaysOption()
++ startContinueOption()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1176</x>
+      <y>159</y>
+      <w>552</w>
+      <h>318</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+-tech</panel_attributes>
+    <additional_attributes>10.0;1040.0;10.0;1010.0;530.0;1010.0;530.0;490.0;1820.0;490.0;1820.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1797</x>
+      <y>111</y>
+      <w>69</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>SignUpCategoriesViewStub
+--
+- categories: int
+- cities: int
+- hours: int
+- days: int
+- contin: int
+--
++ startChooseCategoryOption()
++ startChooseCitiesOption()
++ startChooseHoursOption()
++ startChooseDaysOption()
++ startContinueOption()
++ getCategories() : int {query}
++ getCities() : int {query}
++ getHours() : int {query}
++ getDays() : int {query}
++ getContin() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1761</x>
+      <y>45</y>
+      <w>75</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>558</x>
+      <y>744</y>
+      <w>36</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>RequestAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>639</x>
+      <y>726</y>
+      <w>90</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>TechnicianHomeActivity
+--
+- recyclerView : RecyclerView
+- resourcesList :  String [ ]
+- resourcesChecked :  boolean [ ]
+- selectedResources : ArrayList&lt;String&gt;
+
+--
+# onCreate(savedInstanceState : Bundle)
++ startPaymentOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>570</x>
+      <y>633</y>
+      <w>357</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- requestList</panel_attributes>
+    <additional_attributes>1170.0;20.0;10.0;20.0;10.0;370.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>591</x>
+      <y>744</y>
+      <w>54</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- homeActivity</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>798</y>
+      <w>66</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>TechnicianScreenPresenter
+--
++ onClickRequests()
++ onClickVisits()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>573</x>
+      <y>753</y>
+      <w>33</w>
+      <h>51</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- requestList</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>648</x>
+      <y>801</y>
+      <w>66</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+TechnicianHomeView
+-
++ startRequestsOption()
++ startRequestsOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>675</x>
+      <y>774</y>
+      <w>9</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>603</x>
+      <y>810</y>
+      <w>51</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- view</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>795</y>
+      <w>66</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>TechnicianHomeViewStub
+--
+- requests : int
+- visits : int
+--
++ startRequestsOption()
++startVisitsOption()
++ getRequests() : int {query}
++ getVisits() : int {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>711</x>
+      <y>813</y>
+      <w>57</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>726</x>
+      <y>738</y>
+      <w>78</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+-returnedResources</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>123</x>
+      <y>39</y>
+      <w>63</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+LogInView
+-
++ startLogInOption()
++ startSignUpOption()
++ startVisitorOption()
++ getEmail()
++ getPassword()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>132</y>
+      <w>78</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>LogInActivity
+--
+- type: String
+_+ TYPE_VISITOR : String_
+--
++ customActivity()
++ startLogInOption()
++ startSignUpOption()
++ startVisitorOption()
++ getEmail()
++ getPassword()
+# onCreate(savedInstanceState :Bundle )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>75</y>
+      <w>9</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>42</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>LogInPresenter
+--
++ onClickSignUp()
++ onClickLogIn()
++ onClickVisitor()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>69</x>
+      <y>48</y>
+      <w>60</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>204</x>
+      <y>132</y>
+      <w>78</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>LogInViewStub
+--
+- logInCounter: int
+- signUpCounter: int
+- visitorCounter: int
+- email : String
+- password : String
+--
++ startLogInOption()
++ startSignUpOption()
++ startVisitorOption()
++ getLogInCounter() : int {query}
++ getSignUpCounter() : int {query}
++ getVisitorCounter() : int {query}
++ getEmail() : String {query}
++ getPassword() : String {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>183</x>
+      <y>63</y>
+      <w>60</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>366</x>
+      <y>39</y>
+      <w>63</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+MainScreenView
+-
++ startCustomerOption()
++ startTechnicianOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>351</x>
+      <y>132</y>
+      <w>84</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>MainScreenActivity
+--
+_+ TYPE_CUSTOMER: String_
+_+ TYPE_TECHNICIAN: String_
+-
++ startCustomerOption()
++ startTechnicianOption()
+# onCreate(savedInstanceState :Bundle )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>393</x>
+      <y>60</y>
+      <w>9</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>249</x>
+      <y>39</y>
+      <w>72</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>MainScreenPresenter
+--
++ onClickCustomer()
++ onClickTechnician()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>45</y>
+      <w>54</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>456</x>
+      <y>123</y>
+      <w>72</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>MainScreenViewStub
+--
+- startCustomerCounter: int
+- startTechnicianCounter : int
+--
++ startCustomerOption()
++ startTechnicianOption()
++ getStartCustomerCounter() : int {query}
++ getStartTechnicianCounter() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>426</x>
+      <y>60</y>
+      <w>69</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>585</x>
+      <y>24</y>
+      <w>72</w>
+      <h>57</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+SignUpView
+-
++ startSignUpOption()
++ startNextOption()
++ getName()
++ getPassword()
++ getEmail()
++ getPhone()
++ getStreetName()
++ getStreetNumber()
++ getPostalCode()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>582</x>
+      <y>117</y>
+      <w>81</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>SignUpActivity
+--
+- type: String
+-
++ startSignUpOption()
++ startNextOption()
++ getName()
++ getPassword()
++ getEmail()
++ getPhone()
++ getStreetName()
++ getStreetNumber()
++ getPostalCode()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>621</x>
+      <y>78</y>
+      <w>9</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>474</x>
+      <y>27</y>
+      <w>72</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>SignUpPresenter
+--
++ onClickSignUp()
++ onClickNext()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>543</x>
+      <y>33</y>
+      <w>48</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>684</x>
+      <y>108</y>
+      <w>75</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>SignUpViewStub
+--
+- streetNumber: int
+- signUpCounter: int
+- nextCounter: int
+- name: String
+- password: String
+- email: String
+- phone: String
+- streetName: String
+- postalCode: String
+--
++ startSignUpOption()
++ startNextOption()
++ getName() : String {query}
++ getPassword() : String {query}
++ getEmail() : String {query}
++ getPhone() : String {query}
++ getStreetName() : String {query}
++ getStreetNumber() : int {query}
++ getPostalCode() : String {query}
++ getSignUpCounter() : int {query}
++ getNextCounter() : int {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>654</x>
+      <y>42</y>
+      <w>69</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;220.0</additional_attributes>
   </element>
 </diagram>
