@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>90</y>
+      <w>220</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>SignUpCategoriesPresenter
+--
++ onClickChooseCategory()
++ onClickChooseCities()
++ onClickChooseHours()
++ onClickChooseDays()
++ onClickContinue()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>150</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>90</y>
+      <w>250</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+SignUpCategoriesView
+-
++ startChooseCategoryOption()
++ startChooseCitiesOption()
++ startChooseHoursOption()
++ startChooseDaysOption()
++ startContinueOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>230</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>380</y>
+      <w>300</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>SignUpCategoriesActivity
+--
+- type: String
+-
++ startChooseCategoryOption()
++ startChooseCitiesOption()
++ startChooseHoursOption()
++ startChooseDaysOption()
++ startContinueOption()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>550</y>
+      <w>60</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+-tech</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>670</y>
+      <w>330</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Tecnician
+--
+-requests : List&lt;Requests&gt;
+-services : List &lt;OfferedServices&gt;
+--
++getServices() : List &lt;TechnicianService&gt; {query}
++setServices(services : List &lt;OfferedServices&gt;) 
++getRequests() : List&lt;Request&gt;
++getApprovedRequests() : List&lt;Request&gt;
++getPendingRequests() : List&lt;Request&gt;
++approve(Request request )
++setRequests(requests : List&lt;Requests&gt;) 
++browseResources() : List&lt;Resource&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>710</x>
+      <y>390</y>
+      <w>230</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>SignUpCategoriesViewStub
+--
+- categories: int
+- cities: int
+- hours: int
+- days: int
+- contin: int
+--
++ startChooseCategoryOption()
++ startChooseCitiesOption()
++ startChooseHoursOption()
++ startChooseDaysOption()
++ startContinueOption()
++ getCategories() : int {query}
++ getCities() : int {query}
++ getHours() : int {query}
++ getDays() : int {query}
++ getContin() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>170</y>
+      <w>250</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;230.0;220.0</additional_attributes>
+  </element>
+</diagram>

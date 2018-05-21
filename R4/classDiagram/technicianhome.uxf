@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>424</x>
+      <y>480</y>
+      <w>96</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>RequestAdapter</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>432</y>
+      <w>240</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>TechnicianHomeActivity
+--
+- recyclerView : RecyclerView
+- resourcesList :  String [ ]
+- resourcesChecked :  boolean [ ]
+- selectedResources : ArrayList&lt;String&gt;
+
+--
+# onCreate(savedInstanceState : Bundle)
++ startPaymentOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1064</x>
+      <y>416</y>
+      <w>192</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>Resource 
+--
+-name : String
+-price : double
+-quantity : int
+--
++getName() : String {query}
++setName(name : String)
++getPrice() : double {query}
++setPrice(price : double)
++getQuantity() : int {query}
++setQuantity(quantity : int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>400</y>
+      <w>272</w>
+      <h>304</h>
+    </coordinates>
+    <panel_attributes>Request
+--
+-requestCode : String
+_-counter : int_
+-tecnician : Technician
+-customer : Customer
+-date : Date
+-time : Time
+-visit : Visit
+--
++getRequestCode() : int {query}
+_+getCounter() : int {query}_
++getDate(): Date {query}
++setDate(date : Date)
++getTime() : Time {query}
++setTime(time : Time)
++getOfferedService() : OfferedService {query}
++setOfferedService(OfferedService offeredService)
++getTechnician() : Technician {query}
++getCustomer() : Customer {query}
++getVisit() : Visit {query}
++setApproved(boolean flag)
++isApproved() : Boolean  { return visit != null }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>264</x>
+      <y>480</y>
+      <w>176</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- requestList</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>512</x>
+      <y>480</y>
+      <w>144</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- homeActivity</panel_attributes>
+    <additional_attributes>160.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>376</x>
+      <y>624</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>TechnicianScreenPresenter
+--
++ onClickRequests()
++ onClickVisits()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>504</y>
+      <w>80</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- requestList</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>664</x>
+      <y>632</y>
+      <w>176</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+TechnicianHomeView
+-
++ startRequestsOption()
++ startRequestsOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>560</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>544</x>
+      <y>656</y>
+      <w>136</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- view</panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>968</x>
+      <y>616</y>
+      <w>176</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>TechnicianHomeViewStub
+--
+- requests : int
+- visits : int
+--
++ startRequestsOption()
++startVisitsOption()
++ getRequests() : int {query}
++ getVisits() : int {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>664</y>
+      <w>152</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>872</x>
+      <y>464</y>
+      <w>208</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+-returnedResources</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+</diagram>

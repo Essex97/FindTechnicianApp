@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>110</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+ServiceAssignView
+-
++ startSignUpOption()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>420</y>
+      <w>270</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>ServicesAssignActivity
+--
+- parentLinearLayout: LinearLayout
+- servicesList: ArrayList
+- type: String
+- category: String
+- size: int
+-
++ startSignUpOption()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>170</y>
+      <w>30</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>120</y>
+      <w>240</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>ServiceAssignPresenter
+--
++ onClickSignUp()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>140</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>390</y>
+      <w>240</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>ServiceAssignViewStub
+--
+- servicesAssigned: int
+--
++ startSignUpOption()
++ getServicesAssigned() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>170</y>
+      <w>230</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>330</x>
+      <y>690</y>
+      <w>390</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Tecnician
+--
+-requests : List&lt;Requests&gt;
+-services : List &lt;OfferedServices&gt;
+--
++getServices() : List &lt;TechnicianService&gt; {query}
++setServices(services : List &lt;OfferedServices&gt;) 
++getRequests() : List&lt;Request&gt;
++getApprovedRequests() : List&lt;Request&gt;
++getPendingRequests() : List&lt;Request&gt;
++approve(Request request )
++setRequests(requests : List&lt;Requests&gt;) 
++browseResources() : List&lt;Resource&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>580</y>
+      <w>60</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+ - tech</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

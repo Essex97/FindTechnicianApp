@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>160</y>
+      <w>210</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+LogInView
+-
++ startLogInOption()
++ startSignUpOption()
++ startVisitorOption()
++ getEmail()
++ getPassword()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>400</x>
+      <y>470</y>
+      <w>260</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>LogInActivity
+--
+- type: String
+_+ TYPE_VISITOR : String_
+--
++ customActivity()
++ startLogInOption()
++ startSignUpOption()
++ startVisitorOption()
++ getEmail()
++ getPassword()
+# onCreate(savedInstanceState :Bundle )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>280</y>
+      <w>30</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>170</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>LogInPresenter
+--
++ onClickSignUp()
++ onClickLogIn()
++ onClickVisitor()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>190</y>
+      <w>200</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>180.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>470</y>
+      <w>260</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>LogInViewStub
+--
+- logInCounter: int
+- signUpCounter: int
+- visitorCounter: int
+- email : String
+- password : String
+--
++ startLogInOption()
++ startSignUpOption()
++ startVisitorOption()
++ getLogInCounter() : int {query}
++ getSignUpCounter() : int {query}
++ getVisitorCounter() : int {query}
++ getEmail() : String {query}
++ getPassword() : String {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>240</y>
+      <w>200</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;230.0</additional_attributes>
+  </element>
+</diagram>

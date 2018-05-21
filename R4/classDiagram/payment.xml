@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>90</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+PaymentView
+-
++ startPayOption()
++ startEvaluateOption()
++ startChooseTechnician()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>400</y>
+      <w>240</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>PaymentActivity
+--
+- technicianBehavior: float
+- workQuality: float
+- priceEvaluation: float
+- selectedRequest: Request
+-
++ startPayOption()
++ startEvaluateOption()
++ startChooseTechnician()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>170</y>
+      <w>30</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>100</y>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>PaymentPresenter
+--
++ onClickPay()
++ onClickEvaluate()
++ onChooseTechnician()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>120</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>170.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>820</x>
+      <y>370</y>
+      <w>280</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>PaymentViewStub
+--
+- startPayOption: int
+- startEvaluationOption: int
+- startChooseTechnician : int
+--
++ startPayOption()
++ startEvaluateOption()
++ startChooseTechnician()
++ getStartPayOption() : int {query}
++ getStartEvaluationOption() : int {query}
++ getStartChooseTechnician() : int {query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>160</y>
+      <w>230</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;210.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>340</y>
+      <w>350</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>Request
+--
+-requestCode : String
+_-counter : int_
+-tecnician : Technician
+-customer : Customer
+-date : Date
+-time : Time
+-visit : Visit
+--
++getRequestCode() : int {query}
+_+getCounter() : int {query}_
++getDate(): Date {query}
++setDate(date : Date)
++getTime() : Time {query}
++setTime(time : Time)
++getOfferedService() : OfferedService {query}
++setOfferedService(OfferedService offeredService)
++getTechnician() : Technician {query}
++getCustomer() : Customer {query}
++getVisit() : Visit {query}
++setApproved(boolean flag)
++isApproved() : Boolean  { return visit != null }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>470</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+ - requestAdapter </panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>530</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+ - approvedRequests</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>400</y>
+      <w>190</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..1
+ - selectedRequest</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+</diagram>

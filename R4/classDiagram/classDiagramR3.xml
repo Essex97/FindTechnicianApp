@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>0</y>
+      <w>256</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>/User/
+--
+-firstName : String
+-lastName : String
+-phone : String
+-email : String
+--
++getFirstName() : String {query}
++setFirstName(firstName : String)
++getLastName() : String {query}
++setLastName(lastName : String)
++getPhone() : String {query}
++setPhone(phone : String)
++getEmail() : String {query}
++setEmail(email : String)
++getAddresses() : List&lt;Address&gt; {query}
++removeAddress(address : Address)
++addAddress(address : Address)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>392</y>
+      <w>408</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
++getRequests() : List&lt;Request&gt;
++getApprovedRequests() : List&lt;Request&gt;
++getPendingRequests() : List&lt;Request&gt;
++getEvaluations() : List&lt;Evaluation&gt;
++createRequest(Date date, Time time, 
+					Technician technician, OfferedService offeredService)
++pay(Request request, double givenAmmount)
++browseTechnician() : Technician
++evaluate(Technician tech, Visit visit) : Evaluation</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>928</x>
+      <y>424</y>
+      <w>304</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Tecnician
+--
++getServices() : List &lt;TechnicianService&gt; {query}
++setServices(services : List &lt;OfferedServices&gt;) 
++getRequests() : List&lt;Request&gt;
++getApprovedRequests() : List&lt;Request&gt;
++getPendingRequests() : List&lt;Request&gt;
++approve(Request request )
++setRequests(requests : List&lt;Requests&gt;) 
++browseResources() : List&lt;Resource&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>1128</y>
+      <w>216</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Payment
+--
+-paymentCode : String
+_-counter : int_
+-totalCost : double
+--
++getPaymentCode() : String {query}
+_+getCounter() : int {query}_
++getTotalCost() : double {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>336</y>
+      <w>304</w>
+      <h>272</h>
+    </coordinates>
+    <panel_attributes>Evaluation
+--
+-evaluationId : String
+_-counter : int_
+-technicianBehavior : Scale
+-workQuality : Scale
+-priceEvaluation : Scale
+-comment : String
+-visit : Visit
+--
++getEvaluationID() : String {query}
+_+getCounter() : int {query}_
++getTechnicianBehavior() : Scale {query}
++getWorkQuality() : Scale {query}
++getPriceEvaluation() : Scale {query}
++setTechnicianBehavior(Scale : newTechnicianBehaviour)
++setWorkQuality(Scale : newWorkQuality)
++setPriceEvaluation(Scale : newPriceEvaluation)
++getComment() : String {query}
++setComment(String : newComment)
++getTechnician() : Technician {query}
++getVisit() : Visit() {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>24</y>
+      <w>192</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Address
+--
+-street : String
+-number : int
+-postalCode : String
+--
++getStreet() : String {query}
++setStreet(street : String)
++getNumber() : int {query}
++setNumber(number : int)
++getPostalCode() : String {query}
++setPostalCode(postalCode : String)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>1120</y>
+      <w>184</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>Resource 
+--
+-name : String
+-price : double
+-quantity : int
+--
++getName() : String {query}
++setName(name : String)
++getPrice() : double {query}
++setPrice(price : double)
++getQuantity() : int {query}
++setQuantity(quantity : int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>1072</y>
+      <w>256</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>Visit
+--
+-visitID : String
+_-counter : int_
+-resources : List&lt;Resource&gt;
+--
++getVisitID() : int {query}
+_+getCounter() : int {query}_
++getDate(): Date{query}
++setDate(date : Date)
++getPayment() : Payment{query}
++getTechnician(): Tecnisian{query}
++getCustomer(): Customer{query}
++getResources(): List&lt;Reasource&gt;
++setResources(resources : List&lt;Resource&gt;)
++createPayment(givenAmmount : double)
++getRequest(): Request{query}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>664</y>
+      <w>280</w>
+      <h>288</h>
+    </coordinates>
+    <panel_attributes>Request
+--
+-requestCode : String
+_-counter : int_
+-tecnician : Technician
+-customer : Customer
+-date : Date
+-time : Time
+-visit : Visit
+--
++getRequestCode() : int {query}
+_+getCounter() : int {query}_
++getDate(): Date {query}
++setDate(date : Date)
++getTime() : Time {query}
++setTime(time : Time)
++getOfferedService() : OfferedService {query}
++setOfferedService(OfferedService offeredService)
++getTechnician() : Technician {query}
++getCustomer() : Customer {query}
++getVisit() : Visit {query}
++setApproved(boolean flag)
++isApproved() : Boolean  { return visit != null }</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1672</x>
+      <y>416</y>
+      <w>280</w>
+      <h>184</h>
+    </coordinates>
+    <panel_attributes>Service
+--
+-serviceCode : String
+_-counter : int_
+-description : String
+--
++getServiceCode() : String {query}
+_+getCounter() : int {query}_
++getDescription() : String {query}
++setDescription(description : String)
++getCategories() : List&lt;Category&gt; {query}
++getOfferedServices(): List&lt;Service&gt; {query}
++setOfferedServices() : List &lt;OfferedService&gt; {query}
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1696</x>
+      <y>128</y>
+      <w>224</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Category
+--
+-code : String
+-counter : int
+-title : String
+-description : String
+--
++getCode() : String {query}
++getCounter() : int {query}
++getTitle() : Sring {query}
++setTitle(title : String)
++getDescription() : String {query}
++setDescription(description : String)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1328</x>
+      <y>432</y>
+      <w>200</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>OfferedService
+--
+-tecnician : Tecnician
+-service : Service
+-cost : double
+--
++getTecnician() : Tecnisian{query}
++setTecnician(tecnician : Tecnician)
++getService() : Service {query}
++setService(service : Service)
++getCost() : double {query}
++setCost(cost : double)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>176</x>
+      <y>920</y>
+      <w>168</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+Scale
+--
+VERY_GOOD
+GOOD
+BAD</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>88</y>
+      <w>256</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+-addresses
+m2=1..*</panel_attributes>
+    <additional_attributes>300.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>192</x>
+      <y>200</y>
+      <w>496</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;240.0;600.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>200</y>
+      <w>344</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>410.0;280.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>792</x>
+      <y>576</y>
+      <w>280</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m2=0..*
+requests </panel_attributes>
+    <additional_attributes>330.0;10.0;10.0;260.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>472</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=0..*
+evaluations </panel_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>496</y>
+      <w>128</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m2=1
+technician </panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>560</y>
+      <w>352</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m2=0..*
+requests </panel_attributes>
+    <additional_attributes>10.0;10.0;420.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>768</x>
+      <y>1176</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+-payment 
+m2=0..1</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>632</x>
+      <y>944</y>
+      <w>72</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+-payment 
+m1=1.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>1184</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+-payment 
+m2=0..*.</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1224</x>
+      <y>488</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m2=0..*
+-services </panel_attributes>
+    <additional_attributes>10.0;20.0;130.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1520</x>
+      <y>488</y>
+      <w>168</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m2=0..*
+-offeredServices </panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1792</x>
+      <y>280</y>
+      <w>80</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+-categories 
+m2=0..*</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

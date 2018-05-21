@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>370</x>
+      <y>80</y>
+      <w>240</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+SignUpView
+-
++ startSignUpOption()
++ startNextOption()
++ getName()
++ getPassword()
++ getEmail()
++ getPhone()
++ getStreetName()
++ getStreetNumber()
++ getPostalCode()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>390</y>
+      <w>270</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>SignUpActivity
+--
+- type: String
+-
++ startSignUpOption()
++ startNextOption()
++ getName()
++ getPassword()
++ getEmail()
++ getPhone()
++ getStreetName()
++ getStreetNumber()
++ getPostalCode()
+# onCreate(savedInstanceState :Bundle )
++ customActivity()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>260</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>90</y>
+      <w>240</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>SignUpPresenter
+--
++ onClickSignUp()
++ onClickNext()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>230</x>
+      <y>110</y>
+      <w>160</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+m1=1
+ - view</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>360</y>
+      <w>250</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>SignUpViewStub
+--
+- streetNumber: int
+- signUpCounter: int
+- nextCounter: int
+- name: String
+- password: String
+- email: String
+- phone: String
+- streetName: String
+- postalCode: String
+--
++ startSignUpOption()
++ startNextOption()
++ getName() : String {query}
++ getPassword() : String {query}
++ getEmail() : String {query}
++ getPhone() : String {query}
++ getStreetName() : String {query}
++ getStreetNumber() : int {query}
++ getPostalCode() : String {query}
++ getSignUpCounter() : int {query}
++ getNextCounter() : int {query}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>140</y>
+      <w>230</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;220.0</additional_attributes>
+  </element>
+</diagram>
