@@ -1,0 +1,256 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TechnicianInfoActivity</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1804.view.info</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TechnicianInfoActivity (gr.aueb.softeng.project1804.view.info)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TechnicianInfoActivity</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 62)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">TechnicianInfoActivity$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 64)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1804.view.info;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import android.content.Intent;
+<i>4</i>&nbsp;import android.graphics.Color;
+<i>5</i>&nbsp;import android.support.v7.app.AppCompatActivity;
+<i>6</i>&nbsp;import android.os.Bundle;
+<i>7</i>&nbsp;import android.view.View;
+<i>8</i>&nbsp;import android.widget.ArrayAdapter;
+<i>9</i>&nbsp;import android.widget.ImageView;
+<i>10</i>&nbsp;import android.widget.Spinner;
+<i>11</i>&nbsp;import android.widget.TextView;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;import com.amulyakhare.textdrawable.TextDrawable;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;import java.util.ArrayList;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;import gr.aueb.softeng.project1804.R;
+<i>18</i>&nbsp;import gr.aueb.softeng.project1804.domain.Customer;
+<i>19</i>&nbsp;import gr.aueb.softeng.project1804.memorydao.LogedInUser;
+<i>20</i>&nbsp;import gr.aueb.softeng.project1804.domain.OfferedService;
+<i>21</i>&nbsp;import gr.aueb.softeng.project1804.domain.Technician;
+<i>22</i>&nbsp;import gr.aueb.softeng.project1804.domain.User;
+<i>23</i>&nbsp;import gr.aueb.softeng.project1804.memorydao.TechnicianDAOMemory;
+<i>24</i>&nbsp;import gr.aueb.softeng.project1804.view.customerhome.HomeScreenCustomerActivity;
+<i>25</i>&nbsp;import gr.aueb.softeng.project1804.view.customerhome.ListAdapter;
+<i>26</i>&nbsp;import gr.aueb.softeng.project1804.view.login.LogInActivity;
+<i>27</i>&nbsp;
+<b class="nc"><i>28</i>&nbsp;public class TechnicianInfoActivity extends AppCompatActivity implements TechnicianInfoView{</b>
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    private TextView etName;
+<i>31</i>&nbsp;    private TextView etMail;
+<i>32</i>&nbsp;    private TextView etPhone;
+<i>33</i>&nbsp;    private Spinner hours;
+<i>34</i>&nbsp;    private Spinner days;
+<i>35</i>&nbsp;    private Spinner services;
+<i>36</i>&nbsp;    private Technician selectedTechnician;
+<i>37</i>&nbsp;    private ArrayAdapter&lt;String&gt; adapterHours;
+<i>38</i>&nbsp;    private ArrayAdapter&lt;String&gt; adapterDays;
+<i>39</i>&nbsp;    private ArrayAdapter&lt;String&gt; adapterOffered;
+<i>40</i>&nbsp;    private String type;
+<i>41</i>&nbsp;    private int position;
+<i>42</i>&nbsp;
+<i>43</i>&nbsp;    @Override
+<i>44</i>&nbsp;    public void startRequestOption() {
+<b class="nc"><i>45</i>&nbsp;        String date = adapterDays.getItem(days.getSelectedItemPosition());</b>
+<b class="nc"><i>46</i>&nbsp;        String time = adapterHours.getItem(hours.getSelectedItemPosition());</b>
+<i>47</i>&nbsp;
+<b class="nc"><i>48</i>&nbsp;        selectedTechnician = ListAdapter.selectedTechnician;</b>
+<i>49</i>&nbsp;
+<b class="nc"><i>50</i>&nbsp;        ArrayList&lt;OfferedService&gt; offeredServices = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>51</i>&nbsp;        offeredServices.add(selectedTechnician.getServices().get(services.getSelectedItemPosition()));</b>
+<i>52</i>&nbsp;
+<i>53</i>&nbsp;        //Customer logedInCustomer = CustomerDAOMemory.getLogedInCustomer();
+<b class="nc"><i>54</i>&nbsp;        Customer logedInCustomer = null;</b>
+<b class="nc"><i>55</i>&nbsp;        LogedInUser login = LogedInUser.getInstance();</b>
+<b class="nc"><i>56</i>&nbsp;        User user = login.getUser();</b>
+<b class="nc"><i>57</i>&nbsp;        if (user instanceof Customer)</b>
+<i>58</i>&nbsp;        {
+<b class="nc"><i>59</i>&nbsp;            logedInCustomer = (Customer)user;</b>
+<i>60</i>&nbsp;        }
+<i>61</i>&nbsp;
+<b class="nc"><i>62</i>&nbsp;        logedInCustomer.createRequests(date, time,  selectedTechnician, offeredServices);</b>
+<i>63</i>&nbsp;
+<b class="nc"><i>64</i>&nbsp;        Intent i = new Intent(TechnicianInfoActivity.this, HomeScreenCustomerActivity.class);</b>
+<b class="nc"><i>65</i>&nbsp;        i.putExtra(&quot;TYPE&quot;, type);</b>
+<b class="nc"><i>66</i>&nbsp;        startActivity(i);</b>
+<i>67</i>&nbsp;
+<i>68</i>&nbsp;    }
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;    public void customActivity(){
+<i>71</i>&nbsp;
+<b class="nc"><i>72</i>&nbsp;        Bundle extradata = getIntent().getExtras();</b>
+<b class="nc"><i>73</i>&nbsp;        if(extradata == null) return;</b>
+<i>74</i>&nbsp;
+<b class="nc"><i>75</i>&nbsp;        type = extradata.getString(&quot;TYPE&quot;);</b>
+<b class="nc"><i>76</i>&nbsp;        position = extradata.getInt(&quot;POSITION&quot;);</b>
+<i>77</i>&nbsp;
+<b class="nc"><i>78</i>&nbsp;        selectedTechnician = TechnicianDAOMemory.technicians.get(position);</b>
+<i>79</i>&nbsp;
+<b class="nc"><i>80</i>&nbsp;        if(type.equals(LogInActivity.TYPE_VISITOR)){</b>
+<b class="nc"><i>81</i>&nbsp;            findViewById(R.id.spinner2).setEnabled(false);</b>
+<b class="nc"><i>82</i>&nbsp;            findViewById(R.id.spinner2).setClickable(false);</b>
+<b class="nc"><i>83</i>&nbsp;            findViewById(R.id.spinner3).setEnabled(false);</b>
+<b class="nc"><i>84</i>&nbsp;            findViewById(R.id.spinner3).setClickable(false);</b>
+<b class="nc"><i>85</i>&nbsp;            findViewById(R.id.spinner4).setEnabled(false);</b>
+<b class="nc"><i>86</i>&nbsp;            findViewById(R.id.spinner4).setClickable(false);</b>
+<b class="nc"><i>87</i>&nbsp;            findViewById(R.id.textView8).setEnabled(false);</b>
+<b class="nc"><i>88</i>&nbsp;            findViewById(R.id.textView10).setEnabled(false);</b>
+<b class="nc"><i>89</i>&nbsp;            findViewById(R.id.textView11).setEnabled(false);</b>
+<b class="nc"><i>90</i>&nbsp;            findViewById(R.id.selectofsv).setEnabled(false);</b>
+<b class="nc"><i>91</i>&nbsp;            findViewById(R.id.requaet).setEnabled(false);</b>
+<b class="nc"><i>92</i>&nbsp;            findViewById(R.id.requaet).setClickable(false);</b>
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;        }
+<i>95</i>&nbsp;
+<b class="nc"><i>96</i>&nbsp;        etName = findViewById(R.id.infoName);</b>
+<b class="nc"><i>97</i>&nbsp;        etMail = findViewById(R.id.infoMail);</b>
+<b class="nc"><i>98</i>&nbsp;        etPhone = findViewById(R.id.infoPhone);</b>
+<i>99</i>&nbsp;
+<b class="nc"><i>100</i>&nbsp;        hours = findViewById(R.id.spinner2);</b>
+<b class="nc"><i>101</i>&nbsp;        days = findViewById(R.id.spinner3);</b>
+<b class="nc"><i>102</i>&nbsp;        services = findViewById(R.id.spinner4);</b>
+<i>103</i>&nbsp;
+<b class="nc"><i>104</i>&nbsp;        adapterHours = new  ArrayAdapter(this, android.R.layout.simple_spinner_item, selectedTechnician.getAvailableHours());</b>
+<b class="nc"><i>105</i>&nbsp;        adapterDays = new  ArrayAdapter(this, android.R.layout.simple_spinner_item, selectedTechnician.getAvailableDays());</b>
+<i>106</i>&nbsp;
+<b class="nc"><i>107</i>&nbsp;        ArrayList&lt;String&gt; descrpiptions = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>108</i>&nbsp;        for(int i = 0; i &lt; selectedTechnician.getServices().size(); i++){</b>
+<b class="nc"><i>109</i>&nbsp;            descrpiptions.add(selectedTechnician.getServices().get(i).getService().getDescription());</b>
+<i>110</i>&nbsp;        }
+<b class="nc"><i>111</i>&nbsp;        adapterOffered = new ArrayAdapter(this, android.R.layout.simple_spinner_item, descrpiptions);</b>
+<i>112</i>&nbsp;
+<b class="nc"><i>113</i>&nbsp;        adapterHours.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</b>
+<b class="nc"><i>114</i>&nbsp;        hours.setAdapter(adapterHours);</b>
+<b class="nc"><i>115</i>&nbsp;        adapterDays.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</b>
+<b class="nc"><i>116</i>&nbsp;        days.setAdapter(adapterDays);</b>
+<b class="nc"><i>117</i>&nbsp;        adapterOffered.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);</b>
+<b class="nc"><i>118</i>&nbsp;        services.setAdapter(adapterOffered);</b>
+<i>119</i>&nbsp;
+<b class="nc"><i>120</i>&nbsp;        etName.setText(selectedTechnician.getFirstName() + &quot; &quot; + selectedTechnician.getLastName());</b>
+<b class="nc"><i>121</i>&nbsp;        etMail.setText(selectedTechnician.getEmail());</b>
+<b class="nc"><i>122</i>&nbsp;        etPhone.setText(selectedTechnician.getPhone());</b>
+<i>123</i>&nbsp;
+<b class="nc"><i>124</i>&nbsp;        ImageView image = findViewById(R.id.infoPhoto);</b>
+<b class="nc"><i>125</i>&nbsp;        TextDrawable drawable = TextDrawable.builder().buildRound(etName.getText().toString().substring(0,2), Color.RED);</b>
+<b class="nc"><i>126</i>&nbsp;        image.setImageDrawable(drawable);</b>
+<i>127</i>&nbsp;
+<i>128</i>&nbsp;    }
+<i>129</i>&nbsp;
+<i>130</i>&nbsp;    @Override
+<i>131</i>&nbsp;    protected void onCreate(Bundle savedInstanceState) {
+<b class="nc"><i>132</i>&nbsp;        super.onCreate(savedInstanceState);</b>
+<b class="nc"><i>133</i>&nbsp;        setContentView(R.layout.activity_technician_info);</b>
+<i>134</i>&nbsp;
+<b class="nc"><i>135</i>&nbsp;        customActivity();</b>
+<i>136</i>&nbsp;
+<b class="nc"><i>137</i>&nbsp;        final TechnicianInfoPresenter presenter = new TechnicianInfoPresenter(this);</b>
+<i>138</i>&nbsp;
+<b class="nc"><i>139</i>&nbsp;        findViewById(R.id.requaet).setOnClickListener(new View.OnClickListener() {</b>
+<i>140</i>&nbsp;            @Override
+<i>141</i>&nbsp;            public void onClick(View view) {
+<b class="nc"><i>142</i>&nbsp;                presenter.onClickRequest();</b>
+<i>143</i>&nbsp;            }
+<i>144</i>&nbsp;        });
+<i>145</i>&nbsp;
+<i>146</i>&nbsp;    }
+<i>147</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-22 04:50</div>
+</div>
+</body>
+</html>

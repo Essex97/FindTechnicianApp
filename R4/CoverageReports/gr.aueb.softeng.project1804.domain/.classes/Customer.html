@@ -1,0 +1,266 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Customer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">gr.aueb.softeng.project1804.domain</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Customer (gr.aueb.softeng.project1804.domain)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Customer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    83.3%
+  </span>
+  <span class="absValue">
+    (10/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    79%
+  </span>
+  <span class="absValue">
+    (49/ 62)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package gr.aueb.softeng.project1804.domain;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;/**
+<i>6</i>&nbsp; * Created by marios on 4/15/18.
+<i>7</i>&nbsp; */
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public class Customer extends User
+<i>10</i>&nbsp;{
+<i>11</i>&nbsp;    private List&lt;Request&gt; requests;
+<i>12</i>&nbsp;    private List&lt;Evaluation&gt; evaluations;
+<i>13</i>&nbsp;
+<i>14</i>&nbsp;    /**
+<i>15</i>&nbsp;     * This is the default constructor of the Customer class.
+<i>16</i>&nbsp;     */
+<i>17</i>&nbsp;    public Customer()
+<i>18</i>&nbsp;    {
+<b class="nc"><i>19</i>&nbsp;        super();</b>
+<b class="nc"><i>20</i>&nbsp;    }</b>
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    /**
+<i>23</i>&nbsp;     * This is the constructor of the Customer class.
+<i>24</i>&nbsp;     * @param firstName The first name of the Customer.
+<i>25</i>&nbsp;     * @param lastName The last name of the Customer.
+<i>26</i>&nbsp;     * @param phone The phone of the Costomer.
+<i>27</i>&nbsp;     * @param email The email of the Customer.
+<i>28</i>&nbsp;     */
+<i>29</i>&nbsp;    public Customer(String firstName, String lastName, String phone, String email)
+<i>30</i>&nbsp;    {
+<b class="fc"><i>31</i>&nbsp;        super(firstName, lastName, phone, email);</b>
+<b class="fc"><i>32</i>&nbsp;        requests = new ArrayList&lt;Request&gt;();</b>
+<b class="fc"><i>33</i>&nbsp;        evaluations = new ArrayList&lt;Evaluation&gt;();</b>
+<b class="fc"><i>34</i>&nbsp;    }</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    /**
+<i>37</i>&nbsp;     * This is the getter of the requests list.
+<i>38</i>&nbsp;     * @return The list that contains the requests that this user has created.
+<i>39</i>&nbsp;     */
+<i>40</i>&nbsp;    public List&lt;Request&gt; getRequests()
+<i>41</i>&nbsp;    {
+<b class="fc"><i>42</i>&nbsp;        return requests;</b>
+<i>43</i>&nbsp;    }
+<i>44</i>&nbsp;
+<i>45</i>&nbsp;    /**
+<i>46</i>&nbsp;     * This method returns a list with all the approved requests.
+<i>47</i>&nbsp;     * @return A list with the approved requests.
+<i>48</i>&nbsp;     */
+<i>49</i>&nbsp;    public List&lt;Request&gt; getApprovedRequests()
+<i>50</i>&nbsp;    {
+<b class="fc"><i>51</i>&nbsp;        if (requests == null)</b>
+<b class="nc"><i>52</i>&nbsp;            return null;</b>
+<i>53</i>&nbsp;
+<b class="fc"><i>54</i>&nbsp;        List&lt;Request&gt; approved = new ArrayList&lt;Request&gt;();</b>
+<i>55</i>&nbsp;
+<b class="fc"><i>56</i>&nbsp;        for (Request request : requests)</b>
+<b class="fc"><i>57</i>&nbsp;            if (request.isApproved())</b>
+<b class="fc"><i>58</i>&nbsp;                approved.add(request);</b>
+<b class="fc"><i>59</i>&nbsp;        return approved;</b>
+<i>60</i>&nbsp;    }
+<i>61</i>&nbsp;
+<i>62</i>&nbsp;    /**
+<i>63</i>&nbsp;     * This method returns a list with all the pending requests.
+<i>64</i>&nbsp;     * @return A lists with all the pending requests.
+<i>65</i>&nbsp;     */
+<i>66</i>&nbsp;    public List&lt;Request&gt; getPendingRequests()
+<i>67</i>&nbsp;    {
+<b class="fc"><i>68</i>&nbsp;        if (requests == null)</b>
+<b class="nc"><i>69</i>&nbsp;            return null;</b>
+<i>70</i>&nbsp;
+<b class="fc"><i>71</i>&nbsp;        List&lt;Request&gt; pending = new ArrayList&lt;Request&gt;();</b>
+<i>72</i>&nbsp;
+<b class="fc"><i>73</i>&nbsp;        for (Request request : requests)</b>
+<b class="fc"><i>74</i>&nbsp;            if (!request.isApproved())</b>
+<b class="fc"><i>75</i>&nbsp;                pending.add(request);</b>
+<b class="fc"><i>76</i>&nbsp;        return pending;</b>
+<i>77</i>&nbsp;    }
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;    /**
+<i>80</i>&nbsp;     * This method adds a request into the list
+<i>81</i>&nbsp;     * @param request new request
+<i>82</i>&nbsp;     */
+<i>83</i>&nbsp;    public void addRequest(Request request){
+<b class="nc"><i>84</i>&nbsp;        requests.add(request);</b>
+<b class="nc"><i>85</i>&nbsp;    }</b>
+<i>86</i>&nbsp;
+<i>87</i>&nbsp;    /**
+<i>88</i>&nbsp;     * The getter for the evaluations list.
+<i>89</i>&nbsp;     * @return The evaluations.
+<i>90</i>&nbsp;     */
+<i>91</i>&nbsp;    public List&lt;Evaluation&gt; getEvaluations()
+<i>92</i>&nbsp;    {
+<b class="fc"><i>93</i>&nbsp;        return evaluations;</b>
+<i>94</i>&nbsp;    }
+<i>95</i>&nbsp;
+<i>96</i>&nbsp;    /**
+<i>97</i>&nbsp;     * This method creates a new requests with the specified attributes.
+<i>98</i>&nbsp;     * @param date The date that the visit will take place.
+<i>99</i>&nbsp;     * @param time The time that the visit will take place.
+<i>100</i>&nbsp;     * @param technician The technician that will go to the visit.
+<i>101</i>&nbsp;     * @param services The lists with the services that the customer wants.
+<i>102</i>&nbsp;     */
+<i>103</i>&nbsp;    public void createRequests(String date, String time, Technician technician, List&lt;OfferedService&gt; services)
+<i>104</i>&nbsp;    {
+<b class="fc"><i>105</i>&nbsp;        if (date == null)</b>
+<b class="nc"><i>106</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>107</i>&nbsp;
+<b class="fc"><i>108</i>&nbsp;        if (time == null)</b>
+<b class="nc"><i>109</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>110</i>&nbsp;
+<b class="fc"><i>111</i>&nbsp;        if (technician == null)</b>
+<b class="nc"><i>112</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>113</i>&nbsp;
+<b class="fc"><i>114</i>&nbsp;        if (services == null)</b>
+<b class="nc"><i>115</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>116</i>&nbsp;
+<i>117</i>&nbsp;
+<b class="fc"><i>118</i>&nbsp;        Request request = new Request(date, time, technician, this, services);</b>
+<b class="fc"><i>119</i>&nbsp;        requests.add(request);</b>
+<b class="fc"><i>120</i>&nbsp;        technician.setRequest(request);</b>
+<b class="fc"><i>121</i>&nbsp;    }</b>
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;    /**
+<i>124</i>&nbsp;     * This method is responsible for paying the technician of
+<i>125</i>&nbsp;     * a given request with a certain amount. If the amount is
+<i>126</i>&nbsp;     * not enough then an IllegalArgumentException is thrown.
+<i>127</i>&nbsp;     * @param request The request that is to be paid.
+<i>128</i>&nbsp;     * @param givenAmount The amount of money.
+<i>129</i>&nbsp;     */
+<i>130</i>&nbsp;    public void pay(Request request, double givenAmount)
+<i>131</i>&nbsp;    {
+<b class="fc"><i>132</i>&nbsp;        if (request == null)</b>
+<b class="nc"><i>133</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>134</i>&nbsp;
+<b class="fc"><i>135</i>&nbsp;        if (givenAmount &lt; 0)</b>
+<b class="nc"><i>136</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>137</i>&nbsp;
+<b class="fc"><i>138</i>&nbsp;        Visit visit = request.getVisit();</b>
+<i>139</i>&nbsp;
+<b class="fc"><i>140</i>&nbsp;        if (visit != null)</b>
+<b class="fc"><i>141</i>&nbsp;            visit.createPayment(givenAmount);</b>
+<b class="fc"><i>142</i>&nbsp;    }</b>
+<i>143</i>&nbsp;
+<i>144</i>&nbsp;    /**
+<i>145</i>&nbsp;     * This method evaluates a technician according to a specific visit.
+<i>146</i>&nbsp;     * @param technician The technician that has to be evaluated.
+<i>147</i>&nbsp;     * @param visit The visit.
+<i>148</i>&nbsp;     * @return The evaluation object.
+<i>149</i>&nbsp;     */
+<i>150</i>&nbsp;    public Evaluation evaluate(Technician technician, Visit visit)
+<i>151</i>&nbsp;    {
+<b class="fc"><i>152</i>&nbsp;        if (technician == null)</b>
+<b class="fc"><i>153</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>154</i>&nbsp;
+<b class="fc"><i>155</i>&nbsp;        if (visit == null)</b>
+<b class="fc"><i>156</i>&nbsp;            throw new IllegalArgumentException();</b>
+<i>157</i>&nbsp;
+<b class="fc"><i>158</i>&nbsp;        Evaluation evaluation = new Evaluation(technician, visit);</b>
+<b class="fc"><i>159</i>&nbsp;        evaluations.add(evaluation);</b>
+<b class="fc"><i>160</i>&nbsp;        return evaluation;</b>
+<i>161</i>&nbsp;    }
+<i>162</i>&nbsp;
+<i>163</i>&nbsp;    @Override
+<i>164</i>&nbsp;    public boolean equals(Object o) {
+<b class="fc"><i>165</i>&nbsp;        if (this == o) return true;</b>
+<b class="fc"><i>166</i>&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
+<b class="fc"><i>167</i>&nbsp;        if (!super.equals(o)) return false;</b>
+<i>168</i>&nbsp;
+<b class="fc"><i>169</i>&nbsp;        Customer customer = (Customer) o;</b>
+<i>170</i>&nbsp;
+<b class="fc"><i>171</i>&nbsp;        if (requests != null ? !requests.equals(customer.requests) : customer.requests != null)</b>
+<b class="nc"><i>172</i>&nbsp;            return false;</b>
+<b class="fc"><i>173</i>&nbsp;        return evaluations != null ? evaluations.equals(customer.evaluations) : customer.evaluations == null;</b>
+<i>174</i>&nbsp;    }
+<i>175</i>&nbsp;
+<i>176</i>&nbsp;    @Override
+<i>177</i>&nbsp;    public int hashCode() {
+<b class="fc"><i>178</i>&nbsp;        int result = super.hashCode();</b>
+<b class="fc"><i>179</i>&nbsp;        result = 31 * result + (requests != null ? requests.hashCode() : 0);</b>
+<b class="fc"><i>180</i>&nbsp;        result = 31 * result + (evaluations != null ? evaluations.hashCode() : 0);</b>
+<b class="fc"><i>181</i>&nbsp;        return result;</b>
+<i>182</i>&nbsp;    }
+<i>183</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2018-05-22 04:50</div>
+</div>
+</body>
+</html>
