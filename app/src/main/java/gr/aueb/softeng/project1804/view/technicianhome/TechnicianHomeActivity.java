@@ -30,16 +30,16 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
 
     @Override
     public void startRequestsOption() {
-        findViewById(R.id.btn_tech_request).setEnabled(false);
-        findViewById(R.id.btn_tech_visit).setEnabled(true);
+        findViewById(R.id.btn_tech_visit).setAlpha(0.5f);
+        findViewById(R.id.btn_tech_request).setAlpha(1f);
         findViewById(R.id.textView9).setVisibility(View.VISIBLE);
         findViewById(R.id.textView12).setVisibility(View.INVISIBLE);
     }
 
     @Override
     public void startVisitsOption() {
-        findViewById(R.id.btn_tech_request).setEnabled(true);
-        findViewById(R.id.btn_tech_visit).setEnabled(false);
+        findViewById(R.id.btn_tech_request).setAlpha(0.5f);
+        findViewById(R.id.btn_tech_visit).setAlpha(1f);
         findViewById(R.id.textView9).setVisibility(View.INVISIBLE);
         findViewById(R.id.textView12).setVisibility(View.VISIBLE);
     }

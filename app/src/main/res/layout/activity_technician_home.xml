@@ -4,76 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="gr.aueb.softeng.project1804.view.technicianhome.TechnicianHomeActivity"
-    android:background="@drawable/gradient_backround">
+    android:background="@drawable/gradient_backround"
+    android:weightSum="2"
+    tools:context="gr.aueb.softeng.project1804.view.technicianhome.TechnicianHomeActivity">
 
     <Button
         android:id="@+id/btn_tech_request"
-        android:layout_width="192dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
+        android:background="@drawable/tab"
         android:text="Request"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tech_visit"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_tech_visit"
-        android:layout_width="198dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="0dp"
+        android:background="@drawable/tab"
         android:text="Visits"
+        android:textColor="@android:color/background_light"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintStart_toEndOf="@id/btn_tech_request"
         tools:ignore="UnknownId" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="234dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="serif"
         android:text="Press a request to confirm it"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="15dp"
-        app:layout_constraintBottom_toTopOf="@+id/requestList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_tech_visit" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/requestList"
-        android:layout_width="368dp"
-        android:layout_height="374dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="234dp"
         android:layout_height="41dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="36dp"
         android:text="Press a Visit to cancel it"
         android:textAlignment="center"
         android:textColor="#000"
-        app:layout_constraintBottom_toTopOf="@+id/requestList"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_tech_visit"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_tech_visit" />
 
 
 </android.support.constraint.ConstraintLayout>
