@@ -14,6 +14,9 @@ public class HomeScreenCustomerPresenter {
         this.listAdapter = listAdapter;
     }
 
+    /**
+     * This method is responsible for starting the payment procedure
+     */
     public void onClickCreatePayment(){
         homeActivity.startPaymentOption();
     }

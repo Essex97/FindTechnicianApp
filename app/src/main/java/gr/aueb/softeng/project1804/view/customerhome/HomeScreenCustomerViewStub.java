@@ -12,6 +12,10 @@ public class HomeScreenCustomerViewStub implements  HomeScreenCustomerView
         payments=0;
 
     }
+
+    /**
+     * This method increases the payments counter so we can make tests
+     */
     @Override
     public void startPaymentOption()
     {

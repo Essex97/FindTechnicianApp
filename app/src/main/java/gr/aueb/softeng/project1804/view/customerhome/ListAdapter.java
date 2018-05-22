@@ -32,7 +32,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.TechnicianHold
         this.homeActivity = homeActivity;
         technicianList = TechnicianDAOMemory.technicians;
     }
-
+    
     @Override
     public TechnicianHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new TechnicianHolder(LayoutInflater.from(homeActivity.getBaseContext()).inflate(R.layout.item_technician, parent, false));

@@ -16,12 +16,19 @@ public class HomeScreenCustomerActivity extends AppCompatActivity implements Hom
     private RecyclerView recyclerView;
     public static String type;
 
+    /**
+     * This method is responsible for starting the payment procedure
+     */
     @Override
     public void startPaymentOption() {
         Intent i = new Intent(this, paymentActivity.class);
         startActivity(i);
     }
 
+    /**
+     * In this method the activity connect with the layout and displays alla the items we want
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
