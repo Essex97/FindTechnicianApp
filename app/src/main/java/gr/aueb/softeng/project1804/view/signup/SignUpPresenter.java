@@ -12,10 +12,16 @@ public class SignUpPresenter {
         this.view = view;
     }
 
+    /**
+     This method saves a customer as signed up by calling the mehtod in the activity
+     */
     public void onClickSignUp(){
         view.startSignUpOption();
     }
 
+    /**
+     This method saves a technician as signed up and continues the procedure as more details are needed for the technicians by calling the mehtod in the activity
+     */
     public void onClickNext(){
         view.startNextOption();
     }

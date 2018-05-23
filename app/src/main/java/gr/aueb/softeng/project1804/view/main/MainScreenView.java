@@ -6,7 +6,13 @@ package gr.aueb.softeng.project1804.view.main;
 
 public interface MainScreenView {
 
+    /**
+     * this method is responsible for defining the user as a customer
+     */
     public void startCustomerOption();
 
+    /**
+     * this method is responsible for defining the user as a technician
+     */
     public void startTechnicianOption();
 }

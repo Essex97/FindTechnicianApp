@@ -28,6 +28,9 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
     private ArrayList<String> selectedResources;
     private ArrayList<Resource> returnedResources;
 
+    /**
+     * this mehtod is responsible for displaying all the requests made to the logged in user
+     */
     @Override
     public void startRequestsOption() {
         findViewById(R.id.btn_tech_visit).setAlpha(0.5f);
@@ -36,6 +39,9 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
         findViewById(R.id.textView12).setVisibility(View.INVISIBLE);
     }
 
+    /**
+     * this mehtod is responsible for displaying all the visits arranged for the logged in user
+     */
     @Override
     public void startVisitsOption() {
         findViewById(R.id.btn_tech_request).setAlpha(0.5f);
@@ -44,6 +50,10 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
         findViewById(R.id.textView12).setVisibility(View.VISIBLE);
     }
 
+    /**
+     * this method is responsible for filling the lists
+     * @return
+     */
     public ArrayList<Resource> addResources(){
 
         selectedResources = new ArrayList<>();
@@ -82,6 +92,10 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
         return returnedResources;
     }
 
+    /**
+     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
+     * are accesible
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

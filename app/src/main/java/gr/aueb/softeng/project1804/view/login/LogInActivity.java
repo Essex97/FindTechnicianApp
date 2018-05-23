@@ -24,6 +24,9 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
     public static final String TYPE_VISITOR = "Visitor";
     private String type;
 
+    /**
+     * This method is responsible vor verifying the email and password provided by the users and ultimately allowing them, or not, to login.
+     */
     @Override
     public void startLogInOption() {
         SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
@@ -35,7 +38,7 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
             LogedInUser logedin = LogedInUser.getInstance();
             Customer tempCustomer = CustomerDAOMemory.findCustomeByEmail(getEmail());
             if(tempCustomer == null){
-                Toast.makeText(getApplicationContext(), "YOU AR NOT A CUSTOMER", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "YOU ARE NOT A CUSTOMER", Toast.LENGTH_SHORT).show();
                 return;
             }
             Toast.makeText(getApplicationContext(), "CorrectCustomer", Toast.LENGTH_SHORT).show();
@@ -66,6 +69,9 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
 
     }
 
+    /**
+     * this mehtod is responsible for starting the signup procedure
+     */
     @Override
     public void startSignUpOption() {
         Intent i = new Intent(LogInActivity.this, SignUpActivity.class);
@@ -73,6 +79,9 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         startActivity(i);
     }
 
+    /**
+     * this mehtod is responsible for allowing a user without account to browse through the technicians and their details
+     */
     @Override
     public void startVisitorOption() {
         Intent i = new Intent(LogInActivity.this, HomeScreenCustomerActivity.class);
@@ -81,16 +90,25 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         startActivity(i);
     }
 
+    /**
+     * Email getter
+     */
     @Override
     public String getEmail() {
         return ((AutoCompleteTextView)findViewById(R.id.userEmail)).getText().toString().trim();
     }
 
+    /**
+     * Password getter
+     */
     @Override
     public String getPassword() {
         return ((AutoCompleteTextView)findViewById(R.id.userPassword)).getText().toString().trim();
     }
 
+    /**
+     * this method enables the visitor button when the user of the application is a "customer"
+     */
     public void customActivity(){
         Bundle extradata = getIntent().getExtras();
         if(extradata == null) return;
@@ -101,7 +119,10 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         }
     }
 
-
+    /**
+     * In this method the activity connects with the layout and displays all the items
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

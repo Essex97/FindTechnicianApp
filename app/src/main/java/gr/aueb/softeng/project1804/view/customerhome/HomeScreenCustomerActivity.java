@@ -17,7 +17,7 @@ public class HomeScreenCustomerActivity extends AppCompatActivity implements Hom
     public static String type;
 
     /**
-     * This method is responsible for starting the payment procedure
+     * This method is responsible for starting the payment procedure and overrides the one contained in the Interface
      */
     @Override
     public void startPaymentOption() {
@@ -26,7 +26,7 @@ public class HomeScreenCustomerActivity extends AppCompatActivity implements Hom
     }
 
     /**
-     * In this method the activity connect with the layout and displays alla the items we want
+     * In this method the activity connects with the layout and displays all the items
      * @param savedInstanceState
      */
     @Override

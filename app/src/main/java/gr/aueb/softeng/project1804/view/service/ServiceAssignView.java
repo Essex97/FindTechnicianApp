@@ -6,5 +6,8 @@ package gr.aueb.softeng.project1804.view.service;
 
 public interface ServiceAssignView {
 
+    /**
+     * this method continues the sign up procedure
+     */
     public void startSignUpOption();
 }

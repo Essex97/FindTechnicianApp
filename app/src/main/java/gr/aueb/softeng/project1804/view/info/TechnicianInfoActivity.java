@@ -40,6 +40,10 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
     private String type;
     private int position;
 
+
+    /**
+     * this mehtod is responsible for creating a request for a technician and overrides the one contained in the Interface
+     */
     @Override
     public void startRequestOption() {
         String date = adapterDays.getItem(days.getSelectedItemPosition());
@@ -67,6 +71,9 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
     }
 
+    /**
+     * this method initializes the activity with all the necessary items
+     */
     public void customActivity(){
 
         Bundle extradata = getIntent().getExtras();
@@ -127,6 +134,10 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
 
     }
 
+    /**
+     * In this method the activity connects with the layout and gets called first every time the activity launches
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

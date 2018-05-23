@@ -12,6 +12,9 @@ public class ServiceAssignPresenter {
         this.view = view;
     }
 
+    /**
+     * this method continues the sign up procedure by calling the method in the activity
+     */
     public void onClickSignUp(){
         view.startSignUpOption();
     }

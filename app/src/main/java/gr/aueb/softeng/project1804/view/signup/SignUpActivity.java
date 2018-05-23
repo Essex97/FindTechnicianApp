@@ -20,6 +20,9 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
 
     private String type;
 
+    /**
+    This method saves a customer as signed up
+     */
     @Override
     public void startSignUpOption() {
         Address address = new Address(getStreetName(), getPostalCode(), getStreetNumber());
@@ -45,6 +48,9 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         startActivity(i);
     }
 
+    /**
+     This method saves a technician as signed up and continues the procedure as more details are needed for the technicians
+     */
     @Override
     public void startNextOption() {
         Address address = new Address(getStreetName(), getPostalCode(), getStreetNumber());
@@ -69,6 +75,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         i.putExtra("TYPE", type);
         startActivity(i);
     }
+
 
     @Override
     public String getName() {
@@ -105,6 +112,9 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         return ((EditText)findViewById(R.id.customerPostCode)).getText().toString();
     }
 
+    /**
+     * this method displays the sign up button only when the user is a customer
+     */
     public void customActivity(){
         Bundle extradata = getIntent().getExtras();
         if(extradata == null) return;
@@ -118,6 +128,10 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         }
     }
 
+    /**
+     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
+     * are accesible
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

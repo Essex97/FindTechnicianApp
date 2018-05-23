@@ -17,6 +17,9 @@ public class TechnicianScreenPresenter {
         this.adapter = adapter;
     }
 
+    /**
+     * this mehtod is responsible for displaying all the requests made to the logged in user by calling the activity
+     */
     public void onClickRequests(){
         LogedInUser login = LogedInUser.getInstance();
         User user = login.getUser();
@@ -38,6 +41,9 @@ public class TechnicianScreenPresenter {
         view.startRequestsOption();
     }
 
+    /**
+     * this mehtod is responsible for displaying all the visits arranged for the logged in user by calling the activity
+     */
     public void onClickVisits(){
         LogedInUser login = LogedInUser.getInstance();
         User user = login.getUser();

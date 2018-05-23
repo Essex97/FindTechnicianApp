@@ -6,8 +6,14 @@ package gr.aueb.softeng.project1804.view.signup;
 
 public interface SignUpView {
 
+    /**
+     This method saves a customer as signed up
+     */
     public void startSignUpOption();
 
+    /**
+     This method saves a technician as signed up and continues the procedure as more details are needed for the technicians
+     */
     public void startNextOption();
 
     public String getName();

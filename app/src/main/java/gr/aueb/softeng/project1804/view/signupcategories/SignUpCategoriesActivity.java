@@ -34,6 +34,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
     private ArrayList<String> selectedDays;
     private ArrayList<String> selectedHours;
 
+    /**
+     * this method is responsible for letting a technician choose in which category he belongs
+     */
     @Override
     public void startChooseCategoryOption() {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpCategoriesActivity.this);
@@ -60,6 +63,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         mDialog.show();
     }
 
+    /**
+     * this method is responsible for letting a technician choose in which city he is available
+     */
     @Override
     public void startChooseCitiesOption() {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpCategoriesActivity.this);
@@ -86,6 +92,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         mDialog.show();
     }
 
+    /**
+     * this method is responsible for letting a technician choose which hours he is available
+     */
     @Override
     public void startChooseHoursOption() {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpCategoriesActivity.this);
@@ -113,6 +122,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         mDialog.show();
     }
 
+    /**
+     * this method is responsible for letting a technician choose which days he is available
+     */
     @Override
     public void startChooseDaysOption() {
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(SignUpCategoriesActivity.this);
@@ -141,6 +153,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         mDialog.show();
     }
 
+    /**
+     * this method is continues the signup procedure
+     */
     @Override
     public void startContinueOption(){
         Intent i = new Intent(SignUpCategoriesActivity.this, ServicesAssignActivity.class);
@@ -149,6 +164,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         startActivity(i);
     }
 
+    /**
+     * this method fills all the lists
+     */
     public void customActivity(){
         Bundle extradata = getIntent().getExtras();
         if(extradata == null) return;
@@ -176,6 +194,10 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
     }
 
 
+    /**
+     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
+     * are accesible
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

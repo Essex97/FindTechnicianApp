@@ -12,10 +12,16 @@ public class MainScreenPresenter {
         this.view = view;
     }
 
+    /**
+     * this method is responsible for defining the users as a customer by calling the mehtod pf the activity
+     */
     public void onClickCustomer(){
         view.startCustomerOption();
     }
 
+    /**
+     * this method is responsible for defining the user as a technician by calling the method in the activity
+     */
     public void onClickTechnician(){
         view.startTechnicianOption();
     }

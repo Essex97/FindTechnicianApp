@@ -9,6 +9,13 @@ public class Address
     private String street, postalCode;
     private int number;
 
+    /**
+     * constructor
+     * @param street name of street
+     * @param postalCode postal Code number
+     * @param number building number
+     */
+
     public Address(String street, String postalCode, int number)
     {
         this.street = street;

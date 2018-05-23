@@ -30,6 +30,9 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
     private float priceEvaluation;
     private Request selectedRequest;
 
+    /**
+     * This method is responsible for starting the payment
+     */
     @Override
     public void startPayOption() {
 
@@ -43,6 +46,9 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     }
 
+    /**
+     * this mehtod anables rating only when a customer has completed his payment
+     */
     private void enableRating(){
         findViewById(R.id.textView15).setEnabled(true);
         findViewById(R.id.textView16).setEnabled(true);
@@ -61,6 +67,9 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
         findViewById(R.id.btn_evaluate).setClickable(true);
     }
 
+    /**
+     * this method is responsible for evaluating a technician
+     */
     @Override
     public void startEvaluateOption() {
 
@@ -89,6 +98,11 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     }
 
+
+    /**
+     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
+     * are accesible
+     */
     @Override
     public void startChooseTechnician() {
         if(((Spinner)findViewById(R.id.payment_spinner)).getSelectedItemPosition() == 0){
@@ -124,6 +138,9 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
         }
     }
 
+    /**
+     * this method fills all the dropdown lists
+     */
     public void customActivity(){
         //Customer logedIn = CustomerDAOMemory.getLogedInCustomer();
         Customer logedIn = null;
@@ -153,6 +170,10 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
 
     }
 
+    /**
+     * In this method the activity connects with the layout and gets called first every time the activity launches
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

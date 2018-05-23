@@ -6,7 +6,8 @@ package gr.aueb.softeng.project1804.view.customerhome;
 
 public interface HomeScreenCustomerView {
     /**
-     * This method is responsible for starting the payment procedure
+     * This method is responsible for starting the payment procedurek
+     *
      */
 
     public void startPaymentOption();

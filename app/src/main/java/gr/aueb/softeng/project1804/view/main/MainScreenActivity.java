@@ -22,6 +22,9 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
     public static final String TYPE_CUSTOMER = "Customer";
     public static final String TYPE_TECHNICIAN = "Technician";
 
+    /**
+     * this method is responsible for defining the user as a customer
+     */
     @Override
     public void startCustomerOption() {
         Intent i = new Intent(MainScreenActivity.this, LogInActivity.class);
@@ -29,6 +32,9 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
         startActivity(i);
     }
 
+    /**
+     * this method is responsible for defining the user as a technician
+     */
     @Override
     public void startTechnicianOption() {
         Intent i = new Intent(MainScreenActivity.this, LogInActivity.class);
@@ -36,6 +42,10 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
         startActivity(i);
     }
 
+    /**
+     * In this method the activity connects with the layout and gets called first every time the activity launches
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {

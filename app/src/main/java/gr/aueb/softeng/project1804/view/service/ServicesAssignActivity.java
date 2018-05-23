@@ -30,6 +30,9 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
     private int size;
     private Technician tech;
 
+    /**
+     * this mehtod defines the type and the category of a technician based on previous activities
+     */
     public void customActivity(){
         Bundle extradata = getIntent().getExtras();
         if(extradata == null) return;
@@ -40,6 +43,9 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
         tech = ((TechnicianDAOMemory) getApplication()).getTechnicians().get(size-1);
     }
 
+    /**
+     * this method continues the sign up procedure
+     */
     @Override
     public void startSignUpOption() {
 
@@ -83,6 +89,10 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
         startActivity(i);
     }
 
+    /**
+     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
+     * are accesible
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
