@@ -18,7 +18,7 @@ public class TechnicianScreenPresenter {
     }
 
     /**
-     * this method is responsible for displaying all the requests made to the logged in user by calling the activity
+     * this method is responsible for displaying all the requests made to the logged in user by calling the activity.
      */
     public void onClickRequests(){
         LogedInUser login = LogedInUser.getInstance();
