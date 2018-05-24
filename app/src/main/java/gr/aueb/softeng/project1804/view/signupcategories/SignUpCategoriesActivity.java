@@ -193,10 +193,9 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
         selectedHours = new ArrayList<>();
     }
 
-
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
-     * are accesible
+     * this method is responsible enabling for initializing the activity and which buttons and fields
+     * are accessible
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,7 +233,6 @@ public class SignUpCategoriesActivity extends AppCompatActivity implements SignU
                 presenter.onClickChooseHours();
             }
         });
-
 
         findViewById(R.id.continueSignUp).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -54,7 +54,6 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
         ArrayList<OfferedService> offeredServices = new ArrayList<>();
         offeredServices.add(selectedTechnician.getServices().get(services.getSelectedItemPosition()));
 
-        //Customer logedInCustomer = CustomerDAOMemory.getLogedInCustomer();
         Customer logedInCustomer = null;
         LogedInUser login = LogedInUser.getInstance();
         User user = login.getUser();
@@ -68,7 +67,6 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
         Intent i = new Intent(TechnicianInfoActivity.this, HomeScreenCustomerActivity.class);
         i.putExtra("TYPE", type);
         startActivity(i);
-
     }
 
     /**
@@ -97,7 +95,6 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
             findViewById(R.id.selectofsv).setEnabled(false);
             findViewById(R.id.requaet).setEnabled(false);
             findViewById(R.id.requaet).setClickable(false);
-
         }
 
         etName = findViewById(R.id.infoName);
@@ -131,7 +128,6 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
         ImageView image = findViewById(R.id.infoPhoto);
         TextDrawable drawable = TextDrawable.builder().buildRound(etName.getText().toString().substring(0,2), Color.RED);
         image.setImageDrawable(drawable);
-
     }
 
     /**
@@ -153,6 +149,5 @@ public class TechnicianInfoActivity extends AppCompatActivity implements Technic
                 presenter.onClickRequest();
             }
         });
-
     }
 }

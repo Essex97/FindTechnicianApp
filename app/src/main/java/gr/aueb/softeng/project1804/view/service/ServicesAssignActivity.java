@@ -31,7 +31,7 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
     private Technician tech;
 
     /**
-     * this mehtod defines the type and the category of a technician based on previous activities
+     * this method defines the type and the category of a technician based on previous activities
      */
     public void customActivity(){
         Bundle extradata = getIntent().getExtras();
@@ -90,8 +90,8 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
     }
 
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
-     * are accesible
+     * this method is responsible enabling for initializing the activity and which buttons and fields
+     * are accessible
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,5 +127,4 @@ public class ServicesAssignActivity extends AppCompatActivity implements Service
         });
 
     }
-
 }

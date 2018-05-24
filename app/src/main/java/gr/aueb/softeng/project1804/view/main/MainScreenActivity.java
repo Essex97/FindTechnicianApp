@@ -43,8 +43,7 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
     }
 
     /**
-     * In this method the activity connects with the layout and gets called first every time the activity launches
-     * @param savedInstanceState
+     * In this method the activity connects with the layout and gets called first every time the activity launches.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -70,8 +69,5 @@ public class MainScreenActivity extends AppCompatActivity implements MainScreenV
                 presenter.onClickTechnician();
             }
         });
-
-
     }
-
 }

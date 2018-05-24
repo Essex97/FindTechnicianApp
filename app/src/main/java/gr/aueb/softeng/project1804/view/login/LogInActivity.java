@@ -66,11 +66,10 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
         }else{
             Toast.makeText(getApplicationContext(), "Email or Password is Incorrect", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     /**
-     * this mehtod is responsible for starting the signup procedure
+     * this method is responsible for starting the signup procedure
      */
     @Override
     public void startSignUpOption() {
@@ -80,7 +79,7 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
     }
 
     /**
-     * this mehtod is responsible for allowing a user without account to browse through the technicians and their details
+     * this method is responsible for allowing a user without account to browse through the technicians and their details
      */
     @Override
     public void startVisitorOption() {
@@ -152,6 +151,5 @@ public class LogInActivity extends AppCompatActivity implements LogInView{
                 presenter.onClickVisitor();
             }
         });
-
     }
 }

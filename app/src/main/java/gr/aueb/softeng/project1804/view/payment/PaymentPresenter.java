@@ -27,8 +27,8 @@ public class PaymentPresenter {
     }
 
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
-     * are accesible by calling the method in the activity
+     * this method is responsible enabling for initializing the activity and which buttons and fields
+     * are accessible by calling the method in the activity
      */
     public void onChooseTechnician(){
         view.startChooseTechnician();

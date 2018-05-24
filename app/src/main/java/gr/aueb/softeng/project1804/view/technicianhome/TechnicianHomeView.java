@@ -7,12 +7,12 @@ package gr.aueb.softeng.project1804.view.technicianhome;
 public interface TechnicianHomeView {
 
     /**
-     * this mehtod is responsible for displaying all the requests made to the logged in user
+     * this method is responsible for displaying all the requests made to the logged in user
      */
-    public void startRequestsOption();
+    void startRequestsOption();
 
     /**
-     * this mehtod is responsible for displaying all the visits arranged for the logged in user
+     * this method is responsible for displaying all the visits arranged for the logged in user
      */
-    public void startVisitsOption();
+    void startVisitsOption();
 }

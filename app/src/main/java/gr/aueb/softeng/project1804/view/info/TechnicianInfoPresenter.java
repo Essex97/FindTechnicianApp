@@ -12,7 +12,6 @@ public class TechnicianInfoPresenter {
         this.view = view;
     }
 
-
     /**
      * This method is responsible for starting the payment procedure by calling the method inside the activity
      */

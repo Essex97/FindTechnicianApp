@@ -9,16 +9,16 @@ public interface PaymentView {
     /**
      * This method is responsible for starting the payment
      */
-    public void startPayOption();
+    void startPayOption();
 
     /**
      * this method is responsible for evaluating a technician
      */
-    public void startEvaluateOption();
+    void startEvaluateOption();
 
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
-     * are accesible
+     * this method is responsible enabling for initializing the activity and which buttons and fields
+     * are accessible
      */
-    public void startChooseTechnician();
+    void startChooseTechnician();
 }

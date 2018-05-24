@@ -29,7 +29,7 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
     private ArrayList<Resource> returnedResources;
 
     /**
-     * this mehtod is responsible for displaying all the requests made to the logged in user
+     * this method is responsible for displaying all the requests made to the logged in user
      */
     @Override
     public void startRequestsOption() {
@@ -40,7 +40,7 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
     }
 
     /**
-     * this mehtod is responsible for displaying all the visits arranged for the logged in user
+     * this method is responsible for displaying all the visits arranged for the logged in user
      */
     @Override
     public void startVisitsOption() {
@@ -52,7 +52,6 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
 
     /**
      * this method is responsible for filling the lists
-     * @return
      */
     public ArrayList<Resource> addResources(){
 
@@ -93,8 +92,8 @@ public class TechnicianHomeActivity extends AppCompatActivity implements Technic
     }
 
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
-     * are accesible
+     * this method is responsible enabling for initializing the activity and which buttons and fields
+     * are accessible
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

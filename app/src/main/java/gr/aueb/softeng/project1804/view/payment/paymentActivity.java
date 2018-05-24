@@ -43,11 +43,10 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
         if(successPay){
             enableRating();
         }
-
     }
 
     /**
-     * this mehtod anables rating only when a customer has completed his payment
+     * this method anables rating only when a customer has completed his payment
      */
     private void enableRating(){
         findViewById(R.id.textView15).setEnabled(true);
@@ -74,7 +73,7 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
     public void startEvaluateOption() {
 
         String comment = ((AutoCompleteTextView)findViewById(R.id.comment_arrea)).getText().toString();
-        // Evaluation eval = CustomerDAOMemory.getLogedInCustomer().evaluate(selectedRequest.getTechnician(), selectedRequest.getVisit());
+
         LogedInUser login = LogedInUser.getInstance();
         User user = login.getUser();
         Evaluation eval = null;
@@ -95,12 +94,10 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
         if(priceEvaluation <= 3.0f) eval.setPriceEvaluation(Scale.VERY_GOOD);
 
         Toast.makeText(getApplicationContext(), "Success Evaluation", Toast.LENGTH_SHORT).show();
-
     }
 
-
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
+     * this method is responsible enabling for initializing the activity and which buttons and fields
      * are accesible
      */
     @Override
@@ -134,7 +131,6 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
             findViewById(R.id.payment_ammount).setClickable(true);
             findViewById(R.id.btn_pay).setEnabled(true);
             findViewById(R.id.btn_pay).setClickable(true);
-
         }
     }
 
@@ -142,7 +138,6 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
      * this method fills all the dropdown lists
      */
     public void customActivity(){
-        //Customer logedIn = CustomerDAOMemory.getLogedInCustomer();
         Customer logedIn = null;
         LogedInUser login = LogedInUser.getInstance();
         User user = login.getUser();
@@ -160,9 +155,7 @@ public class paymentActivity extends AppCompatActivity implements PaymentView{
             for(Request request : approvedRequests){
                 requestsByID.add(request.getRequestCode());
             }
-
         }
-
         requestAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, requestsByID);
         requestAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 

@@ -9,28 +9,25 @@ public interface SignUpView {
     /**
      This method saves a customer as signed up
      */
-    public void startSignUpOption();
+    void startSignUpOption();
 
     /**
      This method saves a technician as signed up and continues the procedure as more details are needed for the technicians
      */
-    public void startNextOption();
+    void startNextOption();
 
-    public String getName();
+    String getName();
 
-    public String getPassword();
+    String getPassword();
 
-    public String getEmail();
+    String getEmail();
 
-    public String getPhone();
+    String getPhone();
 
-    public String getStreetName();
+    String getStreetName();
 
-    public int getStreetNumber();
+    int getStreetNumber();
 
-    public String getPostalCode();
-
-
-
+    String getPostalCode();
 
 }

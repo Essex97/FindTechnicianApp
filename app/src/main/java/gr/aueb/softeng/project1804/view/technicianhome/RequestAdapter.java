@@ -30,25 +30,42 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
     private List<Request> requestList;
     private TechnicianHomeActivity homeActivity;
 
+    /**
+     * Constructor
+     * @param homeActivity the activity we want to handle
+     */
     public RequestAdapter(TechnicianHomeActivity homeActivity){
         this.homeActivity = homeActivity;
     }
 
+    /**
+     * Describes an item view and metadata about its place within the RecyclerView.
+     */
     @Override
     public RequestAdapter.RequestHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new RequestAdapter.RequestHolder(LayoutInflater.from(homeActivity.getBaseContext()).inflate(R.layout.item_request, parent, false));
     }
 
+    /**
+     * This method updates the ViewHolder contents with the item at the given position
+     * and also sets up some private fields to be used by RecyclerView
+     */
     @Override
     public void onBindViewHolder(RequestAdapter.RequestHolder holder, int position) {
         holder.apply(requestList.get(position));
     }
 
+    /**
+     * @return the size of the list which contains the requests.
+     */
     @Override
     public int getItemCount() {
         return requestList.size();
     }
 
+    /**
+     * Initialize the request list of the activity
+     */
     public void setList(List<Request> list){
         requestList = list;
     }
@@ -60,6 +77,9 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
         private TextView requestHour;
         private ImageView image;
 
+        /**
+         * Describes an item view and metadata about its place within the RecyclerView.
+         */
         RequestHolder(View itemView){
             super(itemView);
             customerName = itemView.findViewById(R.id.cust_name);
@@ -69,6 +89,10 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
             itemView.setOnClickListener(this);
         }
 
+        /**
+         * This method make some changes on the next layout we transfer
+         * such as the icon and some info of the request we choose.
+         */
         void apply(Request request) {
             customerName.setText(request.getCustomer().getFirstName());
             requestDay.setText(request.getDate());
@@ -77,8 +101,11 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
             image.setImageDrawable(drawable);
         }
 
-
-
+        /**
+         * This method starts at the time we press one request of the list and
+         * makes some chances on the list of the next layout we transfers which is
+         * the list of approved requests.
+         */
         @Override
         public void onClick(View view) {
 
@@ -90,7 +117,6 @@ public class RequestAdapter extends RecyclerView.Adapter<RequestAdapter.RequestH
                 ArrayList<Resource> resources = homeActivity.addResources();
                 selectedRequest.getVisit().setResources(resources);
             }
-
 
             LogedInUser login = LogedInUser.getInstance();
             User user = login.getUser();

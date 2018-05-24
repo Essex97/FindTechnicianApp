@@ -21,7 +21,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
     private String type;
 
     /**
-    This method saves a customer as signed up
+     * This method saves a customer as signed up
      */
     @Override
     public void startSignUpOption() {
@@ -49,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
     }
 
     /**
-     This method saves a technician as signed up and continues the procedure as more details are needed for the technicians
+     * This method saves a technician as signed up and continues the procedure as more details are needed for the technicians
      */
     @Override
     public void startNextOption() {
@@ -75,7 +75,6 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
         i.putExtra("TYPE", type);
         startActivity(i);
     }
-
 
     @Override
     public String getName() {
@@ -129,8 +128,8 @@ public class SignUpActivity extends AppCompatActivity implements SignUpView{
     }
 
     /**
-     * this mehtod is responsible enabling for initializing the activity and which buttons and fields
-     * are accesible
+     * this method is responsible enabling for initializing the activity and which buttons and fields
+     * are accessible
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,7 @@ package gr.aueb.softeng.project1804.view.info;
 public interface TechnicianInfoView {
 
     /**
-     * this mehtod is responsible for creating a request for a technician
+     * this method is responsible for creating a request for a technician
      */
-    public void startRequestOption();
+    void startRequestOption();
 }

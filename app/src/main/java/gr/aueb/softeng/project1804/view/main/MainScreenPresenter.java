@@ -13,7 +13,7 @@ public class MainScreenPresenter {
     }
 
     /**
-     * this method is responsible for defining the users as a customer by calling the mehtod pf the activity
+     * this method is responsible for defining the users as a customer by calling the method pf the activity
      */
     public void onClickCustomer(){
         view.startCustomerOption();

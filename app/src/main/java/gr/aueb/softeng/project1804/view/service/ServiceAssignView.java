@@ -9,5 +9,5 @@ public interface ServiceAssignView {
     /**
      * this method continues the sign up procedure
      */
-    public void startSignUpOption();
+    void startSignUpOption();
 }
